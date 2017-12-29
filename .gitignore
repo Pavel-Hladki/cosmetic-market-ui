@@ -16,6 +16,7 @@
 *.launch
 .settings/
 *.sublime-workspace
+cosmetic-market-ui.iml
 
 # IDE - VSCode
 .vscode/*
