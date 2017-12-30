@@ -15,6 +15,7 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './in-memory-data.service';
 import { ProductSearchComponent } from './product-search/product-search.component';
 import { HttpClientModule } from "@angular/common/http";
+import { Logger } from "./logger.service";
 
 
 @NgModule({
@@ -39,7 +40,7 @@ import { HttpClientModule } from "@angular/common/http";
       InMemoryDataService, { dataEncapsulation: false }
     )
   ],
-  providers: [ProductService, MessageService],
+  providers: [ProductService, MessageService, Logger],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
