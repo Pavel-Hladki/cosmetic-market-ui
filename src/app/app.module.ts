@@ -3,19 +3,20 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 
 import { AppComponent } from './app.component';
-import { ProductsComponent } from './products/products.component';
-import { ProductDetailComponent } from './product-detail/product-detail.component';
-import { ProductService } from "./product.service";
-import { MessagesComponent } from './messages/messages.component';
-import { MessageService } from './message.service';
+import { ProductsComponent } from './components/store/products/products.component';
+import { ProductDetailComponent } from './components/store/product-detail/product-detail.component';
+import { ProductService } from "./services/product.service";
+import { MessageService } from './services/message.service';
 import { AppRoutingModule } from './app-routing.module';
-import { DashboardComponent } from './dashboard/dashboard.component';
 
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService }  from './in-memory-data.service';
-import { ProductSearchComponent } from './product-search/product-search.component';
+import { InMemoryDataService }  from './services/in-memory-data.service';
 import { HttpClientModule } from "@angular/common/http";
-import { Logger } from "./logger.service";
+import { Logger } from "./services/logger.service";
+import { StoreComponent } from './components/store/store.component';
+import { DashboardComponent } from "./components/dashboard/dashboard.component";
+import { MessagesComponent } from "./components/shared/messages/messages.component";
+import { ProductSearchComponent } from "./components/shared/product-search/product-search.component";
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { Logger } from "./logger.service";
     ProductDetailComponent,
     MessagesComponent,
     DashboardComponent,
-    ProductSearchComponent
+    ProductSearchComponent,
+    StoreComponent
   ],
   imports: [
     BrowserModule,
