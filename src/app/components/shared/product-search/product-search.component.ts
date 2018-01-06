@@ -2,14 +2,13 @@ import { Component, OnInit } from '@angular/core';
 
 import { Observable } from 'rxjs/Observable';
 import { Subject }    from 'rxjs/Subject';
-import { of }         from 'rxjs/observable/of';
 
 import {
   debounceTime, distinctUntilChanged, switchMap
 } from 'rxjs/operators';
 
-import { Product } from '../product';
-import { ProductService } from '../product.service';
+import { Product } from '../../../product';
+import { ProductService } from '../../../services/product.service';
 
 @Component({
   selector: 'app-product-search',

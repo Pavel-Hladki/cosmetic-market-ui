@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { MessageService } from './message.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-import { Product } from './product';
+import { Product } from '../product';
 
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
