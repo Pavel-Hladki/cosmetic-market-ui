@@ -1,0 +1,89 @@
+:host {
+  font-size: 14px;
+}
+
+ol, ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  transition: all .3s ease-in 0s;
+  color: #000;
+}
+
+a:focus, a:hover {
+  text-decoration: none;
+  outline: 0;
+  color: #5672f9;
+}
+
+.product-item {
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+.product-item .card {
+  border: none;
+}
+
+.product-item .card .card-body {
+  padding: 20px;
+}
+
+.product-item .card .card-body .card-title {
+  font-size: 18px;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.product-item .card .card-body .card-text {
+  color: #777;
+}
+
+.product-item .thumb-content {
+  position: relative;
+}
+
+.product-item .thumb-content .price {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #5672f9;
+  color: #fff;
+  display: inline-block;
+  padding: 4px 8px;
+  font-size: 12px;
+}
+
+.product-item .product-meta {
+  margin-bottom: 15px;
+}
+
+.product-item .product-meta li {
+  margin-right: 15px;
+}
+
+.product-item .product-meta li a {
+  color: #888;
+  font-size: 12px;
+}
+
+.product-item .product-meta li a i {
+  margin-right: 4px;
+}
+
+.product-item .product-ratings li {
+  margin-right: 1px;
+}
+
+.product-item .product-ratings li i {
+  font-size: 18px;
+  color: #dedede;
+  cursor: pointer;
+}
+
+.product-item .product-ratings .selected i {
+  color: #212529;
+}

@@ -1,24 +1,44 @@
-<h2>My Products</h2>
-
-<div>
-  <label>Product name:
-    <input #productName />
-  </label>
-  <!-- (click) passes input value to add() and then clears the input -->
-  <button (click)="add(productName.value); productName.value=''">
-    add
-  </button>
-</div>
-
-<ul class="products">
-
-  <!--trackBy-->
-  <li *ngFor="let product of products">
-    <a routerLink="/product/{{product.id}}">
-      <span class="badge">{{product.id}}</span> {{product.name}}
-    </a>
-
-    <button class="delete" title="Delete product"
-            (click)="delete(product)">x</button>
-  </li>
-</ul>
+<section class="section-sm">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb bg-light">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item"><a href="#">Property for sale</a></li>
+            <li class="breadcrumb-item active" aria-current="page">North Yorkshire</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="search-result bg-gray">
+          <h2>Health Line</h2>
+          <p>123 Results on 12 December, 2017</p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+        <div class="category-sidebar">
+          <app-products-line-category-widget></app-products-line-category-widget>
+        </div>
+      </div>
+      <div class="col-md-9">
+        <app-products-control-panel></app-products-control-panel>
+        <div class="product-grid-list">
+          <div class="row mt-30">
+            <div class="col-sm-12 col-lg-4 col-md-6">
+              <!-- product card -->
+              <app-products-item></app-products-item>
+            </div>
+          </div>
+        </div>
+        <app-products-pagination></app-products-pagination>
+      </div>
+    </div>
+  </div>
+</section>

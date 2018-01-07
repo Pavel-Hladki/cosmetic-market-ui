@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './components/app.component';
 import { ProductsComponent } from './components/store/products/products.component';
@@ -17,9 +18,14 @@ import { StoreComponent } from './components/store/store.component';
 import { DashboardComponent } from "./components/dashboard/dashboard.component";
 import { MessagesComponent } from "./components/shared/messages/messages.component";
 import { ProductSearchComponent } from "./components/shared/product-search/product-search.component";
+import { ProductsItemComponent } from './components/store/products/products-item/products-item.component';
+import { PaginationComponent } from './components/store/products/products-pagination/products-pagination.component';
+import { ProductsControlPanelComponent } from './components/store/products/products-control-panel/products-control-panel.component';
+import { LineCategoryComponent } from './components/store/products/widgets/line-category/line-category.component';
 
 
 @NgModule({
+  //todo separate on several modules
   declarations: [
     AppComponent,
     ProductsComponent,
@@ -27,7 +33,11 @@ import { ProductSearchComponent } from "./components/shared/product-search/produ
     MessagesComponent,
     DashboardComponent,
     ProductSearchComponent,
-    StoreComponent
+    StoreComponent,
+    ProductsItemComponent,
+    PaginationComponent,
+    ProductsControlPanelComponent,
+    LineCategoryComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +50,8 @@ import { ProductSearchComponent } from "./components/shared/product-search/produ
     // Remove it when a real server is ready to receive requests.
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
-    )
+    ),
+    NgbModule.forRoot()
   ],
   providers: [ProductService, MessageService, Logger],
   bootstrap: [AppComponent]
