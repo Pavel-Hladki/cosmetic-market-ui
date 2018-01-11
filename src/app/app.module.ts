@@ -19,14 +19,19 @@ import { DashboardComponent } from "./components/dashboard/dashboard.component";
 import { MessagesComponent } from "./components/shared/messages/messages.component";
 import { ProductSearchComponent } from "./components/shared/product-search/product-search.component";
 import { ProductsItemComponent } from './components/store/products/products-item/products-item.component';
-import { PaginationComponent } from './components/store/products/products-pagination/products-pagination.component';
+import { PaginationComponent } from './components/store/pagination/pagination.component';
 import { ProductsControlPanelComponent } from './components/store/products/products-control-panel/products-control-panel.component';
 import { LineCategoryComponent } from './components/store/products/widgets/line-category/line-category.component';
-import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { UserProductsListComponent } from './components/store/user/user-products-list/user-products-list.component';
+import { UserComponent } from './components/store/user/user.component';
+import { UserNavigationComponent } from './components/store/user/user-navigation/user-navigation.component';
+import { ProdictListItemComponent } from './components/store/user/user-products-list/prodict-list-item/prodict-list-item.component';
 
 
 @NgModule({
   //todo separate on several modules
+  //todo rename app components after, delete prefix e.g. products-item -> item or item-block
   declarations: [
     AppComponent,
     ProductsComponent,
@@ -38,7 +43,11 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     ProductsItemComponent,
     PaginationComponent,
     ProductsControlPanelComponent,
-    LineCategoryComponent
+    LineCategoryComponent,
+    UserProductsListComponent,
+    UserComponent,
+    UserNavigationComponent,
+    ProdictListItemComponent
   ],
   imports: [
     BrowserModule,

@@ -14,6 +14,7 @@ ul.pagination li a {
   border-color: transparent;
   box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1);
   color: #666;
+  transition: all .3s ease-in-out 0s;
 }
 
 ul.pagination li a:hover {
