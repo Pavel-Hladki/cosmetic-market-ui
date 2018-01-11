@@ -22,6 +22,7 @@ import { ProductsItemComponent } from './components/store/products/products-item
 import { PaginationComponent } from './components/store/products/products-pagination/products-pagination.component';
 import { ProductsControlPanelComponent } from './components/store/products/products-control-panel/products-control-panel.component';
 import { LineCategoryComponent } from './components/store/products/widgets/line-category/line-category.component';
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 
 @NgModule({
@@ -44,6 +45,7 @@ import { LineCategoryComponent } from './components/store/products/widgets/line-
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
+    BrowserAnimationsModule,
 
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.

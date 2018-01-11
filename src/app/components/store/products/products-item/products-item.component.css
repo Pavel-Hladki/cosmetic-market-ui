@@ -46,17 +46,6 @@ a:focus, a:hover {
   position: relative;
 }
 
-.product-item .thumb-content .price {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  background: #5672f9;
-  color: #fff;
-  display: inline-block;
-  padding: 4px 8px;
-  font-size: 12px;
-}
-
 .product-item .product-meta {
   margin-bottom: 15px;
 }
