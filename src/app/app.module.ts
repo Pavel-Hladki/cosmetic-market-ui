@@ -23,11 +23,12 @@ import { PaginationComponent } from './components/store/pagination/pagination.co
 import { ProductsControlPanelComponent } from './components/store/products/products-control-panel/products-control-panel.component';
 import { LineCategoryComponent } from './components/store/products/widgets/line-category/line-category.component';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { UserProductsListComponent } from './components/store/user/user-products-list/user-products-list.component';
-import { UserComponent } from './components/store/user/user.component';
-import { UserNavigationComponent } from './components/store/user/user-navigation/user-navigation.component';
-import { ProdictListItemComponent } from './components/store/user/user-products-list/prodict-list-item/prodict-list-item.component';
-
+import { SupplierComponent } from "./components/supplier/supplier.component";
+import { ProductsTableComponent } from "./components/supplier/products-table/products-table.component";
+import { AccountNavigationComponent } from "./components/supplier/account-navigation/account-navigation.component";
+import { ProductRecordComponent } from "./components/supplier/products-table/product-record/product-record.component";
+import { ProductFormComponent } from './components/supplier/product-form/product-form.component';
+import { QuickviewModalComponent } from './components/store/product-detail/quickview-modal/quickview-modal.component';
 
 @NgModule({
   //todo separate on several modules
@@ -44,10 +45,12 @@ import { ProdictListItemComponent } from './components/store/user/user-products-
     PaginationComponent,
     ProductsControlPanelComponent,
     LineCategoryComponent,
-    UserProductsListComponent,
-    UserComponent,
-    UserNavigationComponent,
-    ProdictListItemComponent
+    ProductsTableComponent,
+    SupplierComponent,
+    AccountNavigationComponent,
+    ProductRecordComponent,
+    ProductFormComponent,
+    QuickviewModalComponent
   ],
   imports: [
     BrowserModule,
