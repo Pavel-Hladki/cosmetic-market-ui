@@ -3,8 +3,8 @@ import {animate, state, style, transition, trigger} from "@angular/animations";
 
 @Component({
   selector: 'app-products-line-category-widget',
-  templateUrl: './line-category.component.html',
-  styleUrls: ['./line-category.component.css'],
+  templateUrl: './line-category-widget.component.html',
+  styleUrls: ['./line-category-widget.component.css'],
   animations: [
     trigger('collapse', [
       state('open', style({

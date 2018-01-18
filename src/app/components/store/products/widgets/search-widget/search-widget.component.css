@@ -1,156 +1,28 @@
-/*:host {
-  font-size: 14px;
-}
-
-ol, ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-a {
-  transition: all .3s ease-in 0s;
-  color: #000;
-}
-
-a:focus, a:hover {
-  text-decoration: none;
-  outline: 0;
-  color: #5672f9;
-}
-
-.product-item {
-  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1);
-  margin-bottom: 30px;
-}
-
-.product-item .card {
-  border: none;
-}
-
-.product-item .card .card-body {
-  padding: 20px;
-}
-
-.product-item .card .card-body .card-title {
-  font-size: 18px;
-  margin-bottom: 5px;
-  font-weight: 600;
-}
-
-.product-item .card .card-body .card-text {
-  color: #777;
-}
-
-.product-item .thumb-content {
+/* -------------------------------------
+    9.6 Widget search
+------------------------------------- */
+.widget-search {
   position: relative;
 }
-
-.product-item .product-meta {
-  margin-bottom: 15px;
+.widget-search input {
+  height: 50px;
+  margin-bottom: 0;
+  padding-right: 50px;
 }
-
-.product-item .product-meta li {
-  margin-right: 15px;
-}
-
-.product-item .product-meta li a {
-  color: #888;
-  font-size: 12px;
-}
-
-.product-item .product-meta li a i {
-  margin-right: 4px;
-}
-
-.product-item .product-ratings li {
-  margin-right: 1px;
-}
-
-.product-item .product-ratings li i {
-  font-size: 18px;
-  color: #dedede;
-  cursor: pointer;
-}
-
-.product-item .product-ratings .selected i {
-  color: #212529;
-}*/
-
-/* -------------------------------------
-    7.2 Featured product section
-------------------------------------- */
-.product-item {
-  margin-bottom: 30px;
+.widget-search button {
+  background: transparent none repeat scroll 0 0;
+  color: #999;
+  font-size: 20px;
+  height: 100%;
+  position: absolute;
+  right: 0;
   transition: all 0.3s ease 0s;
+  width: 50px;
 }
-.product-img img {
-  width: 100%;
-}
-.product-info {
-  background: #f6f6f6 none repeat scroll 0 0;
-  padding: 20px 0;
-  text-align: center;
-}
-.product-title {
-  color: #434343;
-  font-family: "Raleway",sans-serif;
-  font-size: 14px;
-  font-weight: 700;
-  margin-bottom: 10px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  text-transform: uppercase;
-  white-space: nowrap;
-}
-.pro-rating {
-  line-height: 1;
-  margin-bottom: 10px;
-}
-.pro-rating a {
+.widget-search button:hover {
   color: #ff7f00;
-  font-size: 14px;
 }
-.pro-price {
-  color: #666666;
-  font-family: "Roboto",sans-serif;
-  font-weight: 400;
-  line-height: 20px;
-  margin-bottom: 20px;
-  z-index: 9;
-}
-.action-button {}
-.action-button > li {
-  display: inline-block;
-  margin-right: 10px;
-}
-.action-button > li:last-child {
-  margin-right: 0;
-}
-.action-button > li > a {
-  background: transparent;
-  border: 1px solid #ddd;
-  border-radius: 50%;
-  color: #999999;
-  display: block;
-  font-size: 14px;
-  height: 30px;
-  text-align: center;
-  width: 30px;
-}
-.action-button > li > a i {
-  line-height: 28px;
-}
-.action-button > li:hover > a {
-  background: #FF7F00;
-  border-color: #FF7F00;
-  color: #fff;
-}
-.product-item:hover {
-  box-shadow: 0px 8px 13px rgba(0, 0, 0, 0.15);
-}
-
-/*           responsive    */
+/*responsive*/
 /* Large Screen  */
 @media (min-width: 1170px) and (max-width: 1400px) {
 
@@ -1415,7 +1287,9 @@ a:focus, a:hover {
 
 
 }
-/*default */
+
+
+/*   default */
 /*
   Template Name: Subas Ecommerce Responsive Bootstrap Template
   Description: This is html5 template
@@ -2740,6 +2614,7 @@ textarea:focus {
 .bg-opacity-white-70:before {  background: rgba(255, 255, 255, 0.7);}
 .bg-opacity-white-80:before {  background: rgba(255, 255, 255, 0.8);}
 .bg-opacity-white-90:before {  background: rgba(255, 255, 255, 0.9);}
+
 /*************************************
   19. tooltip
  **************************************/
@@ -2921,36 +2796,3 @@ textarea:focus {
 }
 /*==============================================*/
 
-
-
-@font-face {
-  font-family: 'Material-Design-Iconic-Font';
-  src: url('/assets/fonts/Material-Design-Iconic-Font.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
-}
-
-.zmdi {
-  display: inline-block;
-  font: normal normal normal 14px/1 'Material-Design-Iconic-Font';
-  font-size: inherit;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.zmdi-favorite:before {
-  content: '\f15f';
-}
-
-.zmdi-zoom-in:before {
-  content: '\f1ee';
-}
-
-.zmdi-refresh:before {
-  content: '\f1b9';
-}
-
-.zmdi-shopping-cart-plus:before {
-  content: '\f1ca';
-}

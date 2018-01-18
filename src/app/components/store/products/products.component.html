@@ -22,23 +22,32 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-md-3">
+      <div class="col-lg-3">
         <div class="category-sidebar">
+          <!--todo maybe make search with filters instead of several widgets-->
+          <!--todo to popup when size is small less than 768-->
+          <app-search-widget></app-search-widget>
           <app-products-line-category-widget></app-products-line-category-widget>
         </div>
       </div>
-      <div class="col-md-9">
-        <app-products-control-panel></app-products-control-panel>
-        <div class="product-grid-list">
-          <div class="row mt-30">
-            <div class="col-sm-12 col-lg-4 col-md-6">
-              <!-- product card -->
-              <app-products-item></app-products-item>
+
+         <div class="col-lg-9 col-lg-push-3 col-xs-12">
+        <div class="shop-content">
+          <app-products-control-panel></app-products-control-panel>
+          <div class="tab-content">
+            <div class="tab-pane active">
+              <div class="row mt-30">
+                  <!-- product card -->
+                <!--<app-product-item-list class="col-md-12"></app-product-item-list>-->
+                <app-product-item-grid class="col-sm-12 col-lg-4 col-md-6"></app-product-item-grid>
+                <app-product-item-grid class="col-sm-12 col-lg-4 col-md-6"></app-product-item-grid>
+              </div>
             </div>
           </div>
+          <app-pagination></app-pagination>
         </div>
-        <app-pagination></app-pagination>
       </div>
     </div>
   </div>
 </section>
+<!--todo add responsive css to root -->

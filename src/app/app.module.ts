@@ -21,7 +21,7 @@ import { ProductSearchComponent } from "./components/shared/product-search/produ
 import { ProductsItemComponent } from './components/store/products/products-item/products-item.component';
 import { PaginationComponent } from './components/store/pagination/pagination.component';
 import { ProductsControlPanelComponent } from './components/store/products/products-control-panel/products-control-panel.component';
-import { LineCategoryComponent } from './components/store/products/widgets/line-category/line-category.component';
+import { LineCategoryComponent } from './components/store/products/widgets/line-category-widget/line-category-widget.component';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { SupplierComponent } from "./components/supplier/supplier.component";
 import { ProductsTableComponent } from "./components/supplier/products-table/products-table.component";
@@ -29,6 +29,9 @@ import { AccountNavigationComponent } from "./components/supplier/account-naviga
 import { ProductRecordComponent } from "./components/supplier/products-table/product-record/product-record.component";
 import { ProductFormComponent } from './components/supplier/product-form/product-form.component';
 import { QuickviewModalComponent } from './components/store/product-detail/quickview-modal/quickview-modal.component';
+import { SearchWidgetComponent } from './components/store/products/widgets/search-widget/search-widget.component';
+import { ProductItemGridComponent } from './components/store/products/products-item/product-item-grid/product-item-grid.component';
+import { ProductItemListComponent } from './components/store/products/products-item/product-item-list/product-item-list.component';
 
 @NgModule({
   //todo separate on several modules
@@ -50,7 +53,10 @@ import { QuickviewModalComponent } from './components/store/product-detail/quick
     AccountNavigationComponent,
     ProductRecordComponent,
     ProductFormComponent,
-    QuickviewModalComponent
+    QuickviewModalComponent,
+    SearchWidgetComponent,
+    ProductItemGridComponent,
+    ProductItemListComponent
   ],
   imports: [
     BrowserModule,

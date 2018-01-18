@@ -1,82 +1,3 @@
-/*:host {
-  font-size: 14px;
-}
-
-ol, ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-a {
-  transition: all .3s ease-in 0s;
-  color: #000;
-}
-
-a:focus, a:hover {
-  text-decoration: none;
-  outline: 0;
-  color: #5672f9;
-}
-
-.product-item {
-  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1);
-  margin-bottom: 30px;
-}
-
-.product-item .card {
-  border: none;
-}
-
-.product-item .card .card-body {
-  padding: 20px;
-}
-
-.product-item .card .card-body .card-title {
-  font-size: 18px;
-  margin-bottom: 5px;
-  font-weight: 600;
-}
-
-.product-item .card .card-body .card-text {
-  color: #777;
-}
-
-.product-item .thumb-content {
-  position: relative;
-}
-
-.product-item .product-meta {
-  margin-bottom: 15px;
-}
-
-.product-item .product-meta li {
-  margin-right: 15px;
-}
-
-.product-item .product-meta li a {
-  color: #888;
-  font-size: 12px;
-}
-
-.product-item .product-meta li a i {
-  margin-right: 4px;
-}
-
-.product-item .product-ratings li {
-  margin-right: 1px;
-}
-
-.product-item .product-ratings li i {
-  font-size: 18px;
-  color: #dedede;
-  cursor: pointer;
-}
-
-.product-item .product-ratings .selected i {
-  color: #212529;
-}*/
-
 /* -------------------------------------
     7.2 Featured product section
 ------------------------------------- */
@@ -150,9 +71,38 @@ a:focus, a:hover {
   box-shadow: 0px 8px 13px rgba(0, 0, 0, 0.15);
 }
 
+/* -------------------------------------
+    9.3 Shop List
+------------------------------------- */
+.shop-list.product-item {
+  background: #f6f6f6 none repeat scroll 0 0;
+  overflow: hidden;
+}
+.shop-list .product-img {
+  background: #ffffff none repeat scroll 0 0;
+  float: left;
+  padding-right: 30px;
+  width: 37%;
+}
+.shop-list .product-info {
+  float: left;
+  padding: 30px 40px;
+  text-align: left;
+  width: 63%;
+}
+.shop-list .brand-name {
+  color: #999999;
+  font-style: italic;
+  font-weight: 400;
+}
+.shop-list p {
+  color: #666;
+  margin-bottom: 30px;
+}
+
 /*           responsive    */
 /* Large Screen  */
-@media (min-width: 1170px) and (max-width: 1400px) {
+@media (min-width: 1200px) and (max-width: 1400px) {
 
   .plr-185 {
     padding: 0 30px;
@@ -210,7 +160,7 @@ a:focus, a:hover {
 
 
 /* Normal desktop :992px. */
-@media (min-width: 992px) and (max-width: 1169px) {
+@media (min-width: 992px) and (max-width: 1199px) {
 
   .plr-185 {
     padding: 0 30px;
@@ -1380,7 +1330,7 @@ a:focus, a:hover {
 }
 
 /* Normal desktop :992px. */
-@media (min-width: 992px) and (max-width: 1169px) {
+@media (min-width: 992px) and (max-width: 1199px) {
   .boxed-layout .wrapper {
     width: inherit;
   }

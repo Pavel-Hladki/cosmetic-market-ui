@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LineCategoryComponent } from './line-category.component';
+import { SearchWidgetComponent } from './search-widget.component';
 
-describe('LineCategoryComponent', () => {
-  let component: LineCategoryComponent;
-  let fixture: ComponentFixture<LineCategoryComponent>;
+describe('SearchWidgetComponent', () => {
+  let component: SearchWidgetComponent;
+  let fixture: ComponentFixture<SearchWidgetComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LineCategoryComponent ]
+      declarations: [ SearchWidgetComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LineCategoryComponent);
+    fixture = TestBed.createComponent(SearchWidgetComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
