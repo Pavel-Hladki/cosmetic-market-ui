@@ -2,154 +2,12 @@
   font-size: 14px;
 }
 
-ol, ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-a {
-  transition: all .3s ease-in 0s;
-  color: #000;
-}
-
-a:focus, a:hover {
-  text-decoration: none;
-  outline: 0;
-  color: #5672f9;
-}
-
-/* Microsoft Edge */
-
-button {
-  cursor: pointer;
-}
-
-.section {
-  padding: 100px 0;
-}
-
 .section-sm {
   padding: 70px 0;
 }
 
-/**
- *
- * Card Styles
- *
- */
-
 .mt-30 {
   margin-top: 30px;
-}
-
-.alt-color {
-  color: #c7c7c7;
-}
-
-.page-title h3 {
-  color: #fff;
-  font-size: 42px;
-  letter-spacing: 0;
-  line-height: 1;
-  margin-bottom: 0;
-}
-
-.short-popular-category-list h2 {
-  font-size: 14px;
-  text-transform: uppercase;
-  font-weight: bold;
-  color: #fff;
-}
-
-.short-popular-category-list ul {
-  margin-top: 20px;
-}
-
-.short-popular-category-list ul li {
-  margin: 0 2px;
-}
-
-.short-popular-category-list ul li a {
-  border: 1px solid #404040;
-  color: #c1c1c1;
-  font-weight: 200;
-  padding: 4px 10px;
-  font-size: 12px;
-}
-
-.short-popular-category-list ul li a i {
-  margin-right: 2px;
-}
-
-.category-slider .item a {
-  display: inline-block;
-  padding: 20px 40px;
-  background: #fff;
-}
-
-.category-slider .item a h4 {
-  font-size: 14px;
-  margin-top: 10px;
-}
-
-.category-slider .item a i {
-  font-size: 40px;
-}
-
-.category-block .header h4 {
-  font-size: 18px;
-  font-weight: 700;
-  margin-top: 5px;
-}
-
-.category-block .header i {
-  margin-right: 6px;
-  color: #fff;
-  font-size: 13px;
-  width: 35px;
-  height: 35px;
-  line-height: 35px;
-  text-align: center;
-  margin-bottom: 6px;
-  border-radius: 40px;
-}
-
-.category-block .category-list li {
-  display: block;
-  font-size: 14px;
-  border-bottom: 1px solid #F4F7F9;
-  padding: 10px 0;
-}
-
-.category-block .category-list li:last-child {
-  border: none;
-}
-
-.category-block .category-list li a {
-  display: block;
-  color: #777;
-  font-size: 13px;
-}
-
-.category-block .category-list li a span {
-  float: right;
-  font-size: 10px;
-  background: #F4F7F9;
-  border-radius: 10px;
-  padding: 3px 8px;
-  color: #84919B;
-}
-
-.category-block .category-list li a:hover {
-  text-decoration: underline;
-}
-
-.category-block .category-list li a i {
-  margin-right: 6px;
-  font-size: 12px;
-  color: #5672f9;
-  vertical-align: middle;
 }
 
 .search-result {
@@ -184,4 +42,3 @@ button {
 .f-right {
   float: right;
 }
-

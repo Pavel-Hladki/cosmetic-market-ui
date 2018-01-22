@@ -7,7 +7,6 @@ import { AppComponent } from './components/app.component';
 import { ProductsComponent } from './components/store/products/products.component';
 import { ProductDetailComponent } from './components/store/product-detail/product-detail.component';
 import { ProductService } from "./services/product.service";
-import { MessageService } from './services/message.service';
 import { AppRoutingModule } from './app-routing.module';
 
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
@@ -16,7 +15,6 @@ import { HttpClientModule } from "@angular/common/http";
 import { Logger } from "./services/logger.service";
 import { StoreComponent } from './components/store/store.component';
 import { DashboardComponent } from "./components/dashboard/dashboard.component";
-import { MessagesComponent } from "./components/shared/messages/messages.component";
 import { ProductSearchComponent } from "./components/shared/product-search/product-search.component";
 import { ProductsItemComponent } from './components/store/products/products-item/products-item.component';
 import { PaginationComponent } from './components/store/pagination/pagination.component';
@@ -28,7 +26,6 @@ import { ProductsTableComponent } from "./components/supplier/products-table/pro
 import { AccountNavigationComponent } from "./components/supplier/account-navigation/account-navigation.component";
 import { ProductRecordComponent } from "./components/supplier/products-table/product-record/product-record.component";
 import { ProductFormComponent } from './components/supplier/product-form/product-form.component';
-import { QuickviewModalComponent } from './components/store/product-detail/quickview-modal/quickview-modal.component';
 import { SearchWidgetComponent } from './components/store/products/widgets/search-widget/search-widget.component';
 import { ProductItemGridComponent } from './components/store/products/products-item/product-item-grid/product-item-grid.component';
 import { ProductItemListComponent } from './components/store/products/products-item/product-item-list/product-item-list.component';
@@ -40,7 +37,6 @@ import { ProductItemListComponent } from './components/store/products/products-i
     AppComponent,
     ProductsComponent,
     ProductDetailComponent,
-    MessagesComponent,
     DashboardComponent,
     ProductSearchComponent,
     StoreComponent,
@@ -53,7 +49,6 @@ import { ProductItemListComponent } from './components/store/products/products-i
     AccountNavigationComponent,
     ProductRecordComponent,
     ProductFormComponent,
-    QuickviewModalComponent,
     SearchWidgetComponent,
     ProductItemGridComponent,
     ProductItemListComponent
@@ -73,7 +68,7 @@ import { ProductItemListComponent } from './components/store/products/products-i
     ),
     NgbModule.forRoot()
   ],
-  providers: [ProductService, MessageService, Logger],
+  providers: [ProductService, Logger],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
