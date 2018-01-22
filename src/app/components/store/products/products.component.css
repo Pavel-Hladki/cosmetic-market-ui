@@ -153,10 +153,35 @@ button {
 }
 
 .search-result {
-  padding: 20px;
-  margin-bottom: 20px;
+  margin: 10px 0;
 }
 
-.search-result p {
-  margin: 0;
+.search-result h5 {
+  color: #575757;
+  font-weight: 600;
+  line-height: 24px;
+  font-size: 16px;
 }
+.search-result h5 span {
+  color: #999999;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 20px;
+}
+
+@media (min-width: 992px) {
+  .search-result.search-result-bottom {
+    display: none;
+  }
+}
+
+@media (max-width: 991px) {
+  .search-result.search-result-top {
+    display: none;
+  }
+}
+
+.f-right {
+  float: right;
+}
+
