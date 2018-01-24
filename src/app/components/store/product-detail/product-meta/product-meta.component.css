@@ -1,0 +1,38 @@
+li {
+  font-family: "Muli", sans-serif;
+  color: #666;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+/**
+ *
+ * Base Elements
+ *
+ */
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  transition: all .3s ease-in 0s;
+  color: #000;
+}
+
+a:focus, a:hover {
+  text-decoration: none;
+  outline: 0;
+  color: #5672f9;
+}
+
+.product-meta li {
+  color: #888;
+  margin-right: 25px;
+}
+
+.product-meta li a {
+  color: #333;
+  margin-left: 3px;
+}

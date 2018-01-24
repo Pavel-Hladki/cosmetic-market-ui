@@ -29,7 +29,15 @@ import { ProductFormComponent } from './components/supplier/product-form/product
 import { SearchWidgetComponent } from './components/store/products/widgets/search-widget/search-widget.component';
 import { ProductItemGridComponent } from './components/store/products/products-item/product-item-grid/product-item-grid.component';
 import { ProductItemListComponent } from './components/store/products/products-item/product-item-list/product-item-list.component';
-
+import { ProductRatingsComponent } from './components/store/product-ratings/product-ratings.component';
+import { ProductImageSliderComponent } from './components/store/product-detail/product-image-slider/product-image-slider.component';
+import {ProductInfoComponent} from "./components/store/product-detail/product-info-block/product-info-block.component";
+import { ProductReviewComponent } from './components/store/product-detail/product-review/product-review.component';
+import { ProductMetaComponent } from './components/store/product-detail/product-meta/product-meta.component';
+import { ProductCommentComponent } from './components/store/product-detail/product-review/product-comment/product-comment.component';
+import { ReviewFormComponent } from './components/store/product-detail/product-review/review-form/review-form.component';
+import { ProductInfoTabComponent } from './components/store/product-detail/product-info-block/product-info-tab/product-info-tab.component';
+import { SocialSharingComponent } from './components/store/product-detail/product-info-block/social-sharing/social-sharing.component';
 @NgModule({
   //todo separate on several modules
   //todo rename app components after, delete prefix e.g. products-item -> item or item-block
@@ -51,7 +59,16 @@ import { ProductItemListComponent } from './components/store/products/products-i
     ProductFormComponent,
     SearchWidgetComponent,
     ProductItemGridComponent,
-    ProductItemListComponent
+    ProductItemListComponent,
+    ProductRatingsComponent,
+    ProductImageSliderComponent,
+    ProductInfoComponent,
+    ProductReviewComponent,
+    ProductMetaComponent,
+    ProductCommentComponent,
+    ReviewFormComponent,
+    ProductInfoTabComponent,
+    SocialSharingComponent
   ],
   imports: [
     BrowserModule,

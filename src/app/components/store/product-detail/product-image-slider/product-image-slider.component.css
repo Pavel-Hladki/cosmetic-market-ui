@@ -1,0 +1,243 @@
+button {
+  font-family: "Muli", sans-serif;
+  color: #666;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+a {
+  transition: all .3s ease-in 0s;
+  color: #000;
+}
+
+.p-c a.active img {
+  border: 1px solid #FF7F00;
+}
+
+a:focus, a:hover {
+  text-decoration: none;
+  outline: 0;
+  color: #5672f9;
+}
+
+button {
+  cursor: pointer;
+}
+
+.mt-30 {
+  margin-top: 30px;
+}
+
+.p-c {
+  border: 1px solid #fff;
+  padding: 0 5px;
+}
+
+.slick-slide {
+  display: none;
+  float: left;
+  height: inherit;
+  min-height: 1px;
+  -webkit-tap-highlight-color: transparent;
+}
+.slick-track {
+  position: relative;
+  top: 0;
+  left: 0;
+  display: block;
+}
+
+#gallery {
+  padding: 0 30px;
+}
+
+.mt-30 {
+  margin-top: 30px;
+}
+
+.slick-slider {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  user-select: none;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.slick-arrow-3 .slick-arrow {
+  color: #999999;
+  font-size: 20px;
+  height: 35px;
+  left: 0;
+  line-height: 35px;
+  margin-top: -17px;
+  position: absolute;
+  right: auto;
+  top: 50%;
+  transition: all 0.3s ease 0s;
+  width: 35px;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+  border: medium none;
+}
+
+#gallery img {
+  width: 100%;
+}
+
+@font-face {
+  font-family: 'Material-Design-Iconic-Font';
+  src: url('/assets/fonts/Material-Design-Iconic-Font.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+/*todo to styles.css*/
+
+.zmdi {
+  display: inline-block;
+  font: normal normal normal 14px/1 'Material-Design-Iconic-Font';
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.zmdi-long-arrow-right:before {
+  content: '\f301';
+}
+
+.zmdi-long-arrow-left:before {
+  content: '\f2ff';
+}
+
+/*=====================================
+  10. Image zoom area
+======================================*/
+.imgs-zoom-area {
+  width: 100%;
+}
+.imgs-zoom-area img {
+  width: 100% !important;
+}
+#gallery img {
+  width: 100%;
+}
+#gallery {
+  padding: 0 30px;
+}
+.p-c {
+  border: 1px solid #fff;
+  padding: 0 5px;
+}
+#gallery.slick-arrow-3 .arrow-next.slick-arrow {
+  right: -3px;
+}
+
+/* small mobile :320px. */
+@media (max-width: 767px) {
+  .imgs-zoom-area {
+    margin-bottom: 30px;
+  }
+}
+
+.slick-slider
+{
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  /* user-select: none; */
+  -webkit-touch-callout: none;
+  -khtml-user-select: none;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.slick-list
+{
+  position: relative;
+
+  display: block;
+  overflow: hidden;
+
+  margin: 0;
+  padding: 0;
+}
+.slick-list:focus
+{
+  outline: none;
+}
+
+.slick-slider .slick-track,
+.slick-slider .slick-list
+{
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+.slick-track
+{
+  position: relative;
+  top: 0;
+  left: 0;
+
+  display: block;
+}
+.slick-track:before,
+.slick-track:after
+{
+  display: table;
+
+  content: '';
+}
+.slick-track:after
+{
+  clear: both;
+}
+
+.slick-slide
+{
+  display: none;
+  float: left;
+
+  height: inherit;
+  min-height: 1px;
+}
+.slick-slide img
+{
+  display: block;
+}
+.slick-initialized .slick-slide
+{
+  display: block;
+}
+
+/* slick-arrow-3 */
+.slick-arrow-3 .slick-arrow {
+  color: #999999;
+  font-size: 20px;
+  height: 35px;
+  left: 0;
+  line-height: 35px;
+  margin-top: -17px;
+  position: absolute;
+  right: auto;
+  top: 50%;
+  transition: all 0.3s ease 0s;
+  width: 35px;
+  z-index: 2;
+}
+.slick-arrow-3 .arrow-next.slick-arrow {
+  left: auto;
+  right: 0px;
+}
+.slick-arrow-3:hover .slick-arrow {}
+.slick-arrow-3 .arrow-prev.slick-arrow:hover, .slick-arrow-3 .arrow-next.slick-arrow:hover {
+  color: #FF7F00;
+}
