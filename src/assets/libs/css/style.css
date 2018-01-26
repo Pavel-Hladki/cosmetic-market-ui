@@ -105,10 +105,10 @@ a:focus {
 	font-weight: 700;
 }
 
-.navbar-custom.top-nav-collapse ul.nav li a {
-	    -webkit-transition: all .2s ease-in-out;
-    -moz-transition: all .2s ease-in-out;
-    transition: all .2s ease-in-out;
+.navbar-custom.top-nav-collapse ul.nav li a, .navbar-custom.top-nav-collapse .form-group>.fa-search {
+  -webkit-transition: all .2s ease-in-out;
+  -moz-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
 	color: #fff;
 }
 
@@ -334,7 +334,7 @@ hr {
     position: absolute;
     height: 100%;
     width: 100%;
-    background-color: #45633f;
+    background-color: #30881e;
     opacity: 0.75;
     z-index: -1;
 }
@@ -939,3 +939,60 @@ a:not('ul.nav a') {
 .owl-prev i, .owl-next i {
     color: black;
 }
+
+/* START: Search field */
+.search-form .form-group {
+  float: right !important;
+  transition: all 0.35s, border-radius 0s;
+  width: 33px;
+  height: 50px;
+  margin: 0px;
+}
+.search-form .form-group input.form-control {
+  padding-top: 23px;
+  padding-right: 20px;
+  border: 0 none;
+  background: transparent;
+  box-shadow: none;
+  display:block;
+}
+.search-form .form-group input.form-control::-webkit-input-placeholder {
+  display: none;
+}
+.search-form .form-group input.form-control:-moz-placeholder {
+  /* Firefox 18- */
+  display: none;
+}
+.search-form .form-group input.form-control::-moz-placeholder {
+  /* Firefox 19+ */
+  display: none;
+}
+.search-form .form-group input.form-control:-ms-input-placeholder {
+  display: none;
+}
+.search-form .form-group:hover,
+.search-form .form-group.hover {
+  width: 100%;
+  background-color: rgb(246, 252, 252);
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+}
+.search-form .form-group span {
+  position: absolute;
+  top: 6px;
+  right: -2px;
+  z-index: 2;
+  display: block;
+  width: 34px;
+  height: 34px;
+  line-height: 34px;
+  text-align: center;
+  color: #444;
+  left: initial;
+  font-size: 15px;
+  margin-right: 10px;
+}
+.search-form {
+  padding-left: 20px;
+}
+/* END: Search field */

@@ -49,21 +49,21 @@
 	});
 
 
-    $(window).resize(function() {
-        resizeLogo();
-    });
+  $(window).resize(function() {
+      resizeLogo();
+  });
 
-    function resizeLogo() {
-        if(($(window).width() < 750 && $(".navbar").offset().top > 50)
-			|| ($(window).width() > 750 && $(".navbar").offset().top > 50)
-            || ($(window).width() < 750 && $(".navbar").offset().top < 50)){
-            $(".navbar-brand > img").remove();
-            $(".navbar-brand").prepend('<img class="aloe-logo-min" src="assets/img/icons/logoAloe-min-white.png">');
-        } else {
-            $(".navbar-brand > img").remove();
-            $(".navbar-brand").prepend('<img class="aloe-logo" src="assets/img/icons/logoAloe.png">');
-        }
-    }
+  function resizeLogo() {
+      if(($(window).width() < 750 && $(".navbar").offset().top > 50)
+    || ($(window).width() > 750 && $(".navbar").offset().top > 50)
+          || ($(window).width() < 750 && $(".navbar").offset().top < 50)){
+          $(".navbar-brand > img").remove();
+          $(".navbar-brand").prepend('<img class="aloe-logo-min" src="assets/img/icons/logoAloe-min-white.png">');
+      } else {
+          $(".navbar-brand > img").remove();
+          $(".navbar-brand").prepend('<img class="aloe-logo" src="assets/img/icons/logoAloe.png">');
+      }
+  }
 
 	//jQuery for page scrolling feature - requires jQuery Easing plugin
 	$(function() {
