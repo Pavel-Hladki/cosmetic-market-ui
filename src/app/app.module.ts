@@ -38,6 +38,7 @@ import { ProductCommentComponent } from './components/store/product-detail/produ
 import { ReviewFormComponent } from './components/store/product-detail/product-review/review-form/review-form.component';
 import { ProductInfoTabComponent } from './components/store/product-detail/product-info-block/product-info-tab/product-info-tab.component';
 import { SocialSharingComponent } from './components/store/product-detail/product-info-block/social-sharing/social-sharing.component';
+import {DragScrollModule} from 'ngx-drag-scroll';
 @NgModule({
   //todo separate on several modules
   //todo rename app components after, delete prefix e.g. products-item -> item or item-block
@@ -76,6 +77,7 @@ import { SocialSharingComponent } from './components/store/product-detail/produc
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    DragScrollModule,
 
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.
