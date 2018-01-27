@@ -10,10 +10,10 @@ export class ProductImageSliderComponent implements OnInit {
 
   @ViewChild('nav', {read: DragScrollDirective}) ds: DragScrollDirective;
 
-  @Input() defaultImage: string = 'assets/img/product/11.jpg';
 
-  mainImage: string;
-  mainImageIndex: number;
+
+  @Input("defaultImage") mainImage: string = 'assets/img/product/11.jpg';
+  mainImageIndex: number = 0;
 
   @Input("imageUrls") imageList: string[];
 
@@ -28,15 +28,11 @@ export class ProductImageSliderComponent implements OnInit {
 
   initSlider(): void {
     if(this.isNotEmptyImageList()) {
-      this.mainImageIndex = 0;
       this.mainImage = this.imageList[this.mainImageIndex];
-    } else {
-      this.mainImage = this.defaultImage;
     }
   }
 
   clickItem(mainImageIndex: number): void {
-    if(this.mainImageIndex !== mainImageIndex)
     this.mainImageIndex = mainImageIndex;
     this.mainImage = this.imageList[mainImageIndex];
   }

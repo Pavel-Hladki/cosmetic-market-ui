@@ -92,3 +92,4 @@ import {DragScrollModule} from 'ngx-drag-scroll';
 })
 export class AppModule { }
 //todo thing about lazy-loading of modules
+//todo sanitize all resources

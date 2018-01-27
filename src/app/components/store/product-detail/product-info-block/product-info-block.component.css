@@ -60,6 +60,16 @@ hr {
   float: right;
 }
 
+.single-product-info .description {
+  font-size: 16px;
+  font-family: "Muli", sans-serif;
+  font-weight: 600;
+}
+
+.text-black-2 {
+  color: #88888c;
+}
+
 @font-face {
   font-family: 'Material-Design-Iconic-Font';
   src: url('/assets/fonts/Material-Design-Iconic-Font.woff2') format('woff2');
@@ -188,13 +198,6 @@ a.button::after {
   transition: all 0.3s ease-out 0s;
 }
 
-/*=====================================
-  10. Single Product Page
-======================================*/
-/* -------------------------------------
-    10.1 Image zoom area
-------------------------------------- */
-
 /* -------------------------------------
     Single product info
 ------------------------------------- */
@@ -287,8 +290,13 @@ input.cart-plus-minus-box {
     width: 100%;
   }
 
-  h3 {
+  .single-product-info .description {
     font-size: 14px;
+    line-height: 20px;
+  }
+
+  h3 {
+    font-size: 16px;
     line-height: 20px;
   }
   p {
