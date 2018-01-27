@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {Component, Input, OnInit, ViewChild} from '@angular/core';
 import {DragScrollDirective} from 'ngx-drag-scroll';
 
 @Component({
@@ -10,16 +10,12 @@ export class ProductImageSliderComponent implements OnInit {
 
   @ViewChild('nav', {read: DragScrollDirective}) ds: DragScrollDirective;
 
-  mainImage: string;
+  @Input() defaultImage: string = 'assets/img/product/11.jpg';
 
-  imageList: string[] = [
-    'assets/img/product/2.jpg',
-    'assets/img/product/3.jpg',
-    'assets/img/product/4.jpg',
-    'assets/img/product/5.jpg' ,
-    'assets/img/product/6.jpg',
-    'assets/img/product/7.jpg'
-  ];
+  mainImage: string;
+  mainImageIndex: number;
+
+  @Input("imageUrls") imageList: string[];
 
   leftNavDisabled = false;
   rightNavDisabled = false;
@@ -27,11 +23,22 @@ export class ProductImageSliderComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.mainImage = this.imageList[0];
+    this.initSlider();
   }
 
-  clickItem(item: string): void {
-    this.mainImage = item;
+  initSlider(): void {
+    if(this.isNotEmptyImageList()) {
+      this.mainImageIndex = 0;
+      this.mainImage = this.imageList[this.mainImageIndex];
+    } else {
+      this.mainImage = this.defaultImage;
+    }
+  }
+
+  clickItem(mainImageIndex: number): void {
+    if(this.mainImageIndex !== mainImageIndex)
+    this.mainImageIndex = mainImageIndex;
+    this.mainImage = this.imageList[mainImageIndex];
   }
 
   moveLeft(): void {
@@ -48,5 +55,9 @@ export class ProductImageSliderComponent implements OnInit {
 
   rightBoundStat(reachesRightBound: boolean) {
     this.rightNavDisabled = reachesRightBound;
+  }
+
+  isNotEmptyImageList(): boolean {
+    return this.imageList && 0 < this.imageList.length;
   }
 }

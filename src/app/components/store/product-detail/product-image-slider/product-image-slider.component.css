@@ -10,7 +10,7 @@ a {
   color: #000;
 }
 
-.p-c a.active img {
+img.p-c.active  {
   border: 1px solid #FF7F00;
 }
 
@@ -47,10 +47,6 @@ button {
   display: block;
 }
 
-#gallery {
-  padding: 0 30px;
-}
-
 .mt-30 {
   margin-top: 30px;
 }
@@ -79,10 +75,6 @@ button {
   z-index: 2;
   background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
   border: medium none;
-}
-
-#gallery img {
-  width: 100%;
 }
 
 @font-face {
@@ -116,21 +108,31 @@ button {
 .imgs-zoom-area {
   width: 100%;
 }
-.imgs-zoom-area img {
-  width: 100% !important;
-}
-#gallery img {
-  width: 100%;
-}
+
 #gallery {
-  padding: 0 30px;
+  padding: 0 50px;
 }
+
+#gallery .gallery-slider {
+  overflow: hidden;
+  height: 100px;
+}
+
+#gallery .slick-item {
+  width: 100px;
+  height: 100px;
+}
+
+#gallery .slick-item.last {
+  width: 98px;
+}
+
 .p-c {
   border: 1px solid #fff;
   padding: 0 5px;
 }
 #gallery.slick-arrow-3 .arrow-next.slick-arrow {
-  right: -3px;
+  right: 25px;
 }
 
 /* small mobile :320px. */
@@ -223,7 +225,7 @@ button {
   color: #999999;
   font-size: 20px;
   height: 35px;
-  left: 0;
+  left: 28px;
   line-height: 35px;
   margin-top: -17px;
   position: absolute;
@@ -246,23 +248,6 @@ button {
 /*another slider css*/
 .title {
   margin-top: 60px;
-}
-
-.demo-one {
-  height: 75px;
-  background-color: #FFFFFF;
-}
-
-.demo-one img {
-  width: 75px;
-}
-
-.demo-border {
-  padding: 10px 10px 10px 10px;
-  box-sizing: border-box;
-  border: 1px solid;
-  border-color: #CFCFCF;
-  margin-bottom: 20px;
 }
 
 .toggle-box {
@@ -329,17 +314,40 @@ button {
   margin: 50px 70px;
 }
 
-@media screen and (min-width: 600px) and (max-width: 1279px) {
-  .content {
-    margin: 20px 30px;
+
+/* Large Screen  */
+@media (min-width: 1170px) and (max-width: 1400px) {
+
+}
+
+/* Normal desktop :992px. */
+@media (min-width: 992px) and (max-width: 1169px) {
+
+}
+
+  /* Tablet desktop :768px. */
+@media (min-width: 768px) and (max-width: 991px) {}
+
+/* small mobile :320px. */
+@media (max-width: 767px) {
+  #gallery .gallery-slider {
+    overflow: hidden;
+    height: 100px;
+  }
+
+  #gallery .slick-item {
+    width: 100px;
+    height: 100px;
+  }
+
+  #gallery .slick-item.last {
+    width: 98px;
   }
 }
 
-@media screen and (max-width: 599px) {
-  .content {
-    margin: 8px 12px;
-  }
-  .api-table-containter {
-    display: none;
-  }
+/* Large Mobile :480px. */
+@media only screen and (min-width: 480px) and (max-width: 767px){}
+
+@media  (max-width: 480px) {
+
 }

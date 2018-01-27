@@ -1,68 +1,36 @@
 <div class="imgs-zoom-area">
-  <img style="width: 100%;" [src]="mainImage" data-zoom-image="assets/img/product/6.jpg"
-       alt="">
-  <div class="row">
-    <div class="col-sm-12">
-      <div id="gallery1" class="carousel-btn slick-arrow-3 mt-30 slick-initialized slick-slider">
-        <button type="button" class="arrow-prev slick-arrow" (click)="moveLeft()"><i class="zmdi zmdi-long-arrow-left"></i></button>
-          <div class="slick-track">
-            <div *ngFor="let image of imageList" class="p-c slick-slide slick-active" style="width: 75px;" tabindex="0">
-              <a class="active" (click)="clickItem(image)" tabindex="0">
-                <img [src]="image" alt="">
-              </a>
-            </div>
-            <!--<img *ngFor="let image of imageList" [src]="image" (click)="clickItem(image)" class="p-c slick-slide" style="width: 75px;" tabindex="0"/>-->
-            <!--<div class="p-c slick-slide slick-active" style="width: 75px;" tabindex="0">
-              <a class="active" href="#" tabindex="0">
-                <img src="assets/img/product/2.jpg" alt="">
-              </a>
-            </div>
-            <div class="p-c slick-slide" style="width: 75px;" tabindex="0">
-              <a class="active" href="#"  tabindex="0">
-                <img src="assets/img/product/3.jpg" alt="">
-              </a>
-            </div>
-            <div class="p-c slick-slide" style="width: 75px;" tabindex="-1">
-              <a href="#" tabindex="0">
-                <img src="assets/img/product/4.jpg" alt="">
-              </a>
-            </div>
-            <div class="p-c slick-slide " style="width: 75px;">
-              <a href="#">
-                <img class="active" src="assets/img/product/5.jpg" alt="">
-              </a>
-            </div>
-            <div class="p-c slick-slide " style="width: 75px;" tabindex="0">
-              <a href="#" tabindex="-1">
-                <img class="active" src="assets/img/product/6.jpg" alt="">
-              </a>
-            </div>
-            <div class="p-c slick-slide " style="width: 75px;" tabindex="0">
-              <a href="#" tabindex="-1">
-                <img class="active" src="assets/img/product/7.jpg" alt="">
-              </a>
-            </div>
-          </div>-->
-        </div>
-        <button type="button" class="arrow-next slick-arrow" (click)="moveRight()"><i class="zmdi zmdi-long-arrow-right"></i>
+  <img [src]="mainImage" style="width: 100%;" alt=""/>
+  <div *ngIf="isNotEmptyImageList()" class="row">
+    <div class="col-sm-12 mt-30">
+      <div id="gallery" class="slick-arrow-3">
+        <button (click)="moveLeft()"
+                [hidden]="leftNavDisabled"
+                type="button" class="arrow-prev slick-arrow">
+          <i class="zmdi zmdi-long-arrow-left"></i>
         </button>
+        <div class="gallery-slider" dragScroll
+             drag-scroll-y-disabled="true"
+             scrollbar-hidden="true"
+             (reachesLeftBound)="leftBoundStat($event)"
+             (reachesRightBound)="rightBoundStat($event)"
+             #nav>
 
+          <img *ngFor="let image of imageList; let last = last; let i = index"
+               (click)="clickItem(i)"
+               [src]="image"
+               [class.last]="last"
+               [class.active]="i === mainImageIndex"
+               class="p-c slick-item"/>
+        </div>
+
+        <button (click)="moveRight()" [hidden]="rightNavDisabled"
+                type="button"
+                class="arrow-next slick-arrow">
+          <i class="zmdi zmdi-long-arrow-right"></i>
+        </button>
+      </div>
     </div>
   </div>
 </div>
-</div>
-<div class="demo-border">
-  <div class="demo-one"
-       dragScroll
-       drag-scroll-y-disabled="true"
-       scrollbar-hidden="true"
-       (reachesLeftBound)="leftBoundStat($event)"
-       (reachesRightBound)="rightBoundStat($event)"
-       #nav>
-    <img *ngFor="let image of imageList" [src]="image" (click)="clickItem(image)"/>
-  </div>
-</div>
-<div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="center center">
-  <button mat-raised-button color="primary" [disabled]="leftNavDisabled" (click)="moveLeft()">left</button>
-  <button mat-raised-button color="primary" [disabled]="rightNavDisabled" (click)="moveRight()">right</button>
-</div>
+
+
