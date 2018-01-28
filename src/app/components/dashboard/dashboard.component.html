@@ -1,11 +1,432 @@
-<h3>Top Products</h3>
-Dashboard template put here
-<div class="grid grid-pad">
-  <a *ngFor="let product of products" routerLink="/product/{{product.id}}" class="col-1-4">
-    <div class="module product">
-      <h4>{{product.name}}</h4>
-    </div>
-  </a>
+<!-- Preloader -->
+<div id="preloader">
+  <div id="load"></div>
 </div>
 
-<app-product-search></app-product-search>
+<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+      <img class="aloe-logo" src="assets/img/icons/logoAloe.png">
+    </a>
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+        <i class="fa fa-bars"></i>
+      </button>
+
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#intro">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="">Shop</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href=""><i class="fa fa-cog fa-1_5x" aria-hidden="true"></i></a></li>
+        <li><a href=""><i class="fa fa-shopping-cart fa-1_5x" aria-hidden="true"></i></a></li>
+        <li>
+          <form action="" class="search-form">
+            <div class="form-group">
+              <label for="search" class="sr-only">Search</label>
+              <input type="text" class="form-control" name="search" id="search" placeholder="Search...">
+              <span class="fa fa-search fa-1_5x"></span>
+            </div>
+          </form>
+        </li>
+      </ul>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container -->
+</nav>
+
+<!-- Section: intro -->
+<section id="intro" class="intro">
+  <div class="overlay"></div>
+
+  <div class="slogan">
+    <h2>WELCOME TO</h2>
+    <h2><span class="text_color">ALOE PLUS LANZAROTE</span></h2>
+    <h4>Made for each other</h4>
+  </div>
+  <div class="page-scroll">
+    <a href="#products" class="btn btn-circle">
+      <i class="fa fa-angle-double-down animated"></i>
+    </a>
+  </div>
+</section>
+<!-- /Section: intro -->
+
+<!-- Section: about -->
+<section id="about" class="home-section text-center">
+  <div class="heading-about">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+          <div class="wow bounceInDown" data-wow-delay="0.4s">
+            <div class="section-heading">
+              <h2>About us</h2>
+              <i class="fa fa-2x fa-angle-down"></i>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="text-box">
+      <h3>Aloe Plus Lanzarote: The online shop where you can buy the best aloe vera</h3>
+      <h5>In Aloe Plus Lanzarote we specialize in aloe vera because we wish the best for your health,
+        putting at your disposal the multiple properties that this plant offers us. <b>Buying aloe vera is the
+          best option</b> to help improve our well-being in a natural way.
+      </h5>
+      <h6><b>With aloe vera you will achieve a better quality of life.</b></h6>
+    </div>
+  </div>
+</section>
+<!-- /Section: about -->
+
+<!-- Section: products -->
+<section id="products" class="home-section text-center bg-gray">
+  <div class="heading-products">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+          <div class="wow bounceInDown" data-wow-delay="0.4s">
+            <div class="section-heading">
+              <h2>Products</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-2 col-lg-offset-5">
+        <hr class="marginbot-50">
+      </div>
+    </div>
+    <div id="products-slider" class="owl-carousel owl-theme">
+      <div class="product">
+        <div class="item-image">
+          <img src="assets/img/155-con.jpg" class="img-responsive" alt="">
+          <div class="hover-overlay">
+            <ul class="list-unstyled list-inline">
+              <li><a href="" class="cart"><i class="icon-cart-1"></i></a></li>
+              <li><a href="" class="wishlist"><i class="icon-like"></i></a></li>
+              <li><a href="#" class="expand" data-target="#cart-popup-1"><i class="icon-expand"></i></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="item-info">
+          <div class="clearfix">
+            <h5 class="pull-left">GEL DÉRMICO DE ALOE VERA 250ml</h5>
+          </div>
+          <div>
+            <ul class="rate list-unstyled list-inline pull-left">
+              <li><i class="fa fa-star"></i></li>
+              <li><i class="fa fa-star"></i></li>
+              <li><i class="fa fa-star"></i></li>
+              <li><i class="fa fa-star"></i></li>
+              <li><i class="fa fa-star"></i></li>
+            </ul>
+            <span class="price pull-right">70.00$</span>
+          </div>
+        </div>
+      </div>
+      <div class="product">
+        <div class="item-image">
+          <img src="assets/img/cesta-celebraciones.jpg" class="img-responsive" alt="">
+          <div class="hover-overlay">
+            <ul class="list-unstyled list-inline">
+              <li><a href="" class="cart"><i class="icon-cart-1"></i></a></li>
+              <li><a href="" class="wishlist"><i class="icon-like"></i></a></li>
+              <li><a href="#" class="expand" data-target="#cart-popup-1"><i class="icon-expand"></i></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="item-info">
+          <div class="clearfix">
+            <h5 class="pull-left">GEL DÉRMICO DE ALOE VERA 250ml</h5>
+          </div>
+          <div>
+            <ul class="rate list-unstyled list-inline pull-left">
+              <li><i class="fa fa-star"></i></li>
+              <li><i class="fa fa-star"></i></li>
+              <li><i class="fa fa-star"></i></li>
+              <li><i class="fa fa-star"></i></li>
+              <li><i class="fa fa-star"></i></li>
+            </ul>
+            <span class="price pull-right">70.00$</span>
+          </div>
+        </div>
+      </div>
+      <div class="product">
+        <div class="item-image">
+          <img src="assets/img/155-con.jpg" class="img-responsive" alt="">
+          <div class="hover-overlay">
+            <ul class="list-unstyled list-inline">
+              <li><a href="" class="cart"><i class="icon-cart-1"></i></a></li>
+              <li><a href="" class="wishlist"><i class="icon-like"></i></a></li>
+              <li><a href="#" class="expand" data-target="#cart-popup-1"><i class="icon-expand"></i></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="item-info">
+          <div class="clearfix">
+            <h5 class="pull-left">GEL DÉRMICO DE ALOE VERA 250ml</h5>
+          </div>
+          <div>
+            <ul class="rate list-unstyled list-inline pull-left">
+              <li><i class="fa fa-star"></i></li>
+              <li><i class="fa fa-star"></i></li>
+              <li><i class="fa fa-star"></i></li>
+              <li><i class="fa fa-star"></i></li>
+              <li><i class="fa fa-star"></i></li>
+            </ul>
+            <span class="price pull-right">70.00$</span>
+          </div>
+        </div>
+      </div>
+      <div class="product">
+        <div class="item-image">
+          <img src="assets/img/cesta-celebraciones.jpg" class="img-responsive" alt="">
+          <div class="hover-overlay">
+            <ul class="list-unstyled list-inline">
+              <li><a href="" class="cart"><i class="icon-cart-1"></i></a></li>
+              <li><a href="" class="wishlist"><i class="icon-like"></i></a></li>
+              <li><a href="#" class="expand" data-target="#cart-popup-1"><i class="icon-expand"></i></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="item-info">
+          <div class="clearfix">
+            <h5 class="pull-left">GEL DÉRMICO DE ALOE VERA 250ml</h5>
+          </div>
+          <div>
+            <ul class="rate list-unstyled list-inline pull-left">
+              <li><i class="fa fa-star"></i></li>
+              <li><i class="fa fa-star"></i></li>
+              <li><i class="fa fa-star"></i></li>
+              <li><i class="fa fa-star"></i></li>
+              <li><i class="fa fa-star"></i></li>
+            </ul>
+            <span class="price pull-right">70.00$</span>
+          </div>
+        </div>
+      </div>
+      <div class="product">
+        <div class="item-image">
+          <img src="assets/img/155-con.jpg" class="img-responsive" alt="">
+          <div class="hover-overlay">
+            <ul class="list-unstyled list-inline">
+              <li><a href="" class="cart"><i class="icon-cart-1"></i></a></li>
+              <li><a href="" class="wishlist"><i class="icon-like"></i></a></li>
+              <li><a href="#" class="expand" data-target="#cart-popup-1"><i class="icon-expand"></i></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="item-info">
+          <div class="clearfix">
+            <h5 class="pull-left">GEL DÉRMICO DE ALOE VERA 250ml</h5>
+          </div>
+          <div>
+            <ul class="rate list-unstyled list-inline pull-left">
+              <li><i class="fa fa-star"></i></li>
+              <li><i class="fa fa-star"></i></li>
+              <li><i class="fa fa-star"></i></li>
+              <li><i class="fa fa-star"></i></li>
+              <li><i class="fa fa-star"></i></li>
+            </ul>
+            <span class="price pull-right">70.00$</span>
+          </div>
+        </div>
+      </div>
+      <div class="product">
+        <div class="item-image">
+          <img src="assets/img/cesta-celebraciones.jpg" class="img-responsive" alt="">
+          <div class="hover-overlay">
+            <ul class="list-unstyled list-inline">
+              <li><a href="" class="cart"><i class="icon-cart-1"></i></a></li>
+              <li><a href="" class="wishlist"><i class="icon-like"></i></a></li>
+              <li><a href="#" class="expand" data-target="#cart-popup-1"><i class="icon-expand"></i></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="item-info">
+          <div class="clearfix">
+            <h5 class="pull-left">GEL DÉRMICO DE ALOE VERA 250ml</h5>
+          </div>
+          <div>
+            <ul class="rate list-unstyled list-inline pull-left">
+              <li><i class="fa fa-star"></i></li>
+              <li><i class="fa fa-star"></i></li>
+              <li><i class="fa fa-star"></i></li>
+              <li><i class="fa fa-star"></i></li>
+              <li><i class="fa fa-star"></i></li>
+            </ul>
+            <span class="price pull-right">70.00$</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+<!-- /Section: products -->
+
+<!-- Section: video -->
+<section id="video" class="home-section text-center">
+  <div class="heading-about">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+          <div class="wow bounceInDown" data-wow-delay="0.4s">
+            <div class="section-heading">
+              <h2>Our Videos</h2>
+              <i class="fa fa-2x fa-angle-down"></i>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="text-box">
+      <h3>Aloe Plus Lanzarote: The online shop where you can buy the best aloe vera</h3>
+      <h5>In Aloe Plus Lanzarote we specialize in aloe vera because we wish the best for your health,
+        putting at your disposal the multiple properties that this plant offers us. <b>Buying aloe vera is the
+          best option</b> to help improve our well-being in a natural way.
+      </h5>
+      <h6><b>With aloe vera you will achieve a better quality of life.</b></h6>
+    </div>
+  </div>
+</section>
+<!-- /Section: video -->
+
+
+<!-- Section: contact -->
+<section id="contact" class="home-section text-center bg-gray">
+  <div class="heading-contact">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+          <div class="wow bounceInDown" data-wow-delay="0.4s">
+            <div class="section-heading">
+              <h2>Get in touch</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+
+
+    <div class="row">
+      <div class="col-lg-2 col-lg-offset-5">
+        <hr class="marginbot-50">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+        <iframe
+          src="https://yandex.ru/map-widget/v1/?um=constructor%3A3cd515b3366b44acdb3b4f16b11700910b8f8151630ddaec0acc46a7f390a967&amp;source=constructor"
+          width="100%" height="300" frameborder="0"></iframe>
+      </div>
+
+      <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+        <div class="widget-contact">
+          <h5>Main Office</h5>
+
+          <address>
+            <strong>Squas Design, Inc.</strong><br>
+            Tower 795 Folsom Ave, Beautiful Suite 600<br>
+            San Francisco, CA 94107<br>
+            <abbr title="Phone">P:</abbr> (123) 456-7890
+          </address>
+
+          <address>
+            <strong>Email</strong><br>
+            <a href="mailto:#">email.name@example.com</a>
+          </address>
+          <address>
+            <strong>We're on social networks</strong><br>
+            <ul class="company-social">
+              <li class="social-facebook"><a href="#" target="_blank"><i class="fa fa-facebook"></i></a></li>
+              <li class="social-twitter"><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
+              <li class="social-dribble"><a href="#" target="_blank"><i class="fa fa-dribbble"></i></a></li>
+              <li class="social-google"><a href="#" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+            </ul>
+          </address>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /Section: contact -->
+<div class="container">
+  <div class="row">
+    <h1 class="text-center contact"><a href="#myModal" role="button" class="btn btn-primary btn-lg" data-toggle="modal">Contact
+      Us</a></h1>
+  </div>
+</div>
+<div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="myModalLabel">We'd Love to Hear From You</h3>
+      </div>
+      <div class="modal-body">
+        <form class="form-horizontal col-sm-12">
+          <div class="form-group"><label>Name</label><input class="form-control required" placeholder="Your name"
+                                                            data-placement="top" data-trigger="manual"
+                                                            data-content="Must be at least 3 characters long, and must only contain letters."
+                                                            type="text"></div>
+          <div class="form-group"><label>Message</label><textarea class="form-control" placeholder="Your message here.."
+                                                                  data-placement="top" data-trigger="manual"></textarea>
+          </div>
+          <div class="form-group"><label>E-Mail</label><input class="form-control email"
+                                                              placeholder="email@you.com (so that we can contact you)"
+                                                              data-placement="top" data-trigger="manual"
+                                                              data-content="Must be a valid e-mail address (user@gmail.com)"
+                                                              type="text"></div>
+          <div class="form-group"><label>Phone</label><input class="form-control phone" placeholder="999-999-9999"
+                                                             data-placement="top" data-trigger="manual"
+                                                             data-content="Must be a valid phone number (999-999-9999)"
+                                                             type="text"></div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-success pull-right">Send It!</button>
+            <p class="help-block pull-left text-danger hide" id="form-error">&nbsp; The form is not valid. </p></div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 col-lg-12">
+        <div class="wow shake" data-wow-delay="0.4s">
+          <div class="page-scroll marginbot-30">
+            <a href="#intro" id="totop" class="btn btn-circle">
+              <i class="fa fa-angle-double-up animated"></i>
+            </a>
+          </div>
+        </div>
+        <p>&copy;AloeShop. All rights reserved.</p>
+        <div class="credits">Aloe shop..</div>
+      </div>
+    </div>
+  </div>
+</footer>
+<!--<app-product-search></app-product-search>-->
