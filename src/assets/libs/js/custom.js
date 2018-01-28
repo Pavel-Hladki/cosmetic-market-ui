@@ -67,6 +67,7 @@
 
 	//jQuery for page scrolling feature - requires jQuery Easing plugin
 	$(function() {
+    resizeLogo();
 
 		$('.navbar-nav li a').on('click', function(event) {
 

@@ -98,11 +98,21 @@ a:focus {
 }
 
 .navbar-custom ul.nav li a {
-	font-size: 12px;
-	letter-spacing: 1px;
+    font-size: 12px;
+    letter-spacing: 1px;
     color: #444;
-	text-transform: uppercase;
-	font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.navbar-custom .search-form .form-group i {
+    margin: auto;
+    width: 100%;
+}
+
+.navbar-custom .search-form .form-group:hover i{
+    width: 34px;
 }
 
 .navbar-custom.top-nav-collapse ul.nav li a, .navbar-custom.top-nav-collapse .form-group>.fa-search {
@@ -113,7 +123,7 @@ a:focus {
 }
 
 .navbar-custom ul.nav ul.dropdown-menu {
-	  border-radius: 0;
+    border-radius: 0;
 }
 
 .navbar-custom ul.nav ul.dropdown-menu li {
@@ -331,6 +341,7 @@ hr {
 }
 
 #intro>.overlay {
+    top: 0px;
     position: absolute;
     height: 100%;
     width: 100%;
@@ -790,7 +801,7 @@ Parallax
 @media (max-width:480px) {
 
 	.navbar-custom .nav.navbar-nav {
-    background-color: rgba(255,255,255,.4);
+    background-color: #5cb85c;
 	}
 
 	.navbar.navbar-custom.navbar-fixed-top {
@@ -810,6 +821,10 @@ Parallax
 		border-radius: 50%;
 		font-size: 20px;
 	}
+
+.intro .slogan h2 {
+    font-size: 40px;
+}
 
 }
 /*---------------------------*/
@@ -977,7 +992,7 @@ a:not('ul.nav a') {
   border-top-left-radius: 25px;
   border-bottom-left-radius: 25px;
 }
-.search-form .form-group span {
+.search-form .form-group i {
   position: absolute;
   top: 6px;
   right: -2px;
