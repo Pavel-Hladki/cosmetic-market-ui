@@ -31,7 +31,7 @@ import { ProductItemGridComponent } from './components/store/products/products-i
 import { ProductItemListComponent } from './components/store/products/products-item/product-item-list/product-item-list.component';
 import { ProductRatingsComponent } from './components/store/product-ratings/product-ratings.component';
 import { ProductImageSliderComponent } from './components/store/product-detail/product-image-slider/product-image-slider.component';
-import {ProductInfoComponent} from "./components/store/product-detail/product-info-block/product-info-block.component";
+import { ProductInfoComponent } from "./components/store/product-detail/product-info-block/product-info-block.component";
 import { ProductReviewComponent } from './components/store/product-detail/product-review/product-review.component';
 import { ProductMetaComponent } from './components/store/product-detail/product-meta/product-meta.component';
 import { ProductCommentComponent } from './components/store/product-detail/product-review/product-comment/product-comment.component';
@@ -39,6 +39,8 @@ import { ReviewFormComponent } from './components/store/product-detail/product-r
 import { ProductInfoTabComponent } from './components/store/product-detail/product-info-block/product-info-tab/product-info-tab.component';
 import { SocialSharingComponent } from './components/store/product-detail/product-info-block/social-sharing/social-sharing.component';
 import {DragScrollModule} from 'ngx-drag-scroll';
+import { HeaderComponent } from './components/shared/header/header.component';
+import { FooterComponent } from './components/shared/footer/footer.component';
 @NgModule({
   //todo separate on several modules
   //todo rename app components after, delete prefix e.g. products-item -> item or item-block
@@ -69,7 +71,9 @@ import {DragScrollModule} from 'ngx-drag-scroll';
     ProductCommentComponent,
     ReviewFormComponent,
     ProductInfoTabComponent,
-    SocialSharingComponent
+    SocialSharingComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
