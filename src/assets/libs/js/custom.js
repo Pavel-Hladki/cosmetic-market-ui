@@ -39,11 +39,11 @@
 
 	//jQuery to collapse the navbar on scroll
 	$(window).scroll(function() {
-		if ($(".navbar").offset().top > 50) {
-			$(".navbar-fixed-top").addClass("top-nav-collapse");
+		if ($(".navigation-bar").offset().top > 50) {
+			$(".navigation-bar-fixed-top").addClass("top-nav-collapse");
             resizeLogo();
 		} else {
-			$(".navbar-fixed-top").removeClass("top-nav-collapse");
+			$(".navigation-bar-fixed-top").removeClass("top-nav-collapse");
             resizeLogo();
 		}
 	});
@@ -54,14 +54,14 @@
   });
 
   function resizeLogo() {
-      if(($(window).width() < 750 && $(".navbar").offset().top > 50)
-    || ($(window).width() > 750 && $(".navbar").offset().top > 50)
-          || ($(window).width() < 750 && $(".navbar").offset().top < 50)){
-          $(".navbar-brand > img").remove();
-          $(".navbar-brand").prepend('<img class="aloe-logo-min" src="assets/img/icons/logoAloe-min-white.png">');
+      if(($(window).width() < 750 && $(".navigation-bar").offset().top > 50)
+    || ($(window).width() > 750 && $(".navigation-bar").offset().top > 50)
+          || ($(window).width() < 750 && $(".navigation-bar").offset().top < 50)){
+          $(".navigation-bar-brand > img").remove();
+          $(".navigation-bar-brand").prepend('<img class="aloe-logo-min" src="assets/img/icons/logoAloe-min-white.png">');
       } else {
-          $(".navbar-brand > img").remove();
-          $(".navbar-brand").prepend('<img class="aloe-logo" src="assets/img/icons/logoAloe.png">');
+          $(".navigation-bar-brand > img").remove();
+          $(".navigation-bar-brand").prepend('<img class="aloe-logo" src="assets/img/icons/logoAloe.png">');
       }
   }
 
@@ -69,7 +69,7 @@
 	$(function() {
     resizeLogo();
 
-		$('.navbar-nav li a').on('click', function(event) {
+		$('.navigation-bar-nav li a').on('click', function(event) {
 
 			if( $(this).is('a:not([href^="#"])') || $(this).attr("href") == '#' ) {
 	     return;

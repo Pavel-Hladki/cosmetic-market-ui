@@ -63,41 +63,41 @@ a:focus {
     font-weight: 400;
 }
 
-.navbar {
+.navigation-bar {
     margin-bottom: 0;
     border-bottom: 1px solid rgba(255,255,255,.3);
 
 }
 
-.navbar-brand {
+.navigation-bar-brand {
     font-weight: 700;
 }
-.navbar-brand {
+.navigation-bar-brand {
   height: 40px;
   padding: 5px 15px;
   font-size: 18px;
   line-height: 1em;
 }
 
-.navbar-brand h1{
+.navigation-bar-brand h1{
 	color: #fff;
   font-size: 20px;
   line-height: 40px;
 }
 
-.navbar-brand:focus {
+.navigation-bar-brand:focus {
     outline: 0;
 }
 
-.nav.navbar-nav {
+.navigation.navigation-bar-nav {
     background-color: rgba(255,255,255,.4);
 }
 
-.navbar-custom.top-nav-collapse .nav.navbar-nav {
+.navigation-bar-custom.top-nav-collapse .nav.navigation-bar-nav {
     background-color: rgba(0,0,0,0);
 }
 
-.navbar-custom ul.nav li a {
+.navigation-bar-custom ul.navigation li a {
     font-size: 12px;
     letter-spacing: 1px;
     color: #444;
@@ -106,74 +106,74 @@ a:focus {
     font-weight: 700;
 }
 
-.navbar-custom .search-form .form-group i {
+.navigation-bar-custom .search-form .form-group i {
     margin: auto;
     width: 100%;
 }
 
-.navbar-custom .search-form .form-group:hover i{
+.navigation-bar-custom .search-form .form-group:hover i{
     width: 34px;
 }
 
-.navbar-custom.top-nav-collapse ul.nav li a, .navbar-custom.top-nav-collapse .form-group>.fa-search {
+.navigation-bar-custom.top-nav-collapse ul.navigation li a, .navigation-bar-custom.top-nav-collapse .form-group>.fa-search {
   -webkit-transition: all .2s ease-in-out;
   -moz-transition: all .2s ease-in-out;
   transition: all .2s ease-in-out;
 	color: #fff;
 }
 
-.navbar-custom ul.nav ul.dropdown-menu {
+.navigation-bar-custom ul.navigation ul.dropdown-menu {
     border-radius: 0;
 }
 
-.navbar-custom ul.nav ul.dropdown-menu li {
+.navigation-bar-custom ul.navigation ul.dropdown-menu li {
 	border-bottom: 1px solid #f5f5f5;
 
 }
 
-.navbar-custom ul.nav ul.dropdown-menu li:last-child{
+.navigation-bar-custom ul.navigation ul.dropdown-menu li:last-child{
 	border-bottom: none;
 }
 
-.navbar-custom ul.nav ul.dropdown-menu li a {
+.navigation-bar-custom ul.navigation ul.dropdown-menu li a {
 	padding: 10px 20px;
 }
 
-.navbar-custom ul.nav ul.dropdown-menu li a:hover {
+.navigation-bar-custom ul.navigation ul.dropdown-menu li a:hover {
 	background: #fefefe;
 }
 
-.navbar-custom.top-nav-collapse ul.nav ul.dropdown-menu li a {
+.navigation-bar-custom.top-nav-collapse ul.navigation ul.dropdown-menu li a {
 	color: #666;
 }
 
-.navbar-custom .nav li a {
+.navigation-bar-custom .navigation li a {
     -webkit-transition: background .3s ease-in-out;
     -moz-transition: background .3s ease-in-out;
     transition: background .3s ease-in-out;
 }
 
-.navbar-custom .nav li a:hover,
-.navbar-custom .nav li a:focus,
-.navbar-custom .nav li.active {
+.navigation-bar-custom .navigation li a:hover,
+.navigation-bar-custom .navigation li a:focus,
+.navigation-bar-custom .navigation li.active {
     outline: 0;
     background-color: rgba(255,255,255,.2);
 }
-.navbar-custom .nav li a:hover,
-.navbar-custom .nav li a:focus,
-.navbar-custom .nav li.active {
+.navigation-bar-custom .navigation li a:hover,
+.navigation-bar-custom .navigation li a:focus,
+.navigation-bar-custom .navigation li.active {
     outline: 0;
     background-color: rgba(255,255,255,.2);
 }
 
-.navbar-toggle {
+.navigation-bar-toggle {
     padding: 4px 6px;
     font-size: 14px;
     color: #fff;
 }
 
-.navbar-toggle:focus,
-.navbar-toggle:active {
+.navigation-bar-toggle:focus,
+.navigation-bar-toggle:active {
     outline: 0;
 }
 
@@ -750,7 +750,7 @@ Parallax
 
 @media(min-width:767px) {
 
-    .navbar {
+    .navigation-bar {
         padding: 20px 0;
         border-bottom: 0;
         letter-spacing: 1px;
@@ -765,7 +765,7 @@ Parallax
         background-color: #000;
     }
 
-    .navbar-custom.top-nav-collapse {
+    .navigation-bar-custom.top-nav-collapse {
         border-bottom: 1px solid rgba(255,255,255,.3);
     }
 
@@ -800,11 +800,11 @@ Parallax
 
 @media (max-width:480px) {
 
-	.navbar-custom .nav.navbar-nav {
+	.navigation-bar-custom .nav.navigation-bar-nav {
     background-color: #5cb85c;
 	}
 
-	.navbar.navbar-custom.navbar-fixed-top {
+	.navigation-bar.navigation-bar-custom.navigation-bar-fixed-top {
 		margin-bottom: 30px;
 	}
 
@@ -946,7 +946,7 @@ a {
     display: inline-block
 }
 
-a:not('ul.nav a') {
+a:not('ul.navigation a') {
     display: inline-block;
     margin: 5px 0
 }
