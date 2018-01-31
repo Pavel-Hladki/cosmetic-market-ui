@@ -36,33 +36,6 @@ input::-moz-focus-inner {
 input {
   line-height: normal;
 }
-@media print {
-  * {
-    color: #000 !important;
-    text-shadow: none !important;
-    background: transparent !important;
-    box-shadow: none !important;
-  }
-  a,
-  a:visited {
-    text-decoration: underline;
-  }
-  a[href]:after {
-    content: " (" attr(href) ")";
-  }
-  a[href^="#"]:after {
-    content: "";
-  }
-  img {
-    page-break-inside: avoid;
-  }
-  img {
-    max-width: 100% !important;
-  }
-  .navigation-bar {
-    display: none;
-  }
-}
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -74,37 +47,12 @@ input {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-html {
-  font-size: 62.5%;
 
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
-body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  line-height: 1.428571429;
-  color: #333;
-  background-color: #fff;
-}
 input,
 button {
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
-}
-a {
-  color: #428bca;
-  text-decoration: none;
-}
-a:hover,
-a:focus {
-  color: #2a6496;
-  text-decoration: underline;
-}
-a:focus {
-  outline: thin dotted;
-  outline: 5px auto -webkit-focus-ring-color;
-  outline-offset: -2px;
 }
 img {
   vertical-align: middle;
@@ -129,9 +77,15 @@ ul {
   margin-right: auto;
   margin-left: auto;
 }
+.navigation-bar-collapse.in {
+  overflow-y: auto;
+}
 @media (min-width: 768px) {
   .menu-container {
     width: 750px;
+  }
+  .navigation-bar-collapse.in {
+    overflow-y: visible;
   }
 }
 @media (min-width: 992px) {
@@ -191,7 +145,9 @@ label {
 .collapse {
   display: none;
 }
-
+.collapse.in {
+  display: block;
+}
 .navigation {
   padding-left: 0;
   margin-bottom: 0;
@@ -383,22 +339,6 @@ a {
     Author URL: https://bootstrapmade.com
 */
 
-/* ==== Google font ==== */
-@import url('https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic|Montserrat:700|Merriweather:400italic');
-
-a {
-  color: #28c3ab;
-  -webkit-transition: all .2s ease-in-out;
-  -moz-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
-}
-
-a:hover,
-a:focus {
-  text-decoration: none;
-  color: #176e61;
-}
-
 .navigation-bar {
   margin-bottom: 0;
   border-bottom: 1px solid rgba(255,255,255,.3);
@@ -460,7 +400,7 @@ a:focus {
   background-color: rgba(255,255,255,.2);
 }
 
-.navigation-bar-custom.top-nav-collapse .nav.navigation-bar-nav {
+.navigation-bar-custom.top-nav-collapse .navigation.navigation-bar-nav {
   background-color: rgba(0,0,0,0);
 }
 
@@ -487,10 +427,6 @@ a:focus {
 .navigation-bar-toggle:focus,
 .navigation-bar-toggle:active {
   outline: 0;
-}
-
-.fa-1_5x{
-  font-size: 1.4em;
 }
 
 .aloe-logo{
@@ -530,32 +466,6 @@ a:focus {
     margin-bottom: 30px;
   }
 
-}
-/*---------------------------*/
-/*section products*/
-/*---------------------------*/
-
-a, button {
-  -webkit-transition: all .2s ease-out;
-  -moz-transition: all .2s ease-out;
-  transition: all .2s ease-out
-}
-
-a i.fa, button i.fa {
-  margin: 0 5px
-}
-
-a, a:hover {
-  text-decoration: none
-}
-
-a {
-  display: inline-block
-}
-
-a:not('ul.navigation a') {
-  display: inline-block;
-  margin: 5px 0
 }
 
 /* START: Search field */
