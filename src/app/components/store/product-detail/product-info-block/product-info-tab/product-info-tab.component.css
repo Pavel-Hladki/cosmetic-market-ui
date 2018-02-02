@@ -170,7 +170,7 @@ li:focus, li:hover {
 
 .description-tab li {
   display: inline-block;
-  margin-right: 7%;
+  margin-right: 6%;
   cursor: pointer;
 }
 .description-tab li a {
