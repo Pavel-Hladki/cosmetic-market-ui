@@ -24,7 +24,7 @@ import {animate, state, style, transition, trigger} from "@angular/animations";
 })
 export class ProductInfoTabComponent implements OnInit {
 
-  @Input() infoTabs: infoTab[];
+  @Input() infoTabs: InfoTab[];
 
   activeTabIndex: number = 0;
 
@@ -39,7 +39,7 @@ export class ProductInfoTabComponent implements OnInit {
 
 }
 
-export class infoTab {
+export class InfoTab {
   constructor(
     public name: string,
     public content: string

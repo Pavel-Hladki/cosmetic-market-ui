@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { Platform } from "./social-sharing/social-sharing.component";
+import {Component, Input, OnInit} from '@angular/core';
+import {Product, ProductDescription} from "../../../../models/product";
+import {InfoTab} from "./product-info-tab/product-info-tab.component";
 
 @Component({
   selector: 'app-product-info-block',
@@ -8,11 +9,30 @@ import { Platform } from "./social-sharing/social-sharing.component";
 })
 export class ProductInfoComponent implements OnInit {
 
-  sharingPlatforms: Platform[] = [Platform.FACEBOOK, Platform.TWITTER, Platform.PINTEREST, Platform.GOOGLE_PLUS]
+  @Input() product: Product;
+
+  infoTabs: InfoTab[] = [];
 
   constructor() { }
 
   ngOnInit() {
+    this.prepareInfoTabs();
   }
 
+  private prepareInfoTabs(): void {
+    this.pushIfDefined('Details',
+      this.product.description.details);
+    this.pushIfDefined('Active Ingredients',
+      this.product.description.activeIngredients);
+    this.pushIfDefined('Properties',
+      this.product.description.properties);
+    this.pushIfDefined('Directions',
+      this.product.description.directions)
+  }
+
+  private pushIfDefined(name: string, content: string): void {
+    if(content != null) {
+      this.infoTabs.push({name, content});
+    }
+  }
 }

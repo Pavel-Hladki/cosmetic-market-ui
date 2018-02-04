@@ -13,6 +13,7 @@ import { ProductService } from "../../../services/product.service";
 export class ProductDetailComponent implements OnInit {
 
   @Input() product: Product;
+  imageUrls: string[] = [];
 
   constructor(
     private route: ActivatedRoute,
@@ -27,12 +28,11 @@ export class ProductDetailComponent implements OnInit {
   getProduct(): void {
     const id = +this.route.snapshot.paramMap.get('id');
     this.productService.getProduct(id)
-      .subscribe(product => this.product = product);
-  }
-
-  save(): void {
-    this.productService.updateProduct(this.product)
-      .subscribe(() => this.goBack());
+      .subscribe(product => {
+        this.product = product;
+        this.imageUrls = [];
+        this.imageUrls.push(product.mainImage, ...product.otherImages);
+      });
   }
 
   goBack(): void {
