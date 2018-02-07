@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Product } from '../../../models/product';
 
 import { ProductService } from '../../../services/product.service';
+import { ViewType } from "./products-control-panel/products-control-panel.component";
 
 @Component({
   selector: 'app-products',
@@ -11,6 +12,10 @@ import { ProductService } from '../../../services/product.service';
 export class ProductsComponent implements OnInit {
 
   products: Product[];
+  selectedSortOptionId: string;
+  selectedViewType: ViewType = ViewType.LIST;
+
+  readonly viewType = ViewType;
 
   constructor(private productService: ProductService) { }
 
@@ -21,6 +26,14 @@ export class ProductsComponent implements OnInit {
   getProducts(): void {
     this.productService.getProducts()
       .subscribe(products => this.products = products);
+  }
+
+  selectSortOption(sortOptionId: string): void {
+    this.selectedSortOptionId = sortOptionId;
+  }
+
+  selectViewType(viewType: ViewType): void {
+    this.selectedViewType = viewType;
   }
 
   add(name: string): void {

@@ -42,7 +42,9 @@ export class InMemoryDataService implements InMemoryDbService {
         '<li>decongestant</li>\n' +
         '</ul>',
         directions: 'Apply daily with a gentle massage as often as necessary and whenever the sensation of fatigue appears.',
-      }
+      },
+      price: 800,
+      overallRating: 7.62
     };
 
     const product2 = {
@@ -74,7 +76,9 @@ export class InMemoryDataService implements InMemoryDbService {
         '<li><strong>Coconut Oil</strong></li>\n' +
         '</ul>',
         directions: 'Moisten skin and apply soap on it with your fingers, using a circular motion. A soft brush can also be used for its application. Afterwards, rinse with water.',
-      }
+      },
+      price: 600,
+      overallRating: 8.94
     };
 
     const products = [product1, product2];

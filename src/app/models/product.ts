@@ -11,6 +11,8 @@ export class Product {
     public mainImage: string,
     public otherImages: string[],
     public description: ProductDescription,
+    public price: number,
+    public overallRating: number
   ) {}
 }
 

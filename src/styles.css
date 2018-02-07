@@ -13,6 +13,13 @@
 /*todo clean up  unused css selectors in files over whole project*/
 
 @font-face {
+  font-family: 'Material-Design-Iconic-Font';
+  src: url('/assets/fonts/Material-Design-Iconic-Font.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
   font-family: 'Glyphicons Halflings';
 
   src: url('./assets/fonts/glyphicons-halflings-regular.eot');

@@ -1,34 +1,20 @@
-
 <div class="shop-list product-item">
   <div class="product-img">
-    <a routerLink="/products/1">
-      <img src="assets/img/product/linea_jabones0004.jpg" alt="">
+    <a routerLink="/products/{{product.id}}">
+      <img [src]="product.mainImage" alt="">
     </a>
   </div>
   <div class="product-info">
     <div class="clearfix">
       <h6 class="product-title f-left">
-        <a routerLink="/products/1">Dummy Product Name </a>
+        <a routerLink="/products/{{product.id}}">{{product.name}}</a>
       </h6>
       <app-product-ratings style="float: right;"></app-product-ratings>
     </div>
-    <h6 class="brand-name mb-30">Brand Name</h6>
-    <h3 class="pro-price">$ 869.00</h3>
-    <p>Pure aloe vera juice ideal to help the body.</p>
-    <ul class="action-button">
-      <li>
-        <a href="#" title="Wishlist"><i class="zmdi zmdi-favorite"></i></a>
-      </li>
-      <li>
-        <a href="#" data-toggle="modal" data-target="#productModal" title="Quickview"><i class="zmdi zmdi-zoom-in"></i></a>
-      </li>
-      <li>
-        <a href="#" title="Compare"><i class="zmdi zmdi-refresh"></i></a>
-      </li>
-      <li>
-        <a href="#" title="Add to cart"><i class="zmdi zmdi-shopping-cart-plus"></i></a>
-      </li>
-    </ul>
+    <h6 class="brand-name mb-30">{{product.brand}}</h6>
+    <h3 class="pro-price">{{product.price}}</h3>
+    <p>{{product.briefDescription}}</p>
+    <app-product-actions></app-product-actions>
   </div>
 </div>
 

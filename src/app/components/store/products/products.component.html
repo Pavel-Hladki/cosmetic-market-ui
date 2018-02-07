@@ -24,14 +24,25 @@
               <h5>Search result for: <span>Health Line</span></h5>
             </div>
           </div>
-          <app-products-control-panel></app-products-control-panel>
+          <app-products-control-panel [defaultViewType]="selectedViewType"
+                                      (onSelectViewType)="selectViewType($event)"
+                                      (onSelectedSortOption)="selectSortOption($event)">
+          </app-products-control-panel>
           <div class="tab-content">
             <div class="tab-pane active">
-              <div class="row mt-30">
+              <div *ngFor="let product of products"
+                   [ngSwitch]="selectedViewType" class="row mt-30">
                   <!-- product card -->
-                <app-product-item-list class="col-md-12"></app-product-item-list>
-                <app-product-item-list class="col-md-12"></app-product-item-list>
-                <!--<app-product-item-grid class="col-sm-12 col-lg-4 col-md-6"></app-product-item-grid>
+                <app-product-item-list *ngSwitchCase="viewType.LIST"
+                                       [product]="product"
+                                       class="col-md-12">
+                </app-product-item-list>
+                <app-product-item-grid *ngSwitchCase="viewType.GRIP"
+                                       [product]="product"
+                                       class="col-sm-12 col-lg-4 col-md-6">
+                </app-product-item-grid>
+
+                <!--<app-product-item-list class="col-md-12"></app-product-item-list>
                 <app-product-item-grid class="col-sm-12 col-lg-4 col-md-6"></app-product-item-grid>-->
               </div>
             </div>
