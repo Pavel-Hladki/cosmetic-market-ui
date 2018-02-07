@@ -13,7 +13,7 @@ export class ProductsComponent implements OnInit {
 
   products: Product[];
   selectedSortOptionId: string;
-  selectedViewType: ViewType = ViewType.LIST;
+  selectedViewType: ViewType = ViewType.GRID;
 
   readonly viewType = ViewType;
 

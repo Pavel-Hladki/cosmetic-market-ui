@@ -19,7 +19,7 @@ export class ProductsControlPanelComponent implements OnInit {
   @Output() onSelectedSortOption = new EventEmitter<string>();
   selectedSortOptionId: string;
 
-  @Input('defaultViewType') selectedViewType: ViewType = ViewType.LIST;
+  @Input('defaultViewType') selectedViewType: ViewType = ViewType.GRID;
   @Output() onSelectViewType = new EventEmitter<ViewType>();
 
   readonly viewType = ViewType;
@@ -56,5 +56,5 @@ export class SortOption {
 
 export enum ViewType {
   LIST,
-  GRIP
+  GRID
 }

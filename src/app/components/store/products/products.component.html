@@ -29,21 +29,20 @@
                                       (onSelectedSortOption)="selectSortOption($event)">
           </app-products-control-panel>
           <div class="tab-content">
-            <div class="tab-pane active">
-              <div *ngFor="let product of products"
-                   [ngSwitch]="selectedViewType" class="row mt-30">
+            <div [ngSwitch]="selectedViewType" class="tab-pane active">
+              <div *ngSwitchCase="viewType.LIST" class="row mt-30">
                   <!-- product card -->
-                <app-product-item-list *ngSwitchCase="viewType.LIST"
+                <app-product-item-list *ngFor="let product of products"
                                        [product]="product"
                                        class="col-md-12">
                 </app-product-item-list>
-                <app-product-item-grid *ngSwitchCase="viewType.GRIP"
+              </div>
+              <div *ngSwitchCase="viewType.GRID" class="row mt-30">
+                <!-- product card -->
+                <app-product-item-grid *ngFor="let product of products"
                                        [product]="product"
                                        class="col-sm-12 col-lg-4 col-md-6">
                 </app-product-item-grid>
-
-                <!--<app-product-item-list class="col-md-12"></app-product-item-list>
-                <app-product-item-grid class="col-sm-12 col-lg-4 col-md-6"></app-product-item-grid>-->
               </div>
             </div>
           </div>

@@ -19,11 +19,11 @@
     </div>
     <!-- Nav tabs -->
     <ul class="shop-tab f-right text-right" role="tablist">
-      <li [ngClass]="{'active': isSelectedViewType(viewType.LIST)}">
-        <a (click)="selectViewType(viewType.LIST)"><i class="zmdi zmdi-view-module"></i></a>
+      <li [ngClass]="{'active': isSelectedViewType(viewType.GRID)}">
+        <a (click)="selectViewType(viewType.GRID)"><i class="zmdi zmdi-view-module"></i></a>
       </li>
-      <li [ngClass]="{'active': isSelectedViewType(viewType.GRIP)}">
-        <a (click)="selectViewType(viewType.GRIP)"><i class="zmdi zmdi-view-list-alt"></i></a>
+      <li [ngClass]="{'active': isSelectedViewType(viewType.LIST)}">
+        <a (click)="selectViewType(viewType.LIST)"><i class="zmdi zmdi-view-list-alt"></i></a>
       </li>
     </ul>
   </div>
