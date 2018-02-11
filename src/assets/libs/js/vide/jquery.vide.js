@@ -249,7 +249,7 @@
             .css({
                 position: 'absolute',
                 'z-index': -1,
-                top: 0,
+                top: -30,
                 left: 0,
                 bottom: 0,
                 right: 0,
