@@ -1011,3 +1011,21 @@ a:not('ul.nav a') {
   padding-left: 20px;
 }
 /* END: Search field */
+
+/* videos section */
+/* #videos .ps-current {
+    background:red;
+    float:left;
+    position:relative
+}
+#videos .ps-current:hover .play{display:block}
+#videos .ps-current .play{
+  position : absolute;
+    display:none;
+    top:40%;
+    width:40px;
+    margin:0 auto; left:0px;
+    right:0px;
+    z-index:100
+}
+*/
