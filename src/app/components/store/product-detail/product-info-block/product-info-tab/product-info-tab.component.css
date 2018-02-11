@@ -20,15 +20,16 @@ ul {
 }
 
 a {
-  transition: all .3s ease-in 0s;
-  color: #000;
+  transition: all .3s ease-in-out 0s;
 }
 
 a:focus, a:hover {
   text-decoration: none;
   outline: 0;
-  color: #5672f9;
 }
+li:focus, li:hover {
+  color: #ffcc99;
+ }
 
 .f-left {
   float: left;
@@ -48,7 +49,7 @@ a:focus, a:hover {
     margin-right: 10%;
   }
 
-  ul.description-tab .tab-content.bottom {
+  ul.description-tab .tab-content.vertical-align-fix {
     margin-top: 40px;
     box-sizing: border-box;
     float: right;
@@ -60,7 +61,7 @@ a:focus, a:hover {
 
 /* Large Screen  */
 @media (min-width: 1200px) and (max-width: 1400px) {
-  ul.description-tab .tab-content.bottom {
+  ul.description-tab .tab-content.vertical-align-fix {
     margin-top: 40px;
     box-sizing: border-box;
     float: right;
@@ -73,7 +74,7 @@ a:focus, a:hover {
 /* Normal desktop :992px. */
 @media (min-width: 992px) and (max-width: 1199px) {
 
-  ul.description-tab .tab-content.bottom {
+  ul.description-tab .tab-content.vertical-align-fix {
     margin-top: 40px;
     box-sizing: border-box;
     float: right;
@@ -100,7 +101,7 @@ a:focus, a:hover {
     margin: 0;
   }
 
-  ul.description-tab li:not(.active) {
+  ul.description-tab li:not(.active):not(.last) {
     border-bottom: 1px solid #ffcc99;
   }
 
@@ -128,7 +129,7 @@ a:focus, a:hover {
     margin-right: 3%;
   }
 
-  ul.description-tab .tab-content.bottom {
+  ul.description-tab .tab-content.vertical-align-fix {
     margin-top: 40px;
     box-sizing: border-box;
     float: right;
@@ -146,7 +147,7 @@ a:focus, a:hover {
     margin: 0;
   }
 
-  ul.description-tab li:not(.active) {
+  ul.description-tab li:not(.active):not(.last) {
     border-bottom: 1px solid #ffcc99;
   }
 
@@ -162,9 +163,15 @@ a:focus, a:hover {
 /* -------------------------------------
     Product description tab
 ------------------------------------- */
+.description-tab {
+  display: inline-block;
+  width:100%;
+}
+
 .description-tab li {
   display: inline-block;
   margin-right: 7%;
+  cursor: pointer;
 }
 .description-tab li a {
   display: block;
@@ -173,7 +180,13 @@ a:focus, a:hover {
   text-transform: uppercase;
 }
 .description-tab li.active a {
+  opacity: 1;
+  transition: all .3s ease-in 0s;
   border-bottom: 1px solid #ffcc99;
+}
+
+.description-tab .tab-content .tab-pane {
+  display: block !important;
 }
 
 .description-tab .tab-content .tab-pane p {

@@ -5,7 +5,14 @@
             <app-product-meta></app-product-meta>
           </div>
           <div class="row product-description">
-            <app-product-image-slider class="col-md-5 col-sm-12"></app-product-image-slider>
+            <app-product-image-slider [imageUrls]="[
+                                            'assets/img/product/11.jpg',
+                                            'assets/img/product/22.jpg',
+                                            'assets/img/product/11.jpg',
+                                            'assets/img/product/22.jpg' ,
+                                            'assets/img/product/11.jpg',
+                                            'assets/img/product/22.jpg']"
+                                      class="col-md-5 col-sm-12"></app-product-image-slider>
             <app-product-info-block class="col-md-7 col-sm-12"></app-product-info-block>
           </div>
           <div class="row content">
@@ -13,5 +20,12 @@
           </div>
         </div>
       </div>
-  <!-- Container End -->
+  <!-- Container End [
+    'assets/img/product/11.jpg',
+    'assets/img/product/22.jpg',
+    'assets/img/product/11.jpg',
+    'assets/img/product/22.jpg' ,
+    'assets/img/product/11.jpg',
+    'assets/img/product/22.jpg'
+  ]-->
 </section>

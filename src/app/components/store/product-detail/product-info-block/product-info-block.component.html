@@ -6,11 +6,29 @@
     </div>
     <app-product-ratings></app-product-ratings>
   </div>
+  <span class="description text-black-2">There are many variations of passages of.</span>
   <hr>
-  <app-product-info-tab></app-product-info-tab>
+  <app-product-info-tab [infoTabs]="[
+    {
+      name: 'details',
+      content: 'There are many variations of passages of Lorem Ipsum available, but the majo Rity have be suffered alteration in some form, by injected humou or randomis Rity have be suffered alteration in some form, by injected humou or randomis words which donot look even slightly believable. If you are going to use a passage Lorem Ipsum.'
+    },
+    {
+      name: 'active ingredients',
+      content: '<ul><li><strong>Glycerine</strong>: Moisturizer</li><li><strong>Aloe Vera</strong>: moisturizing and regenerating.</li></ul>'
+    },
+    {
+      name: 'properties',
+      content: 'There are many variations of passages of Lorem Ipsum available, but the majo Rity have be suffered alteration in some form, by injected humou or randomis Rity have be suffered alteration in some form, by injected humou or randomis words which donot look even slightly believable. If you are going to use a passage Lorem Ipsum.'
+    },
+    {
+      name: 'directions',
+      content: 'There are many variations of passages of Lorem Ipsum available, but the majo Rity have be suffered alteration in some form, by injected humou or randomis Rity have be suffered alteration in some form, by injected humou or randomis words which donot look even slightly believable. If you are going to use a passage Lorem Ipsum.'
+    }
+  ]"></app-product-info-tab>
   <!--  hr -->
   <hr>
-  <app-social-sharing style="display: block; margin: 0 31px;"></app-social-sharing>
+  <app-social-sharing [platforms]="sharingPlatforms" style="display: block; margin: 0 31px;"></app-social-sharing>
   <hr>
 
   <!-- plus-minus-pro-action -->

@@ -10,7 +10,7 @@ a {
   color: #000;
 }
 
-.p-c a.active img {
+img.p-c.active  {
   border: 1px solid #FF7F00;
 }
 
@@ -47,10 +47,6 @@ button {
   display: block;
 }
 
-#gallery {
-  padding: 0 30px;
-}
-
 .mt-30 {
   margin-top: 30px;
 }
@@ -79,10 +75,6 @@ button {
   z-index: 2;
   background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
   border: medium none;
-}
-
-#gallery img {
-  width: 100%;
 }
 
 @font-face {
@@ -116,21 +108,31 @@ button {
 .imgs-zoom-area {
   width: 100%;
 }
-.imgs-zoom-area img {
-  width: 100% !important;
-}
-#gallery img {
-  width: 100%;
-}
+
 #gallery {
-  padding: 0 30px;
+  padding: 0 50px;
 }
+
+#gallery .gallery-slider {
+  overflow: hidden;
+  height: 100px;
+}
+
+#gallery .slick-item {
+  width: 100px;
+  height: 100px;
+}
+
+#gallery .slick-item.last {
+  width: 98px;
+}
+
 .p-c {
   border: 1px solid #fff;
   padding: 0 5px;
 }
 #gallery.slick-arrow-3 .arrow-next.slick-arrow {
-  right: -3px;
+  right: 25px;
 }
 
 /* small mobile :320px. */
@@ -223,7 +225,7 @@ button {
   color: #999999;
   font-size: 20px;
   height: 35px;
-  left: 0;
+  left: 28px;
   line-height: 35px;
   margin-top: -17px;
   position: absolute;
@@ -240,4 +242,112 @@ button {
 .slick-arrow-3:hover .slick-arrow {}
 .slick-arrow-3 .arrow-prev.slick-arrow:hover, .slick-arrow-3 .arrow-next.slick-arrow:hover {
   color: #FF7F00;
+}
+
+
+/*another slider css*/
+.title {
+  margin-top: 60px;
+}
+
+.toggle-box {
+  width: 49%;
+  display: inline-block;
+}
+
+.toggle-box mat-slide-toggle {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.footer {
+  font-weight: 300;
+  font-size: 15px;
+  background-color: rgb(33, 33, 33);
+}
+
+.footer a {
+  background-color: transparent;
+  text-decoration: none;
+  cursor: auto;
+}
+
+.docs-api-properties-table {
+  border-collapse: collapse;
+  border-radius: 2px;
+  border-spacing: 0;
+  margin: 0 0 32px;
+  width: 100%;
+  box-shadow: 0 2px 2px rgba(0,0,0,.24), 0 0 2px rgba(0,0,0,.12);
+}
+
+.docs-api-properties-table p {
+  margin: 0;
+}
+
+.docs-api-properties-table th {
+  max-width: 100px;
+  padding: 13px 32px;
+  text-align: left;
+}
+
+.docs-api-properties-table td {
+  font-weight: 400;
+  padding: 8px 30px;
+  color: rgba(0,0,0,.54);
+  border: 1px solid rgba(0,0,0,.03);
+}
+
+
+@media only screen and  (max-width: 960px) {
+  .toggle-box {
+    width: 100%;
+    display: block;
+  }
+
+  .demo-content {
+    margin: 16px;
+  }
+}
+
+.content {
+  margin: 50px 70px;
+}
+
+
+/* Large Screen  */
+@media (min-width: 1170px) and (max-width: 1400px) {
+
+}
+
+/* Normal desktop :992px. */
+@media (min-width: 992px) and (max-width: 1169px) {
+
+}
+
+  /* Tablet desktop :768px. */
+@media (min-width: 768px) and (max-width: 991px) {}
+
+/* small mobile :320px. */
+@media (max-width: 767px) {
+  #gallery .gallery-slider {
+    overflow: hidden;
+    height: 100px;
+  }
+
+  #gallery .slick-item {
+    width: 100px;
+    height: 100px;
+  }
+
+  #gallery .slick-item.last {
+    width: 98px;
+  }
+}
+
+/* Large Mobile :480px. */
+@media only screen and (min-width: 480px) and (max-width: 767px){}
+
+@media  (max-width: 480px) {
+
 }
