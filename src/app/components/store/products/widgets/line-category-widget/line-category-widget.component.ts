@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {animate, state, style, transition, trigger} from "@angular/animations";
+import {CategoryCount} from "../../../../../models/product-category";
+import {CategoryService} from "../../../../../services/category.service";
 
 @Component({
   selector: 'app-products-line-category-widget',
@@ -26,9 +28,17 @@ export class LineCategoryComponent implements OnInit {
 
   collapse: string = 'open';
 
-  constructor() { }
+  categoryCountList: CategoryCount[];
+
+  constructor(private categoryService: CategoryService) { }
 
   ngOnInit() {
+    this.getCategoriesCount();
+  }
+
+  getCategoriesCount(): void {
+    this.categoryService.getCategoryCounts()
+      .subscribe(categoryCountList => this.categoryCountList = categoryCountList);
   }
 
   toggleCollapse(): void {

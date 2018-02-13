@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
+import {FormsModule, ReactiveFormsModule} from '@angular/forms'; // <-- NgModel lives here
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './components/app.component';
@@ -42,6 +42,9 @@ import {DragScrollModule} from 'ngx-drag-scroll';
 import { HeaderComponent } from './components/shared/header/header.component';
 import { FooterComponent } from './components/shared/footer/footer.component';
 import { ProductActionsComponent } from './components/store/shared/product-actions/product-actions.component';
+import { ProductsBreadcrumbComponent } from './components/store/products/products-breadcrumb/products-breadcrumb.component';
+import {CategoryService} from "./services/category.service";
+
 @NgModule({
   //todo separate on several modules
   //todo rename app components after, delete prefix e.g. products-item -> item or item-block
@@ -75,10 +78,12 @@ import { ProductActionsComponent } from './components/store/shared/product-actio
     SocialSharingComponent,
     HeaderComponent,
     FooterComponent,
-    ProductActionsComponent
+    ProductActionsComponent,
+    ProductsBreadcrumbComponent
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
@@ -93,7 +98,7 @@ import { ProductActionsComponent } from './components/store/shared/product-actio
     ),
     NgbModule.forRoot()
   ],
-  providers: [ProductService, Logger],
+  providers: [ProductService, CategoryService, Logger],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

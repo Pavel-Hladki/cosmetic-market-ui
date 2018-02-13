@@ -42,3 +42,51 @@
 .f-right {
   float: right;
 }
+
+._3l16dhH, .NvorkQI {
+  font-family: futura-pt,sans-serif;
+  color: #2d2d2d;
+}
+._3l16dhH {
+  font-size: 14px;
+  line-height: 1.57;
+  letter-spacing: .4px;
+}
+._3l16dhH, .NvorkQI {
+  margin: 0;
+}
+
+._1UL_oeJ {
+  background: #f8f8f8;
+  text-align: center;
+  padding: 16px;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+
+
+@media (min-width: 768px) {
+  .NvorkQI {
+    font-size: 24px;
+  }
+}
+
+.NvorkQI {
+  font-size: 22px;
+  font-weight: 900;
+  line-height: 1.45;
+  letter-spacing: 1.8px;
+  text-transform: capitalize;
+}
+._3l16dhH, .NvorkQI {
+  font-family: futura-pt,sans-serif;
+  color: #2d2d2d;
+}
+._3l16dhH, .NvorkQI {
+  margin: 0;
+}
+
+.text,
+.searchTerm {
+  margin: 0;
+}

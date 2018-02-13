@@ -1,4 +1,5 @@
 import { InMemoryDbService } from 'angular-in-memory-web-api';
+
 //todo investigate deep down to source
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {
@@ -6,17 +7,13 @@ export class InMemoryDataService implements InMemoryDbService {
       id: 1,
       name: 'ALOE VERA COLD RELAX GEL',
       category: {
-        id: 1,
-        category: 'Health Line'
+        id: 2,
+        name: 'Health Line'
       },
       properties: [
         {
           name: 'volume',
           values: ['250ml', '500ml']
-        },
-        {
-          name: 'volume_measure',
-          values: ['ml']
         }
       ],
       brand: 'Lanzarote',
@@ -51,17 +48,13 @@ export class InMemoryDataService implements InMemoryDbService {
       id: 2,
       name: 'HANDMADE WINE SOAP',
       category: {
-        id: 2,
-        category: 'Vinotherapy'
+        id: 5,
+        name: 'Vinotherapy'
       },
       properties: [
         {
           name: 'weight',
           values: ['100', '300']
-        },
-        {
-          name: 'weight_measure',
-          values: ['g']
         }
       ],
       brand: 'Lanzarote',
@@ -81,9 +74,34 @@ export class InMemoryDataService implements InMemoryDbService {
       overallRating: 8.94
     };
 
+
+    const categories = [
+      {id: 1, name: 'skin care line'},
+      {id: 2, name: 'health line'},
+      {id: 3, name: 'men\'s line'},
+      {id: 4, name: 'kids line'},
+      {id: 5, name: 'vinotherapy'},
+      {id: 6, name: 'argan line'},
+      {id: 7, name: 'makeup'},
+      {id: 8, name: 'gift ideas'},
+      {id: 9, name: 'home'},
+      {id: 10, name: 'pets'}];
+
+    const categoriesCount = [
+      {category: {id: 1, name: 'skin care line'}, count: 0},
+      {category: {id: 2, name: 'health line'}, count: 1},
+      {category: {id: 3, name: 'men\'s line'}, count: 0},
+      {category: {id: 4, name: 'kids line'}, count: 0},
+      {category: {id: 5, name: 'vinotherapy'}, count: 1},
+      {category: {id: 6, name: 'argan line'}, count: 0},
+      {category: {id: 7, name: 'makeup'}, count: 0},
+      {category: {id: 8, name: 'gift ideas'}, count: 0},
+      {category: {id: 9, name: 'home'}, count: 0},
+      {category: {id: 10, name: 'pets'}, count: 0}];
+
     const products = [product1, product2];
 
-    return {products};
+    return {products, categories, categoriesCount};
   }
 
 }
