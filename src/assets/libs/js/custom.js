@@ -27,6 +27,33 @@
             }
         });
 
+//        $('#videos-slider').owlCarousel({
+//            loop: true,
+//            margin: 20,
+//            dots: false,
+//            nav: true,
+//            navText: [
+//                "<i class='fa fa-2x fa-angle-left'></i>",
+//                "<i class='fa fa-2x fa-angle-right'></i>"
+//            ],
+//            responsiveClass: true,
+//            responsive: {
+//                0: {
+//                    items: 1,
+//                    nav: true
+//                },
+//                600: {
+//                    items: 3,
+//                    nav: true
+//                },
+//                1000: {
+//                    items: 4,
+//                    nav: true,
+//                    loop: true
+//                }
+//            }
+//        });
+
     });
 
 	new WOW().init();
@@ -92,3 +119,20 @@
 	});
 
 })(jQuery);
+
+//$(document).ready(function() {
+//    $('.pgwSlider').pgwSlider();
+//
+//    $('.ps-current').append( '<div class="play"><img src="http://cdn1.iconfinder.com/data/icons/flavour/button_play_blue.png" />' );
+//
+//    $('#videos .pgwSlider li img').click(function(e) {
+//      autoPlayVideo(e.target.parentElement, 'jUiLL3oELN8','450','283');
+//    });
+//
+//    function autoPlayVideo(place, vcode, width, height){
+////      var owl = $('#videos-slider');
+////      owl.trigger('stop.owl.autoplay')
+//      $(place).find('img').remove();
+//      $(place).append('<iframe width="'+width+'" height="'+height+'" src="https://www.youtube.com/embed/'+vcode+'?autoplay=1&loop=1&rel=0&wmode=transparent" frameborder="0" allowfullscreen wmode="Opaque"></iframe>');
+//    }
+//});
