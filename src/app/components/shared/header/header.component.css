@@ -415,8 +415,8 @@ a {
   color: #666;
 }
 
-.top-nav-collapse{
-  background-color: #5cb85c !important;
+.top-nav-collapse {
+background-color: #454343 !important;
 }
 .navigation-bar-toggle {
   padding: 4px 6px;
@@ -452,7 +452,6 @@ a {
 
   .top-nav-collapse {
     padding: 0;
-    background-color: #000;
   }
 
   .navigation-bar-custom.top-nav-collapse {
@@ -461,6 +460,10 @@ a {
 }
 
 @media (max-width:480px) {
+
+  .navigation-bar-custom .navigation.navigation-bar-nav {
+    background-color: rgba(255,255,255,.4);
+  }
 
   .navigation-bar.navigation-bar-custom.navigation-bar-fixed-top {
     margin-bottom: 30px;
