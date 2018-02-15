@@ -12,7 +12,7 @@ export class ProductImageSliderComponent implements OnInit {
 
 
 
-  @Input("defaultImage") mainImage: string = 'assets/img/product/11.jpg';
+  @Input("defaultImage") mainImage: string = 'assets/img/product/default.jpg';
   mainImageIndex: number = 0;
 
   @Input("imageUrls") imageList: string[];

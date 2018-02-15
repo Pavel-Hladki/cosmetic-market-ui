@@ -1,6 +1,18 @@
 <div class="widget-search mb-30">
   <form action="#">
-    <input type="text" placeholder="Search here...">
+    <input [formControl]="searchField" type="text" placeholder="Search here...">
     <button type="submit"><i class="zmdi zmdi-search"></i></button>
   </form>
+
+  <div class="text-center">
+    <p class="lead" *ngIf="loading">Loading...</p>
+  </div>
+
+  <ul class="list-group">
+    <li class="list-group-item"
+        *ngFor="let product of products$ | async">
+      <!-- <img src="{{product.id}}"> -->
+      <a routerLink="/detail/{{product.id}}">{{product.name}}</a>
+    </li>
+  </ul>
 </div>

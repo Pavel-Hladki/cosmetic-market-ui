@@ -1,4 +1,4 @@
-p, li, input {
+p, input {
   font-family: "Muli", sans-serif;
   color: #666;
   font-size: 14px;
@@ -28,11 +28,6 @@ p {
  * Base Elements
  *
  */
-ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
 
 a {
   transition: all .3s ease-in 0s;
@@ -77,58 +72,6 @@ hr {
   font-style: normal;
 }
 /*todo to styles.css*/
-
-.zmdi {
-  display: inline-block;
-  font: normal normal normal 14px/1 'Material-Design-Iconic-Font';
-  font-size: inherit;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.zmdi-favorite:before {
-  content: '\f15f';
-}
-
-.zmdi-zoom-in:before {
-  content: '\f1ee';
-}
-
-.zmdi-refresh:before {
-  content: '\f1b9';
-}
-
-.zmdi-shopping-cart-plus:before {
-  content: '\f1ca';
-}
-
-.action-button > li {
-  display: inline-block;
-  margin-right: 10px;
-}
-.action-button > li:last-child {
-  margin-right: 0;
-}
-.action-button > li > a {
-  background: transparent;
-  border: 1px solid #ddd;
-  border-radius: 50%;
-  color: #999999;
-  display: block;
-  font-size: 14px;
-  height: 30px;
-  text-align: center;
-  width: 30px;
-}
-.action-button > li > a i {
-  line-height: 28px;
-}
-.action-button > li:hover > a {
-  background: #FF7F00;
-  border-color: #FF7F00;
-  color: #fff;
-}
 
 .pro-price {
   z-index: 9;
@@ -316,4 +259,3 @@ input.cart-plus-minus-box {
   }
 
 }
-

@@ -1,12 +1,15 @@
 <section class="section-sm">
   <div class="container">
     <div class="row">
+      <app-products-breadcrumb></app-products-breadcrumb>
       <div class="col-md-12">
-        <div class="col-lg-9 search-result search-result-top f-right">
-          <h5>Search results for: <span>Health Line</span></h5>
+        <div id="search-term-banner" class="_1UL_oeJ search-result search-result-top">
+          <p class="_3l16dhH">Your search results for:</p>
+          <p class="NvorkQI">"asos"</p>
         </div>
       </div>
     </div>
+
     <div class="row">
       <div class="col-lg-3">
         <div class="category-sidebar">
@@ -19,20 +22,31 @@
 
       <div class="col-lg-9 col-lg-push-3 col-xs-12">
         <div class="shop-content">
-          <div class="col-md-12">
-            <div class="search-result search-result-bottom">
-              <h5>Search result for: <span>Health Line</span></h5>
-            </div>
+
+          <div class="_1UL_oeJ search-result search-result-bottom">
+            <p class="_3l16dhH">Your search results for:</p>
+            <p class="NvorkQI">"asos"</p>
           </div>
-          <app-products-control-panel></app-products-control-panel>
+
+          <app-products-control-panel [defaultViewType]="selectedViewType"
+                                      (onSelectViewType)="selectViewType($event)"
+                                      (onSelectedSortOption)="selectSortOption($event)">
+          </app-products-control-panel>
           <div class="tab-content">
-            <div class="tab-pane active">
-              <div class="row mt-30">
+            <div [ngSwitch]="selectedViewType" class="tab-pane active">
+              <div *ngSwitchCase="viewType.LIST" class="row mt-30">
                   <!-- product card -->
-                <app-product-item-list class="col-md-12"></app-product-item-list>
-                <app-product-item-list class="col-md-12"></app-product-item-list>
-                <!--<app-product-item-grid class="col-sm-12 col-lg-4 col-md-6"></app-product-item-grid>
-                <app-product-item-grid class="col-sm-12 col-lg-4 col-md-6"></app-product-item-grid>-->
+                <app-product-item-list *ngFor="let product of products"
+                                       [product]="product"
+                                       class="col-md-12">
+                </app-product-item-list>
+              </div>
+              <div *ngSwitchCase="viewType.GRID" class="row mt-30">
+                <!-- product card -->
+                <app-product-item-grid *ngFor="let product of products"
+                                       [product]="product"
+                                       class="col-sm-12 col-lg-4 col-md-6">
+                </app-product-item-grid>
               </div>
             </div>
           </div>

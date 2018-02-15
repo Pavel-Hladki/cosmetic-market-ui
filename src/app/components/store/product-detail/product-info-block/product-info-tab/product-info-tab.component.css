@@ -127,6 +127,7 @@ li:focus, li:hover {
 
   ul.description-tab li {
     margin-right: 3%;
+    font-size: 13px;
   }
 
   ul.description-tab .tab-content.vertical-align-fix {
@@ -170,7 +171,7 @@ li:focus, li:hover {
 
 .description-tab li {
   display: inline-block;
-  margin-right: 7%;
+  margin-right: 6%;
   cursor: pointer;
 }
 .description-tab li a {

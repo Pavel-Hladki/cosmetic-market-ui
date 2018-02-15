@@ -1,34 +1,17 @@
 <div class="single-product-info">
   <div class="clearfix">
     <div class="single-product-header">
-      <h3 class="product-name text-black-1">Dummy Product Name</h3>
-      <h6 class="brand-name-2">brand name</h6>
+      <h3 class="product-name text-black-1">{{product.name}}</h3>
+      <h6 class="brand-name-2">{{product.brand}}</h6>
     </div>
     <app-product-ratings></app-product-ratings>
   </div>
-  <span class="description text-black-2">There are many variations of passages of.</span>
+  <span class="description text-black-2">{{product.briefDescription}}</span>
   <hr>
-  <app-product-info-tab [infoTabs]="[
-    {
-      name: 'details',
-      content: 'There are many variations of passages of Lorem Ipsum available, but the majo Rity have be suffered alteration in some form, by injected humou or randomis Rity have be suffered alteration in some form, by injected humou or randomis words which donot look even slightly believable. If you are going to use a passage Lorem Ipsum.'
-    },
-    {
-      name: 'active ingredients',
-      content: '<ul><li><strong>Glycerine</strong>: Moisturizer</li><li><strong>Aloe Vera</strong>: moisturizing and regenerating.</li></ul>'
-    },
-    {
-      name: 'properties',
-      content: 'There are many variations of passages of Lorem Ipsum available, but the majo Rity have be suffered alteration in some form, by injected humou or randomis Rity have be suffered alteration in some form, by injected humou or randomis words which donot look even slightly believable. If you are going to use a passage Lorem Ipsum.'
-    },
-    {
-      name: 'directions',
-      content: 'There are many variations of passages of Lorem Ipsum available, but the majo Rity have be suffered alteration in some form, by injected humou or randomis Rity have be suffered alteration in some form, by injected humou or randomis words which donot look even slightly believable. If you are going to use a passage Lorem Ipsum.'
-    }
-  ]"></app-product-info-tab>
+  <app-product-info-tab [infoTabs]="infoTabs"></app-product-info-tab>
   <!--  hr -->
   <hr>
-  <app-social-sharing [platforms]="sharingPlatforms" style="display: block; margin: 0 31px;"></app-social-sharing>
+  <app-social-sharing style="display: block; margin: 0 31px;"></app-social-sharing>
   <hr>
 
   <!-- plus-minus-pro-action -->
@@ -42,22 +25,9 @@
   </div>
   <hr>
   <div class="pro-price clearfix">
-    <h3 class="f-left">Price: $ 869.00</h3>
+    <h3 class="f-left">Price: $ {{product.price}}</h3>
     <div class="sin-pro-action f-right">
-      <ul class="action-button">
-        <li>
-          <a href="#" title="Wishlist" tabindex="0"><i class="zmdi zmdi-favorite"></i></a>
-        </li>
-        <li>
-          <a href="#" title="Quickview" tabindex="0"><i class="zmdi zmdi-zoom-in"></i></a>
-        </li>
-        <li>
-          <a href="#" title="Compare" tabindex="0"><i class="zmdi zmdi-refresh"></i></a>
-        </li>
-        <li>
-          <a href="#" title="Add to cart" tabindex="0"><i class="zmdi zmdi-shopping-cart-plus"></i></a>
-        </li>
-      </ul>
+      <app-product-actions></app-product-actions>
     </div>
   </div>
   <hr>

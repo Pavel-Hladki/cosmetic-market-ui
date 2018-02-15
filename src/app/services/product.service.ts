@@ -1,23 +1,23 @@
 import { Injectable } from '@angular/core';
 
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 
 import { Product } from '../models/product';
 
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
 import { catchError, map, tap } from 'rxjs/operators';
-
-const httpOptions = {
-  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-};
+import {httpOptions} from "./http.options";
+import {BaseService} from "./base.service";
 
 @Injectable()
-export class ProductService {
+export class ProductService extends BaseService {
 
   private productsUrl = 'api/products';  // URL to web api
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+    super();
+  }
 
   getProducts(): Observable<Product[]> {
     return this.http.get<Product[]>(this.productsUrl)
@@ -72,30 +72,5 @@ export class ProductService {
       tap(_ => this.log(`found products matching "${term}"`)),
       catchError(this.handleError<Product[]>('searchProducts', []))
     );
-  }
-
-  /**
-   * Handle Http operation that failed.
-   * Let the app continue.
-   * @param operation - name of the operation that failed
-   * @param result - optional value to return as the observable result
-   */
-  private handleError<T> (operation = 'operation', result?: T) {
-    return (error: any): Observable<T> => {
-
-      // TODO: send the error to remote logging infrastructure
-      console.error(error); // log to console instead
-
-      // TODO: better job of transforming error for user consumption
-      this.log(`${operation} failed: ${error.message}`);
-
-      // Let the app keep running by returning an empty result.
-      return of(result as T);
-    };
-  }
-
-  /** Log a ProductService message with the MessageService */
-  private log(message: string) {
-    //todo implement
   }
 }
