@@ -1,8 +1,8 @@
-ul.pagination li {
+/deep/ ul.pagination li {
   margin-right: 10px;
 }
 
-ul.pagination li a {
+/deep/ ul.pagination li a {
   font-weight: 600;
   border-radius: 3px !important;
   font-size: 16px;
@@ -17,14 +17,21 @@ ul.pagination li a {
   transition: all .3s ease-in-out 0s;
 }
 
-ul.pagination li a:hover {
-  background-color: #5672f9 !important;
+/deep/ ul.pagination li a:hover {
+  background-color: #454343 !important;
   color: #fff !important;
   border-color: transparent !important;
 }
 
-ul.pagination .active a {
-  background-color: #5672f9 !important;
+/deep/ ul.pagination .active a {
+  background-color: #454343 !important;
   color: #fff !important;
   border-color: transparent !important;
+}
+
+/deep/ .page-item.disabled .page-link {
+  color: #ddd;
+  pointer-events: none;
+  background-color: #fff;
+  border-color: #fff;
 }

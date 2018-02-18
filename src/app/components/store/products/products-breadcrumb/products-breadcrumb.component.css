@@ -1,14 +1,11 @@
-._26dhdzA{
-  margin:0 auto;
-  padding:0;
-  display:none
-}
 .breadcrumb-list{
   height:50px;
   line-height:50px;
   padding:0 16px;
-  font-size:0
+  font-size:0;
+  margin-bottom: 0;
 }
+
 .products-breadcrumb a{
   color:#2d2d2d;
   text-decoration:none

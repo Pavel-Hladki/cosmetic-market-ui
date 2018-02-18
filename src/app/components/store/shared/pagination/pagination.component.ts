@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import {PaginationService} from "../../../../services/pagination.service";
 
 @Component({
   selector: 'app-pagination',
   templateUrl: './pagination.component.html',
-  styleUrls: ['./pagination.component.css'],
-  providers:[ PaginationService ],
+  styleUrls: ['./pagination.component.css']
 })
 export class PaginationComponent implements OnInit {
 
-  constructor(private paginationService: PaginationService) { }
+  page: number = 1;
+
+  constructor() { }
 
   ngOnInit() {
   }

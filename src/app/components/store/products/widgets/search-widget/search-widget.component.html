@@ -2,13 +2,12 @@
   <form action="#">
     <input [formControl]="searchField" type="text" placeholder="Search here...">
     <button type="submit"><i class="zmdi zmdi-search"></i></button>
+    <span *ngIf="loading" style="position: absolute;top: auto;right: 1.4em;bottom: 1.2em;">
+      <img src="assets/img/loading.gif">
+    </span>
   </form>
 
-  <div class="text-center">
-    <p class="lead" *ngIf="loading">Loading...</p>
-  </div>
-
-  <ul class="list-group">
+  <ul class="list-group" style="position: absolute;">
     <li class="list-group-item"
         *ngFor="let product of products$ | async">
       <!-- <img src="{{product.id}}"> -->
