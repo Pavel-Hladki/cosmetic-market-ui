@@ -1,28 +1,23 @@
 (function ($) {
     $(document).ready(function() {
         $('#products-slider').owlCarousel({
+            center: true,
             loop: true,
+            items:6,
             margin: 20,
-            dots: false,
-            nav: true,
-            navText: [
-                "<i class='fa fa-2x fa-angle-left'></i>",
-                "<i class='fa fa-2x fa-angle-right'></i>"
-            ],
             responsiveClass: true,
+            autoplay:true,
+            autoplayTimeout:2000,
+            autoplayHoverPause:true,
             responsive: {
                 0: {
-                    items: 1,
-                    nav: true
+                    items: 1
                 },
                 600: {
-                    items: 3,
-                    nav: true
+                    items: 3
                 },
                 1000: {
-                    items: 4,
-                    nav: true,
-                    loop: true
+                    items: 4
                 }
             }
         });
