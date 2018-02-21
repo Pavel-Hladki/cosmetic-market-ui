@@ -88,7 +88,7 @@
           $(".navigation-bar-brand").prepend('<img class="aloe-logo-min" src="assets/img/icons/logoAloe-min-white.png">');
       } else {
           $(".navigation-bar-brand > img").remove();
-          $(".navigation-bar-brand").prepend('<img class="aloe-logo" src="assets/img/icons/logoAloe.png">');
+          $(".navigation-bar-brand").prepend('<img class="aloe-logo" src="assets/img/icons/logoAloe-white.png">');
       }
   }
 
