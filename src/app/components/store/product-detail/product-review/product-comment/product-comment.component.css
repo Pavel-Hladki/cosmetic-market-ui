@@ -1,0 +1,42 @@
+p {
+  font-family: "Muli", sans-serif;
+  color: #666;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+h5 {
+  font-family: "Muli", sans-serif;
+  font-weight: 600;
+  color: #333;
+}
+
+.comment-line img {
+  width: 60px;
+  margin-right: 20px;
+}
+
+.comment-line .name h5 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.comment-line .date p {
+  color: #888;
+}
+
+.comment-line .media-body {
+  background: #fff;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  margin-bottom: 30px;
+  border-radius: 2px;
+}
+
+/* small mobile :320px. */
+@media (max-width: 767px) {
+  p {
+    font-size: 12px;
+  }
+}
+

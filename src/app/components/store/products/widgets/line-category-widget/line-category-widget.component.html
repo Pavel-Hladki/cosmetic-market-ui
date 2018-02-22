@@ -1,0 +1,17 @@
+<div class="widget category-list">
+  <a (click)="toggleCollapse()" class="widget-header">
+    All Category
+    <i [ngClass] = "{'fa-caret-down': isOpened(),
+                     'fa-caret-right': !isOpened()}"
+       class="fa float-right"></i>
+  </a>
+  <div class="collapse-section" [@collapse]="collapse">
+    <ul class="category-list">
+      <li *ngFor="let categoryCount of categoryCountList">
+        <a href="#">
+          {{categoryCount.category.name}}<span>{{categoryCount.count}}</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>

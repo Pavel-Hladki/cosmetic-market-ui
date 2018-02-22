@@ -1,0 +1,96 @@
+/* -------------------------------------
+    Shop List
+------------------------------------- */
+.shop-list.product-item {
+  background: #f6f6f6 none repeat scroll 0 0;
+  overflow: hidden;
+}
+.shop-list .product-img {
+  background: #ffffff none repeat scroll 0 0;
+  float: left;
+  padding-right: 30px;
+  width: 37%;
+}
+.shop-list .product-info {
+  float: left;
+  padding: 30px 40px;
+  text-align: left;
+  width: 63%;
+}
+.shop-list .brand-name {
+  color: #999999;
+  font-style: italic;
+  font-weight: 400;
+}
+.shop-list p {
+  color: #666;
+  margin-bottom: 30px;
+}
+
+/* Normal desktop :992px. */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .shop-list .product-info {
+    padding: 25px 30px 12px;
+  }
+  .shop-list .brand-name.mb-30 {
+    margin-bottom: 10px;
+  }
+  .shop-list .pro-price {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  .shop-list p {
+    margin-bottom: 10px;
+  }
+
+}
+
+
+/* Tablet desktop :768px. */
+@media (min-width: 768px) and (max-width: 991px) {
+
+  .shop-list .product-info {
+    padding: 25px 30px 12px;
+  }
+  .shop-list .brand-name.mb-30 {
+    margin-bottom: 10px;
+  }
+  .shop-list .pro-price {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  .shop-list p {
+    margin-bottom: 20px;
+  }
+
+}
+
+
+/* small mobile :320px. */
+@media (max-width: 767px) {
+
+  .shop-list .product-info {
+    padding: 25px 30px 12px;
+  }
+  .shop-list .brand-name.mb-30 {
+    margin-bottom: 10px;
+  }
+  .shop-list .pro-price {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  .shop-list p {
+    margin-bottom: 20px;
+  }
+  .shop-list .product-img {
+    padding-right: 0;
+    width: 100%;
+  }
+  .shop-list .product-info {
+    padding: 20px 15px;
+    width: 100%;
+  }
+
+}
+
+

@@ -1,0 +1,261 @@
+p, input {
+  font-family: "Muli", sans-serif;
+  color: #666;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+h3, h6 {
+  font-family: "Muli", sans-serif;
+  font-weight: 600;
+  color: #333;
+}
+
+p {
+  color: #666;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+p {
+  color: #888;
+}
+
+/**
+ *
+ * Base Elements
+ *
+ */
+
+a {
+  transition: all .3s ease-in 0s;
+  color: #000;
+}
+
+a:focus, a:hover {
+  text-decoration: none;
+  outline: 0;
+  color: #5672f9;
+}
+
+hr {
+  border-bottom: 1px solid #eeeeee;
+  border-top: 0 none;
+  margin: 30px 0;
+  padding: 0;
+}
+
+.f-left {
+  float: left;
+}
+
+.f-right {
+  float: right;
+}
+
+.single-product-info .description {
+  font-size: 16px;
+  font-family: "Muli", sans-serif;
+  font-weight: 600;
+}
+
+.text-black-2 {
+  color: #88888c;
+}
+
+@font-face {
+  font-family: 'Material-Design-Iconic-Font';
+  src: url('/assets/fonts/Material-Design-Iconic-Font.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+/*todo to styles.css*/
+
+.pro-price {
+  z-index: 9;
+}
+
+.pro-price h3 {
+  color: #666666;
+  font-family: "Roboto",sans-serif;
+  font-weight: 400;
+  margin: 3px 0 0;
+  font-size: 20px;
+}
+
+a.button.button-black {
+  border: 0 none;
+  border-radius: 3px;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.03) inset;
+  cursor: pointer;
+  display: inline-block;
+  margin-right: 10px;
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+  background-color: #575757;
+  color: #4FC1F0;
+  font-size: 15px;
+}
+
+a.button.button-black span {
+  display: block;
+  float: left;
+  position: relative;
+  z-index: 2;
+  padding: 11px 20px;
+  font-size: 15px;
+  color: #fff;
+  font-weight: normal;
+}
+
+a.button.extra-small span {
+  padding: 8px 30px;
+  font-size: 14px;
+}
+
+a.button::after {
+  background: rgba(0, 0, 0, 0.09) none repeat scroll 0 0;
+  content: "";
+  height: 100%;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 0;
+  z-index: 1;
+}
+a.button:hover::after { width: 100% }
+
+/***************************
+  2. transtion
+****************************/
+a.button::after {
+  -webkit-transition: all 0.3s ease-out 0s;
+  -moz-transition: all 0.3s ease-out 0s;
+  -ms-transition: all 0.3s ease-out 0s;
+  -o-transition: all 0.3s ease-out 0s;
+  transition: all 0.3s ease-out 0s;
+}
+
+/* -------------------------------------
+    Single product info
+------------------------------------- */
+.single-product-info .product-name {
+  font-weight: 600;
+  margin-bottom: 5px;
+  margin-right: 15px;
+}
+.single-product-info .single-product-header {
+  float: left;
+  width: 80%;
+}
+
+.text-black-1 {
+  color: #575757;
+}
+
+.brand-name-2 {
+  color: #999999;
+  font-size: 14px;
+  font-style: italic;
+  text-transform: capitalize;
+  font-weight: 300;
+}
+
+/* -------------------------------------
+    Product color and rating
+------------------------------------- */
+.color-title {
+  color: #575757;
+  line-height: 25px;
+  margin-bottom: 0;
+  text-transform: uppercase;
+  font-size: 13px;
+  width: 70px;
+}
+
+/* -------------------------------------
+    Product Cart plus minus
+------------------------------------- */
+.cart-plus-minus {
+  border: 1px solid #cccccc;
+  height: 25px;
+  text-align: center;
+  width: 90px;
+  color: #666666;
+}
+.qtybutton {
+  background: #cccccc none repeat scroll 0 0;
+  height: 100%;
+  width: 30%;
+}
+.dec.qtybutton {
+  float: left;
+}
+
+.inc.qtybutton {
+  float: right;
+}
+
+input.cart-plus-minus-box {
+  background: transparent none repeat scroll 0 0;
+  border: 1px solid transparent;
+  box-shadow: none;
+  font-family: roboto;
+  height: 100%;
+  margin-bottom: 0;
+  padding: 0;
+  text-align: center;
+  width: 40%;
+}
+
+/* Tablet desktop :768px. */
+@media (min-width: 768px) and (max-width: 991px) {
+
+  .single-product-info .single-product-header {
+    width: 100%;
+  }
+
+  hr {
+    margin: 20px 0;
+  }
+
+}
+
+/* small mobile :320px. */
+@media (max-width: 767px) {
+
+  .single-product-info .single-product-header {
+    width: 100%;
+  }
+
+  .single-product-info .description {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  h3 {
+    font-size: 16px;
+    line-height: 20px;
+  }
+  p {
+    font-size: 12px;
+  }
+
+  hr {
+    margin: 20px 0;
+  }
+}
+
+/* Large Mobile :480px. */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+
+  .single-product-info .single-product-header {
+    width: 100%;
+  }
+
+}

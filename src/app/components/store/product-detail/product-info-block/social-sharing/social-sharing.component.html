@@ -1,0 +1,10 @@
+<div *ngIf="platforms" class="social-sharing clearfix">
+  <p class="sharing-title f-left">Share</p>
+  <ul class="action-button f-right clearfix">
+    <li *ngFor="let sharing of sharingList">
+      <a [href]="sharing.url" target="_blank" [title]="sharing.title">
+        <i [class]="sharing.cssClasses"></i>
+      </a>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,115 @@
+/* -------------------------------------
+    Featured product section
+------------------------------------- */
+.product-item {
+  margin-bottom: 30px;
+  transition: all 0.3s ease 0s;
+}
+.product-img img {
+  width: 100%;
+}
+.product-info {
+  background: #f6f6f6 none repeat scroll 0 0;
+  padding: 20px 0;
+  text-align: center;
+}
+.product-title {
+  color: #434343;
+  font-family: "Raleway",sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.pro-price {
+  color: #666666;
+  font-family: "Roboto",sans-serif;
+  font-weight: 400;
+  line-height: 20px;
+  margin-bottom: 20px;
+  z-index: 9;
+}
+.product-item:hover {
+  box-shadow: 0px 8px 13px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 767px) {
+  .product-title {
+    font-size: 13px;
+  }
+}
+/*************************
+  General
+*************************/
+a {
+  -webkit-transition: all 0.3s ease-out 0s;
+  -moz-transition: all 0.3s ease-out 0s;
+  -ms-transition: all 0.3s ease-out 0s;
+  -o-transition: all 0.3s ease-out 0s;
+  transition: all 0.3s ease-out 0s;
+}
+a:focus {
+  text-decoration: none;
+  outline: none;
+}
+a:focus,
+a:hover {
+  color: #ff7f00;
+  text-decoration: none;
+}
+a {
+  outline: medium none;
+  color: #666666;
+}
+h3,
+h6 {
+  font-family: 'Raleway', sans-serif;
+  font-weight: normal;
+  color: #434343;
+  margin-top: 0px;
+  font-style: normal;
+  font-weight: 400;
+}
+h6 a {
+  color: inherit
+}
+h3 {
+  font-size: 20px;
+}
+h6 {
+  font-size: 14px;
+}
+p {
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 20px;
+  color: #999999;
+  margin-bottom: 15px;
+}
+*::-moz-selection {
+  background: #4fc1f0;
+  color: #fff;
+  text-shadow: none;
+}
+::-moz-selection {
+  background: #4fc1f0;
+  color: #fff;
+  text-shadow: none;
+}
+
+.f-left {
+  float: left
+}
+
+/*************************
+  Input
+*************************/
+::-moz-placeholder {
+  color: #444;
+  font-size: 13px;
+}
+
+.mb-30 { margin-bottom: 30px }

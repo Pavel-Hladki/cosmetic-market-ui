@@ -1,0 +1,193 @@
+/* -------------------------------------
+    Shop Option
+------------------------------------- */
+.shop-option {
+  padding: 10px 30px;
+}
+.shop-tab {
+  line-height: 1;
+}
+.shop-tab > li {
+  display: inline-block;
+  margin-right: 5px;
+}
+.shop-tab > li:last-child {
+  margin-right: 0px;
+}
+.shop-tab li a {
+  color: #999999;
+  display: block;
+  font-size: 25px;
+  height: 30px;
+  text-align: center;
+  width: 30px;
+}
+.shop-tab li a i {
+  line-height: 30px;
+}
+.shop-tab li.active a {
+  color: #ff7f00;
+}
+.shop-tab, .short-by, .showing {
+  width: 33.3337%;
+}
+.short-by > span {
+  margin-right: 10px;
+}
+.showing span {
+  color: #999999;
+  display: block;
+  line-height: 30px;
+}
+
+/*responsive*/
+/* Large Screen  */
+@media (min-width: 1170px) and (max-width: 1400px) {
+
+}
+
+
+/* Normal desktop :992px. */
+@media (min-width: 992px) and (max-width: 1169px) {
+
+}
+
+
+/* Tablet desktop :768px. */
+@media (min-width: 768px) and (max-width: 991px) {
+
+
+}
+
+
+/* small mobile :320px. */
+@media (max-width: 767px) {
+  .shop-tab, .short-by, .showing {
+    width: auto;
+  }
+  .shop-option {
+    padding: 10px 15px;
+  }
+  .shop-tab > li {
+    margin-right: 0;
+  }
+  .shop-content .showing {
+    display: none;
+  }
+  .short-by > span {
+    margin-right: 0;
+  }
+  .short-by select {
+    padding-left: 0;
+  }
+  .short-by {
+    float: right;
+  }
+}
+/*************************
+  General
+*************************/
+.f-left {
+  float: left
+}
+.f-right {
+  float: right
+}
+
+a {
+  -webkit-transition: all 0.3s ease-out 0s;
+  -moz-transition: all 0.3s ease-out 0s;
+  -ms-transition: all 0.3s ease-out 0s;
+  -o-transition: all 0.3s ease-out 0s;
+  transition: all 0.3s ease-out 0s;
+}
+a:focus {
+  text-decoration: none;
+  outline: none;
+}
+a:focus,
+a:hover {
+  color: #ff7f00;
+  text-decoration: none;
+}
+a {
+  outline: medium none;
+  color: #666666;
+}
+ul {
+  margin: 0px;
+  padding: 0px;
+}
+li {
+  list-style: none;
+}
+*::-moz-selection {
+  background: #4fc1f0;
+  color: #fff;
+  text-shadow: none;
+}
+::-moz-selection {
+  background: #4fc1f0;
+  color: #fff;
+  text-shadow: none;
+}
+/***************************
+  Transtion
+****************************/
+select {
+  -webkit-transition: all 0.5s ease-out 0s;
+  -moz-transition: all 0.5s ease-out 0s;
+  -ms-transition: all 0.5s ease-out 0s;
+  -o-transition: all 0.5s ease-out 0s;
+  transition: all 0.5s ease-out 0s;
+}
+
+/*************************
+  Input
+*************************/
+select {
+  border: 1px solid #eeeeee;
+  color: #999999;
+  font-size: 13px;
+  height: 30px;
+  padding-left: 20px;
+}
+option {
+  background: #ffffff none repeat scroll 0 0;
+  border: 0 solid #626262;
+  font-size: 13px;
+  padding-left: 10px;
+}
+::-moz-placeholder {
+  color: #444;
+  font-size: 13px;
+}
+
+.mb-30 { margin-bottom: 30px }
+
+.box-shadow {  box-shadow: 0 0 4px rgba(0, 0, 0, 0.1); }
+
+
+@font-face {
+  font-family: 'Material-Design-Iconic-Font';
+  src: url('/assets/fonts/Material-Design-Iconic-Font.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.zmdi {
+  display: inline-block;
+  font: normal normal normal 14px/1 'Material-Design-Iconic-Font';
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.zmdi-view-list-alt:before {
+  content: '\f31f';
+}
+
+.zmdi-view-module:before {
+  content: '\f321';
+}

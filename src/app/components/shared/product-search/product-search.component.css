@@ -1,0 +1,111 @@
+/* -------------------------------------
+    Widget search
+------------------------------------- */
+.widget-search {
+  position: relative;
+}
+.widget-search input {
+  height: 50px;
+  margin-bottom: 0;
+  padding-right: 50px;
+}
+.widget-search button {
+  background: transparent none repeat scroll 0 0;
+  color: #999;
+  font-size: 20px;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  transition: all 0.3s ease 0s;
+  width: 50px;
+}
+.widget-search button:hover {
+  color: #ff7f00;
+}
+
+/*responsive*/
+/* Large Screen  */
+@media (min-width: 1170px) and (max-width: 1400px) {
+
+}
+
+
+/* Normal desktop :992px. */
+@media (min-width: 992px) and (max-width: 1169px) {
+
+}
+
+
+/* Tablet desktop :768px. */
+@media (min-width: 768px) and (max-width: 991px) {
+  .widget-search {
+    margin-top: 30px;
+  }
+
+}
+
+/* small mobile :320px. */
+@media (max-width: 767px) {
+
+  .widget-search {
+    margin-top: 30px;
+  }
+}
+
+/*************************
+  General
+*************************/
+button,
+input {
+  outline: medium none;
+  color: #666666;
+}
+*::-moz-selection {
+  background: #4fc1f0;
+  color: #fff;
+  text-shadow: none;
+}
+::-moz-selection {
+  background: #4fc1f0;
+  color: #fff;
+  text-shadow: none;
+}
+/***************************
+  Transtion
+****************************/
+input {
+  -webkit-transition: all 0.5s ease-out 0s;
+  -moz-transition: all 0.5s ease-out 0s;
+  -ms-transition: all 0.5s ease-out 0s;
+  -o-transition: all 0.5s ease-out 0s;
+  transition: all 0.5s ease-out 0s;
+}
+
+/*************************
+  Input
+*************************/
+input[type="text"] {
+  background: #fff none repeat scroll 0 0;
+  border: 1px solid transparent;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+  color: #999999;
+  font-size: 13px;
+  height: 40px;
+  margin-bottom: 20px;
+  padding-left: 20px;
+  width: 100%;
+}
+button {
+  background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+  border: medium none;
+  font-family: raleway;
+}
+input[type="text"]:focus {
+  border: 1px solid #FFBF7F;
+}
+::-moz-placeholder {
+  color: #444;
+  font-size: 13px;
+}
+
+.mb-30 { margin-bottom: 30px }
