@@ -21,7 +21,17 @@
       "styles": [
         "styles.css"
       ],
-      "scripts": [],
+      "scripts": [
+        "../node_modules/jquery/dist/jquery.min.js",
+        "../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
+        "../node_modules/jquery.easing/jquery.easing.min.js",
+        "../node_modules/jquery.scrollto/jquery.scrollTo.min.js",
+        "../node_modules/owl.carousel/dist/owl.carousel.min.js",
+        "../node_modules/wowjs/dist/wow.min.js",
+        "../src/assets/libs/js/vide/jquery.vide.js",
+        "../src/assets/libs/js/background-video.js",
+        "../src/assets/libs/js/custom.js"
+      ],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",
