@@ -1,6 +1,6 @@
 import {FormGroup} from '@angular/forms';
 export abstract class ReactiveFormsBaseClass {
-  constructor(protected formErrors: any, protected validationMessages: any) {}
+  constructor(public formErrors: any, public validationMessages: any) {}
 
   protected onValueChanged (form: FormGroup, data?: any): void {
     for (const field in this.formErrors) {
