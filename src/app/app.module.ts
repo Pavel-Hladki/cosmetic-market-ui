@@ -41,6 +41,7 @@ import { SocialSharingComponent } from './components/store/product-detail/produc
 import {DragScrollModule} from 'ngx-drag-scroll';
 import { HeaderComponent } from './components/shared/header/header.component';
 import { FooterComponent } from './components/shared/footer/footer.component';
+import { ContactUsComponent } from './components/shared/contact-us/contact-us.component';
 import { ProductActionsComponent } from './components/store/shared/product-actions/product-actions.component';
 import { ProductsBreadcrumbComponent } from './components/store/products/products-breadcrumb/products-breadcrumb.component';
 import {CategoryService} from "./services/category.service";
@@ -78,6 +79,7 @@ import {CategoryService} from "./services/category.service";
     SocialSharingComponent,
     HeaderComponent,
     FooterComponent,
+    ContactUsComponent,
     ProductActionsComponent,
     ProductsBreadcrumbComponent
   ],
