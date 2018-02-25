@@ -37,7 +37,8 @@
                                       (onSelectViewType) = "selectViewType($event)"
                                       (onSelectSortOption) = "selectSortOption($event)">
           </app-products-control-panel>
-          <div class="tab-content">
+          <div *ngIf="loading" id="load" style="z-index: 9990"></div>
+          <div *ngIf="!loading" class="tab-content">
             <div [ngSwitch]="selectedViewType" class="tab-pane active">
               <div *ngSwitchCase="viewType.LIST" class="row mt-30">
                   <!-- product card -->
@@ -55,7 +56,8 @@
               </div>
             </div>
           </div>
-          <app-pagination [pageSize] = "pageSize"
+          <app-pagination *ngIf="!loading"
+                          [pageSize] = "pageSize"
                           [page] = "filterState.page"
                           [collectionSize] = "productsTotalCount"
                           (onPageSelect) = "selectPage($event)">

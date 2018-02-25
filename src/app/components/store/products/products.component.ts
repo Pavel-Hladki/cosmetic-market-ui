@@ -20,6 +20,7 @@ export class ProductsComponent implements OnInit {
   selectedViewType: ViewType;
 
   products: Product[];
+  loading: boolean = false;
 
   readonly viewType = ViewType;
 
@@ -38,10 +39,11 @@ export class ProductsComponent implements OnInit {
 
   getProducts(): void {
     this.productService.getProducts(this.buildFilterParams())
+      .do(_ => this.loading = true)
       .subscribe(products => {
         this.products = products;
         this.productsTotalCount = this.products.length;
-      });
+        this.loading = false});
   }
 
   getStartItemIndex(): number {

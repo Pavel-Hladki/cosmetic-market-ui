@@ -1,18 +1,18 @@
 <div class="widget-search mb-30">
   <form [formGroup]="searchForm" (submit)="onSubmit()" novalidate>
 
-    <input formControlName="searchField" type="text" placeholder="Search here...">
+    <input (focus)="onSearchFieldFocus()" (blur)="onSearchFieldBlur()" formControlName="searchField" type="text" placeholder="Search here...">
     <span *ngIf = "searchField.errors?.minlength" class="error">Please type in at least {{this.searchField.errors.minlength.requiredLength}} letters...</span>
-    <button type="submit" style="position: absolute;top: auto;bottom: -0.2em;"><i class="zmdi zmdi-search" style="font-size: 24px"></i></button>
-    <span *ngIf="loading" style="position: absolute;top: auto;right: 3em;bottom: 1.2em;">
+    <button type="submit" class="search-button"><i class="zmdi zmdi-search"></i></button>
+    <span *ngIf="loading" class="search-spinner">
       <img src="assets/img/loading.gif">
     </span>
   </form>
 
-  <ul class="list-group" style="position: absolute;">
+  <ul *ngIf="isSearchFocused()" class="list-group search-result">
     <li class="list-group-item"
         *ngFor="let product of products$ | async">
-      <!-- <img src="{{product.id}}"> -->
+      <img src="{{product.mainImage}}" class="product-icon-small">
       <a routerLink="/products/{{product.id}}">{{product.name}}</a>
     </li>
   </ul>
