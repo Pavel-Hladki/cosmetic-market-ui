@@ -167,23 +167,6 @@ option {
 
 .box-shadow {  box-shadow: 0 0 4px rgba(0, 0, 0, 0.1); }
 
-
-@font-face {
-  font-family: 'Material-Design-Iconic-Font';
-  src: url('/assets/fonts/Material-Design-Iconic-Font.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
-}
-
-.zmdi {
-  display: inline-block;
-  font: normal normal normal 14px/1 'Material-Design-Iconic-Font';
-  font-size: inherit;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
 .zmdi-view-list-alt:before {
   content: '\f31f';
 }

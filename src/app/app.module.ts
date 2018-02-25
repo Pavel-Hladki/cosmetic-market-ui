@@ -44,6 +44,7 @@ import { FooterComponent } from './components/shared/footer/footer.component';
 import { ProductActionsComponent } from './components/store/shared/product-actions/product-actions.component';
 import { ProductsBreadcrumbComponent } from './components/store/products/products-breadcrumb/products-breadcrumb.component';
 import {CategoryService} from "./services/category.service";
+import { WidgetsComponent } from './components/store/products/widgets/widgets.component';
 
 @NgModule({
   //todo separate on several modules
@@ -79,7 +80,8 @@ import {CategoryService} from "./services/category.service";
     HeaderComponent,
     FooterComponent,
     ProductActionsComponent,
-    ProductsBreadcrumbComponent
+    ProductsBreadcrumbComponent,
+    WidgetsComponent
   ],
   imports: [
     BrowserModule,
@@ -93,7 +95,7 @@ import {CategoryService} from "./services/category.service";
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.
     // Remove it when a real server is ready to receive requests.
-    HttpClientInMemoryWebApiModule.forRoot(
+     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
     ),
     NgbModule.forRoot()

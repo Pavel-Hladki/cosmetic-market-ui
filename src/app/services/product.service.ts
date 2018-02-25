@@ -1,14 +1,15 @@
 import { Injectable } from '@angular/core';
 
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 
 import { Product } from '../models/product';
 
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
-import { catchError, map, tap } from 'rxjs/operators';
+import { catchError, tap } from 'rxjs/operators';
 import {httpOptions} from "./http.options";
 import {BaseService} from "./base.service";
+
 
 @Injectable()
 export class ProductService extends BaseService {
@@ -19,8 +20,9 @@ export class ProductService extends BaseService {
     super();
   }
 
-  getProducts(): Observable<Product[]> {
-    return this.http.get<Product[]>(this.productsUrl)
+  getProducts(params?: FilterParams): Observable<Product[]> {
+    const httpParams: HttpParams = params && params.toHttpParams();
+    return this.http.get<Product[]>(this.productsUrl, {params: httpParams})
       .pipe(
         tap(products => this.log(`fetched products`)),
         catchError(this.handleError('getProducts', []))
@@ -63,14 +65,39 @@ export class ProductService extends BaseService {
   }
 
   /** GET products whose name contains search term */
-  searchProducts(term: string): Observable<Product[]> {
+  autocompleteName(term: string): Observable<Product[]> {
     if (!term.trim()) {
       // if not search term, return empty product array.
       return of([]);
     }
     return this.http.get<(Product)[]>(`${this.productsUrl}?name=${term}`).pipe(
       tap(_ => this.log(`found products matching "${term}"`)),
-      catchError(this.handleError<Product[]>('searchProducts', []))
+      catchError(this.handleError<Product[]>('autocompleteName', []))
     );
+  }
+}
+
+
+export class FilterParams {
+
+  constructor(public page: number,
+              public pageSize: number,
+              public categoryIds: number[] = [],
+              public searchTerm: string,
+              public sortField: string,
+              public sortOrder: string
+  ) {}
+
+  public toHttpParams(): HttpParams {
+    const params  = new HttpParams();
+    this.searchTerm && params.set("term", this.searchTerm);
+    this.page && params.set("page", String(this.page));
+    this.pageSize && params.set("pageSize", String(this.pageSize));
+    this.sortField && params.set("sortField", this.sortField);
+    this.sortOrder && params.set("sortOrder", this.sortOrder);
+
+    this.categoryIds.forEach(categoryId => params
+      .append("categoryIds", String(categoryId)));
+    return params;
   }
 }

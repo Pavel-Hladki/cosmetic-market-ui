@@ -1,8 +1,10 @@
 <div class="widget-search mb-30">
-  <form action="#">
-    <input [formControl]="searchField" type="text" placeholder="Search here...">
-    <button type="submit"><i class="zmdi zmdi-search"></i></button>
-    <span *ngIf="loading" style="position: absolute;top: auto;right: 1.4em;bottom: 1.2em;">
+  <form [formGroup]="searchForm" (submit)="onSubmit()" novalidate>
+
+    <input formControlName="searchField" type="text" placeholder="Search here...">
+    <span *ngIf = "searchField.errors?.minlength" class="error">Please type in at least {{this.searchField.errors.minlength.requiredLength}} letters...</span>
+    <button type="submit" style="position: absolute;top: auto;bottom: -0.2em;"><i class="zmdi zmdi-search" style="font-size: 24px"></i></button>
+    <span *ngIf="loading" style="position: absolute;top: auto;right: 3em;bottom: 1.2em;">
       <img src="assets/img/loading.gif">
     </span>
   </form>
@@ -11,7 +13,7 @@
     <li class="list-group-item"
         *ngFor="let product of products$ | async">
       <!-- <img src="{{product.id}}"> -->
-      <a routerLink="/detail/{{product.id}}">{{product.name}}</a>
+      <a routerLink="/products/{{product.id}}">{{product.name}}</a>
     </li>
   </ul>
 </div>

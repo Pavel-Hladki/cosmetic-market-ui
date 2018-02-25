@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../../../models/product';
 
-import { ProductService } from '../../../services/product.service';
+import { ProductService, FilterParams } from '../../../services/product.service';
 import { ViewType } from "./products-control-panel/products-control-panel.component";
+import {defaultIfNull} from "../../../utils/utils";
 
 @Component({
   selector: 'app-products',
@@ -11,44 +12,104 @@ import { ViewType } from "./products-control-panel/products-control-panel.compon
 })
 export class ProductsComponent implements OnInit {
 
+  filterState: FilterState;
+
+  productsTotalCount: number;
+  pageSize: number = 30;
+
+  selectedViewType: ViewType;
+
   products: Product[];
-  selectedSortOptionId: string;
-  selectedViewType: ViewType = ViewType.GRID;
 
   readonly viewType = ViewType;
 
   constructor(private productService: ProductService) { }
 
   ngOnInit() {
-    this.getProducts();
+    this.filterState = JSON.parse(sessionStorage.getItem("productFilter"));
+    if (!this.filterState) {
+      this.filterState = new FilterState();
+      this.syncStorageFilter();
+    }
+
+    this.selectedViewType = ViewType[localStorage.getItem("viewType")];
+    this.selectViewType(defaultIfNull(this.selectedViewType, ViewType.GRID));
   }
 
   getProducts(): void {
-    this.productService.getProducts()
-      .subscribe(products => this.products = products);
+    this.productService.getProducts(this.buildFilterParams())
+      .subscribe(products => {
+        this.products = products;
+        this.productsTotalCount = this.products.length;
+      });
   }
 
-  selectSortOption(sortOptionId: string): void {
-    this.selectedSortOptionId = sortOptionId;
+  getStartItemIndex(): number {
+    return this.calculatePageItemIndex(this.filterState.page) + 1;
+  }
+
+  getEndItemIndex(): number {
+    let nextPageItemIndex = this.calculatePageItemIndex(this.filterState.page + 1);
+
+    return nextPageItemIndex > this.productsTotalCount
+      ? this.productsTotalCount : nextPageItemIndex
   }
 
   selectViewType(viewType: ViewType): void {
-    this.selectedViewType = viewType;
+      this.selectedViewType = viewType;
+      this.pageSize = viewType === ViewType.GRID ? 30 : 15;
+      this.getProducts();
+      localStorage.setItem("viewType", ViewType[viewType]);
   }
 
-  add(name: string): void {
-    name = name.trim();
-    if (!name) { return; }
-    this.productService.addProduct({ name } as Product)
-      .subscribe(product => {
-        this.products.push(product);
-      });
+  selectSortOption(sortOptionName: string): void {
+    this.filterState.sortField = sortOptionName;
+    this.updateProductList();
   }
 
-  delete(product: Product): void {
-    this.productService.deleteProduct(product)
-      .subscribe(_ => {
-        this.products = this.products.filter(p => p !== product)
-      });
+  selectCategories(categoryIds: number[]): void {
+    this.filterState.categoryIds = categoryIds;
+    this.updateProductList();
   }
+
+  selectTerm(term: string): void {
+    this.filterState.searchTerm = term;
+    this.updateProductList();
+  }
+
+  selectPage(page: number) {
+    this.filterState.page = page;
+    this.updateProductList();
+  };
+
+  private calculatePageItemIndex(page: number): number {
+    return (page - 1) * this.pageSize;
+  }
+
+  private syncStorageFilter() {
+    sessionStorage.setItem("productFilter", JSON.stringify(this.filterState));
+  }
+
+  private updateProductList() {
+    this.getProducts();
+    this.syncStorageFilter();
+  }
+
+  private buildFilterParams(): FilterParams {
+      return new FilterParams(
+        this.filterState.page, this.pageSize,
+        this.filterState.categoryIds, this.filterState.searchTerm,
+        this.filterState.sortField, this.filterState.sortOrder);
+  }
+}
+
+class FilterState {
+
+  public page: number = 1;
+  public categoryIds: number[];
+  public searchTerm: string;
+  public sortField: string = 'name';
+  public sortOrder: string;
+
+  constructor() {}
 }

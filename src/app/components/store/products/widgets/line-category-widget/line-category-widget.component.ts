@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {animate, state, style, transition, trigger} from "@angular/animations";
 import {CategoryCount} from "../../../../../models/product-category";
 import {CategoryService} from "../../../../../services/category.service";
+import {defaultIfNull} from "../../../../../utils/utils";
 
 @Component({
   selector: 'app-products-line-category-widget',
@@ -26,13 +27,16 @@ import {CategoryService} from "../../../../../services/category.service";
 })
 export class LineCategoryComponent implements OnInit {
 
-  collapse: string = 'open';
+  @Input("categoryIds") selectedCategoryIds: number[];
+  @Output() onCategoriesChange = new EventEmitter<number[]>();
 
+  collapse: string = 'open';
   categoryCountList: CategoryCount[];
 
   constructor(private categoryService: CategoryService) { }
 
   ngOnInit() {
+    this.selectedCategoryIds = this.selectedCategoryIds || [];
     this.getCategoriesCount();
   }
 
@@ -47,5 +51,20 @@ export class LineCategoryComponent implements OnInit {
 
   isOpened(): boolean {
     return this.collapse === 'open';
+  }
+
+  selectCategory(categoryId: number) {
+    if(this.isCategorySelected(categoryId)) {
+      this.selectedCategoryIds = this.selectedCategoryIds
+        .filter(item => item !== categoryId);
+    } else {
+      this.selectedCategoryIds.push(categoryId);
+    }
+
+    this.onCategoriesChange.emit(this.selectedCategoryIds);
+  }
+
+  isCategorySelected(categoryId: number): boolean {
+    return this.selectedCategoryIds.includes(categoryId);
   }
 }

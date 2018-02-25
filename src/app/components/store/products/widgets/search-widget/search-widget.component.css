@@ -23,6 +23,10 @@
   color: #ff7f00;
 }
 
+.zmdi-search:before {
+  content: '\f1c3';
+}
+
 /*responsive*/
 /* Large Screen  */
 @media (min-width: 1170px) and (max-width: 1400px) {
@@ -109,5 +113,34 @@ input[type="text"]:focus {
 }
 
 .mb-30 { margin-bottom: 30px }
+
+.error {
+  position: absolute;
+  top: -2.0em;
+  left: 0;
+  padding: .2em 1em .1em;
+  background-color: #f66;
+  border: 1px solid #f00;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 12px;
+}
+.error::after,
+.error::before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 15px;
+  border: solid transparent;
+}
+.error::after {
+  margin-left: 1px;
+  border-top-color: #f66;
+  border-width: 7px;
+}
+.error::before {
+  border-top-color: #f00;
+  border-width: 8px;
+}
 
 

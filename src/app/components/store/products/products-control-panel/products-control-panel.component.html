@@ -3,7 +3,7 @@
     <!-- showing -->
     <div class="showing f-left text-left">
       <span>
-        Showing : {{startItemIndex | number:'2.0-0'}}-{{endItemIndex | number:'2.0-0'}} of {{itemCount}}.
+        Showing : {{startItemsIndex | number:'2.0-0'}}-{{endItemsIndex | number:'2.0-0'}} of {{itemsCount}}.
       </span>
     </div>
     <!-- short-by -->
@@ -12,7 +12,9 @@
       <select #sortOptionsSelect
               (change)="selectSortOption(sortOptionsSelect.value)"
               title="Sort by :">
-        <option *ngFor="let option of sortOptions" [value]="option.value">
+        <option *ngFor="let option of sortOptions"
+                [value]="option.id"
+                [selected]="isSelectedSortOption(option.id)">
           {{option.name}}
         </option>
       </select>

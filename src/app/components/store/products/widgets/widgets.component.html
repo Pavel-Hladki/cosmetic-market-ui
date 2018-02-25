@@ -1,0 +1,7 @@
+<!--todo to popup when size is small less than 768-->
+<app-search-widget [term]="searchTerm"
+                   (onTermSelect)="selectTerm($event)">
+</app-search-widget>
+<app-products-line-category-widget [categoryIds]="categoryIds"
+                                   (onCategoriesChange)="selectCategories($event)">
+</app-products-line-category-widget>
