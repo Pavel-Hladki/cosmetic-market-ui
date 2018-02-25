@@ -3,10 +3,14 @@
   <div class="container">
     <!-- Row Start -->
     <div class="row">
-      <div class="col-md-10 offset-md-1 col-lg-4 offset-lg-0">
-        <app-account-navigation></app-account-navigation>
-      </div>
-      <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-0">
+      <!--<div class="col-md-10 offset-md-1 col-lg-4 offset-lg-0">-->
+        <!--<app-account-navigation></app-account-navigation>-->
+      <!--</div>-->
+
+      <div class="col-md-12 col-lg-12">
+        <div class="buttons">
+          <button class="pull-right" (click)="onCreateForm()">+</button>
+        </div>
         <router-outlet></router-outlet>
       </div>
     </div>
@@ -14,3 +18,76 @@
   </div>
   <!-- Container End -->
 </section>
+
+<div id="addProduct" class="modal message-box animated fade" role="dialog">
+  <div class="mb-container col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2
+  col-sm-8 col-sm-offset-2  col-xs-8 col-xs-offset-2">
+    <div>
+      <div class="mb-content">
+        <h3 style="text-align: center">Создать продукт:</h3>
+        <form [formGroup]="productForm">
+          <div class="form-horizontal col-lg-12">
+
+            <div class="form-group">
+              <label class="col-md-3 col-xs-12 control-label pull-left">Name:</label>
+              <div class="col-md-6 col-xs-12">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
+                  <input type="text" class="form-control" formControlName="name" title="" required>
+                </div>
+                <span class="help-block">Enter product name</span>
+                <div class="alert alert-danger" *ngIf="!productForm.get('name').valid
+          && formErrors.name">{{ formErrors.name }}</div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-md-3 col-xs-12 control-label pull-left">Description:</label>
+              <div class="col-md-6 col-xs-12">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
+                  <input type="text" class="form-control" formControlName="description" title="" required>
+                </div>
+                <span class="help-block">Enter description</span>
+                <div class="alert alert-danger" *ngIf="!productForm.get('description').valid
+           && formErrors.description">{{ formErrors.description }}</div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-md-3 col-xs-12 control-label">Category:</label>
+              <div class="col-md-6 col-xs-12">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
+                  <input type="text" class="form-control" formControlName="category" title="" required>
+                </div>
+                <span class="help-block">Enter category</span>
+                <div class="alert alert-danger" *ngIf="!productForm.get('category').valid
+          && formErrors.category">{{ formErrors.category }}</div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-md-3 col-xs-12 control-label">Price:</label>
+              <div class="col-md-6 col-xs-12">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
+                  <input type="text" class="form-control" formControlName="price" title="" required>
+                </div>
+                <span class="help-block">Enter price</span>
+                <div class="alert alert-danger" *ngIf="!productForm.get('price').valid
+          && formErrors.price">{{ formErrors.price }}</div>
+              </div>
+            </div>
+
+          </div>
+        </form>
+
+        <div>
+          <button class="btn btn-default btn-lg btn-logout" (click)="onAddNewProduct()">Add</button>
+          <button class="btn btn-default btn-lg btn-logout" data-dismiss="modal">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -69,3 +69,7 @@
 #contactModal .modal-body {
   margin-bottom: 20px;
 }
+#contactModal .btn-success {
+  background-color: #337f25;
+  border-color: #337f25;
+}
