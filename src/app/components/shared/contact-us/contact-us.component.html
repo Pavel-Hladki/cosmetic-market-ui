@@ -2,40 +2,40 @@
      aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-        <h3 id="contactModalLabel">We'd Love to Hear From You</h3>
+      <div class="modal-header row">
+        <div class="col-md-11">
+          <h3 id="contactModalLabel">Форма обратной связи</h3>
+          <p>Здесь вы можете отправить нам сообщение.</p>
+        </div>
+        <div class="col-md-1">
+          <button type="button" class="close pull-right" data-dismiss="modal" aria-hidden="true">×</button>
+        </div>
       </div>
       <div class="modal-body">
         <form class="form-horizontal col-sm-12">
-          <div class="form-group"><label>Name</label><input class="form-control required"
-                                                            placeholder="Your name" data-placement="top"
+          <div class="form-group"><label>Имя</label><input class="form-control required"
+                                                            placeholder="Ваше имя" data-placement="top"
                                                             data-trigger="manual"
                                                             data-content="Must be at least 3 characters long, and must only contain letters."
                                                             type="text"></div>
-          <div class="form-group"><label>Message</label><textarea class="form-control"
-                                                                  placeholder="Your message here.."
+          <div class="form-group"><label>Сообщение</label><textarea class="form-control"
+                                                                  placeholder="Ваше сообщение здесь.."
                                                                   data-placement="top"
                                                                   data-trigger="manual"></textarea></div>
           <div class="form-group"><label>E-Mail</label><input class="form-control email"
-                                                              placeholder="email@you.com (so that we can contact you)"
+                                                              placeholder="email@you.com (мы сможем связаться с вами)"
                                                               data-placement="top" data-trigger="manual"
                                                               data-content="Must be a valid e-mail address (user@gmail.com)"
                                                               type="text"></div>
-          <div class="form-group"><label>Phone</label><input class="form-control phone"
+          <div class="form-group"><label>Телефон</label><input class="form-control phone"
                                                              placeholder="999-999-9999" data-placement="top"
                                                              data-trigger="manual"
                                                              data-content="Must be a valid phone number (999-999-9999)"
                                                              type="text"></div>
           <div class="form-group">
-            <button type="submit" class="btn btn-success float-right">Send It!</button>
-            <p class="help-block float-left text-danger hide" id="form-error">&nbsp; The form is not
-              valid.</p>
+            <button type="submit" class="btn btn-success float-right">Отправить!</button>
           </div>
         </form>
-      </div>
-      <div class="modal-footer">
-        <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
       </div>
     </div>
   </div>
