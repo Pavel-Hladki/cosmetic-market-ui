@@ -1,28 +1,4 @@
 (function ($) {
-    $(document).ready(function() {
-        $('#products-slider').owlCarousel({
-            center: true,
-            loop: true,
-            items:6,
-            margin: 20,
-            responsiveClass: true,
-            autoplay:true,
-            autoplayTimeout:2000,
-            autoplayHoverPause:true,
-            responsive: {
-                0: {
-                    items: 1
-                },
-                600: {
-                    items: 3
-                },
-                1000: {
-                    items: 4
-                }
-            }
-        });
-    });
-
 	new WOW().init();
 
 	//jQuery to collapse the navbar on scroll

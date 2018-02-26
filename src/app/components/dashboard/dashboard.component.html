@@ -24,7 +24,7 @@
             <div class="wow bounceInDown" data-wow-delay="0.4s">
               <div class="section-heading">
                 <h2>О нас</h2>
-                <p>   Мы являемся официальным представителем в Беларуси компании <span>Aloe Plus Lanzarote</span> -
+                <p> Мы являемся официальным представителем в Беларуси компании <span>Aloe Plus Lanzarote</span> -
                   Испанского производителя натуральной косметики.</p>
                 <p>Главный принцип в нашей работе – это любовь и преданность своему делу.
                   Мы занимаемся любимым делом, отдаемся ему, и надеемся на то, что наше дело приносит
@@ -92,7 +92,20 @@
         <div class="col-xl-12">
           <div class="wow bounceInDown" data-wow-delay="0.4s">
             <div class="section-heading">
-              <h2>Бестселлеры</h2>
+              <h2>Продукция</h2>
+              <div>
+                <ul class="nav nav-pills">
+                  <li class="nav-item">
+                    <a class="nav-link active" data-toggle="pill" href="#bestsellers">Бестселлеры</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" data-toggle="pill" href="#sets">Наборы</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" data-toggle="pill" href="#stock">Акции</a>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
@@ -105,200 +118,17 @@
         <hr class="marginbot-50">
       </div>
     </div>
-    <div id="products-slider" class="owl-carousel owl-theme">
-      <div class="product">
-        <div class="item-image">
-          <img src="assets/img/155-con.jpg" class="img-fluid" alt="">
-          <div class="hover-overlay">
-            <ul class="list-unstyled list-inline">
-              <li class="list-inline-item"><a href="" class="cart"><i class="icon-cart-1"></i></a></li>
-              <li class="list-inline-item"><a href="#" class="expand" data-target="#cart-popup-1"><i class="icon-expand"></i></a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="item-info">
-          <div class="clearfix">
-            <h5 class="float-left">GEL DÉRMICO DE ALOE VERA 250ml</h5>
-          </div>
-          <div>
-            <ul class="rate list-unstyled list-inline float-left">
-              <li class="list-inline-item"><i class="fa fa-star"></i>
-              </li>
-              <li class="list-inline-item"><i class="fa fa-star"></i>
-              </li>
-              <li class="list-inline-item"><i class="fa fa-star"></i>
-              </li>
-              <li class="list-inline-item"><i class="fa fa-star"></i>
-              </li>
-              <li class="list-inline-item"><i class="fa fa-star"></i>
-              </li>
-            </ul> <span class="price float-right">70.00$</span>
-          </div>
-        </div>
+    <div class="tab-content">
+      <div class="container-fluid active drivers-main tab-pane" id="bestsellers">
+        <app-bestsellers></app-bestsellers>
       </div>
-      <div class="product">
-        <div class="item-image">
-          <img src="assets/img/cesta-celebraciones.jpg" class="img-fluid" alt="">
-          <div class="hover-overlay">
-            <ul class="list-unstyled list-inline">
-              <li class="list-inline-item"><a href="" class="cart"><i class="icon-cart-1"></i></a>
-              </li>
-              <li class="list-inline-item"><a href="#" class="expand" data-target="#cart-popup-1"><i class="icon-expand"></i></a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="item-info">
-          <div class="clearfix">
-            <h5 class="float-left">GEL DÉRMICO DE ALOE VERA 250ml</h5>
-          </div>
-          <div>
-            <ul class="rate list-unstyled list-inline float-left">
-              <li class="list-inline-item"><i class="fa fa-star"></i>
-              </li>
-              <li class="list-inline-item"><i class="fa fa-star"></i>
-              </li>
-              <li class="list-inline-item"><i class="fa fa-star"></i>
-              </li>
-              <li class="list-inline-item"><i class="fa fa-star"></i>
-              </li>
-              <li class="list-inline-item"><i class="fa fa-star"></i>
-              </li>
-            </ul> <span class="price float-right">70.00$</span>
-          </div>
-        </div>
+      <div class="container-fluid drivers-main tab-pane" id="sets">
+        <app-sets style="height: 100%;"></app-sets>
       </div>
-      <div class="product">
-        <div class="item-image">
-          <img src="assets/img/155-con.jpg" class="img-fluid" alt="">
-          <div class="hover-overlay">
-            <ul class="list-unstyled list-inline">
-              <li class="list-inline-item"><a href="" class="cart"><i class="icon-cart-1"></i></a>
-              </li>
-              <li class="list-inline-item"><a href="#" class="expand" data-target="#cart-popup-1"><i class="icon-expand"></i></a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="item-info">
-          <div class="clearfix">
-            <h5 class="float-left">GEL DÉRMICO DE ALOE VERA 250ml</h5>
-          </div>
-          <div>
-            <ul class="rate list-unstyled list-inline float-left">
-              <li class="list-inline-item"><i class="fa fa-star"></i>
-              </li>
-              <li class="list-inline-item"><i class="fa fa-star"></i>
-              </li>
-              <li class="list-inline-item"><i class="fa fa-star"></i>
-              </li>
-              <li class="list-inline-item"><i class="fa fa-star"></i>
-              </li>
-              <li class="list-inline-item"><i class="fa fa-star"></i>
-              </li>
-            </ul> <span class="price float-right">70.00$</span>
-          </div>
-        </div>
-      </div>
-      <div class="product">
-        <div class="item-image">
-          <img src="assets/img/cesta-celebraciones.jpg" class="img-fluid" alt="">
-          <div class="hover-overlay">
-            <ul class="list-unstyled list-inline">
-              <li class="list-inline-item"><a href="" class="cart"><i class="icon-cart-1"></i></a>
-              </li>
-              <li class="list-inline-item"><a href="#" class="expand" data-target="#cart-popup-1"><i class="icon-expand"></i></a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="item-info">
-          <div class="clearfix">
-            <h5 class="float-left">GEL DÉRMICO DE ALOE VERA 250ml</h5>
-          </div>
-          <div>
-            <ul class="rate list-unstyled list-inline float-left">
-              <li class="list-inline-item"><i class="fa fa-star"></i>
-              </li>
-              <li class="list-inline-item"><i class="fa fa-star"></i>
-              </li>
-              <li class="list-inline-item"><i class="fa fa-star"></i>
-              </li>
-              <li class="list-inline-item"><i class="fa fa-star"></i>
-              </li>
-              <li class="list-inline-item"><i class="fa fa-star"></i>
-              </li>
-            </ul> <span class="price float-right">70.00$</span>
-          </div>
-        </div>
-      </div>
-      <div class="product">
-        <div class="item-image">
-          <img src="assets/img/155-con.jpg" class="img-fluid" alt="">
-          <div class="hover-overlay">
-            <ul class="list-unstyled list-inline">
-              <li class="list-inline-item"><a href="" class="cart"><i class="icon-cart-1"></i></a>
-              </li>
-              <li class="list-inline-item"><a href="#" class="expand" data-target="#cart-popup-1"><i class="icon-expand"></i></a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="item-info">
-          <div class="clearfix">
-            <h5 class="float-left">GEL DÉRMICO DE ALOE VERA 250ml</h5>
-          </div>
-          <div>
-            <ul class="rate list-unstyled list-inline float-left">
-              <li class="list-inline-item"><i class="fa fa-star"></i>
-              </li>
-              <li class="list-inline-item"><i class="fa fa-star"></i>
-              </li>
-              <li class="list-inline-item"><i class="fa fa-star"></i>
-              </li>
-              <li class="list-inline-item"><i class="fa fa-star"></i>
-              </li>
-              <li class="list-inline-item"><i class="fa fa-star"></i>
-              </li>
-            </ul> <span class="price float-right">70.00$</span>
-          </div>
-        </div>
-      </div>
-      <div class="product">
-        <div class="item-image">
-          <img src="assets/img/cesta-celebraciones.jpg" class="img-fluid" alt="">
-          <div class="hover-overlay">
-            <ul class="list-unstyled list-inline">
-              <li class="list-inline-item"><a href="" class="cart"><i class="icon-cart-1"></i></a>
-              </li>
-              <li class="list-inline-item"><a href="#" class="expand" data-target="#cart-popup-1"><i class="icon-expand"></i></a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="item-info">
-          <div class="clearfix">
-            <h5 class="float-left">GEL DÉRMICO DE ALOE VERA 250ml</h5>
-          </div>
-          <div>
-            <ul class="rate list-unstyled list-inline float-left">
-              <li class="list-inline-item"><i class="fa fa-star"></i>
-              </li>
-              <li class="list-inline-item"><i class="fa fa-star"></i>
-              </li>
-              <li class="list-inline-item"><i class="fa fa-star"></i>
-              </li>
-              <li class="list-inline-item"><i class="fa fa-star"></i>
-              </li>
-              <li class="list-inline-item"><i class="fa fa-star"></i>
-              </li>
-            </ul> <span class="price float-right">70.00$</span>
-          </div>
-        </div>
+      <div class="container-fluid drivers-main tab-pane" id="stock">
+        <app-stock></app-stock>
       </div>
     </div>
-
   </div>
 </section>
 <!-- /Section: products -->
@@ -313,7 +143,7 @@
           <div class="wow bounceInDown" data-wow-delay="0.4s">
             <div class="section-heading">
               <h2>Категории</h2>
-              <h4>Наша продукция сделана для каждого:</h4>
+              <h4>Наша продукция создана для каждого:</h4>
               <i class="fa fa-2x fa-angle-down"></i>
             </div>
           </div>
@@ -357,7 +187,7 @@
       </div>
       <h3>Для дома и животных</h3>
       <p class="category-list-description">Средства для дома и животных сделаны на основе натуральных ингредиентов.
-       </p>
+      </p>
       <p class="category-list-footer">
         <a class="btn">Подробнее</a>
       </p>
@@ -388,8 +218,9 @@
     </div>
     <div class="row">
       <div class="col-xl-8 col-lg-8 col-md-12 col-12">
-        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A3cd515b3366b44acdb3b4f16b11700910b8f8151630ddaec0acc46a7f390a967&amp;source=constructor"
-                width="100%" height="300" frameborder="0"></iframe>
+        <iframe
+          src="https://yandex.ru/map-widget/v1/?um=constructor%3A3cd515b3366b44acdb3b4f16b11700910b8f8151630ddaec0acc46a7f390a967&amp;source=constructor"
+          width="100%" height="300" frameborder="0"></iframe>
       </div>
       <div class="col-xl-4 col-lg-4 col-md-12 col-12">
         <div class="widget-contact">

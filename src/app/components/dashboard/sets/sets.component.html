@@ -1,0 +1,21 @@
+<div id="sets-slider" class="owl-carousel owl-theme">
+  <div class="product" *ngFor="let set of listSets">
+    <div class="item-image">
+      <img src="{{set.photo}}" class="img-fluid" alt="">
+      <div class="hover-overlay">
+        <ul class="list-unstyled list-inline">
+          <li class="list-inline-item"><a href="#" class="expand" data-target="#cart-popup-1"><i class="icon-expand"></i></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="item-info">
+      <div class="clearfix">
+        <h5 class="float-left">{{set.name}}</h5>
+      </div>
+      <div>
+        <span class="price ">{{set.price}}</span>
+      </div>
+    </div>
+  </div>
+</div>
