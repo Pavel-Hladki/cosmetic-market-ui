@@ -1,19 +1,22 @@
-<section class="section" style="background: #fff;"> <!--todo add bg-light when customized to #fff -->
+<section class="section-sm"> <!--todo add bg-light when customized to #fff -->
   <div class="container">
-        <div *ngIf="product" class="product-details">
-          <div class="row">
-            <app-products-breadcrumb></app-products-breadcrumb>
-          </div>
-          <div class="row product-description">
-            <app-product-image-slider [imageUrls]="imageUrls" class="col-md-5 col-sm-12">
-            </app-product-image-slider>
+    <div class="row">
+      <app-products-breadcrumb>
+        <li ><a routerLink="/products">Products</a></li>
+        <li *ngIf="product">{{getBreadcrumbName()}}</li>
+      </app-products-breadcrumb>
+    </div>
+    <div *ngIf="product" class="product-details">
+      <div class="row product-description">
+        <app-product-image-slider [imageUrls]="imageUrls" class="col-md-5 col-sm-12">
+        </app-product-image-slider>
 
-            <app-product-info-block [product]="product" class="col-md-7 col-sm-12">
-            </app-product-info-block>
-          </div>
-          <div class="row content">
-            <app-product-review></app-product-review>
-          </div>
-        </div>
+        <app-product-info-block [product]="product" class="col-md-7 col-sm-12">
+        </app-product-info-block>
       </div>
+      <div class="row content">
+        <app-product-review></app-product-review>
+      </div>
+    </div>
+  </div>
 </section>

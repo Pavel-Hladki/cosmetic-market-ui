@@ -57,6 +57,10 @@ export class ProductsComponent implements OnInit {
       ? this.productsTotalCount : nextPageItemIndex
   }
 
+  isSearch() {
+    return this.filterState.searchTerm != null;
+  }
+
   selectViewType(viewType: ViewType): void {
       this.selectedViewType = viewType;
       this.pageSize = viewType === ViewType.GRID ? 30 : 15;

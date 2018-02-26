@@ -35,6 +35,10 @@ export class ProductDetailComponent implements OnInit {
       });
   }
 
+  getBreadcrumbName() {
+    return this.product.name.charAt(0).toUpperCase() + this.product.name.slice(1).toLowerCase();
+  }
+
   goBack(): void {
     this.location.back();
   }

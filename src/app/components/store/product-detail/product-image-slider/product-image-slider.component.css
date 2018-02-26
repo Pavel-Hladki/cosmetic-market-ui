@@ -11,7 +11,7 @@ a {
 }
 
 img.p-c.active  {
-  border: 1px solid #FF7F00;
+  border: 1px solid #28c3ab;
 }
 
 a:focus, a:hover {
@@ -241,7 +241,7 @@ button {
 }
 .slick-arrow-3:hover .slick-arrow {}
 .slick-arrow-3 .arrow-prev.slick-arrow:hover, .slick-arrow-3 .arrow-next.slick-arrow:hover {
-  color: #FF7F00;
+  color: #28c3ab;
 }
 
 

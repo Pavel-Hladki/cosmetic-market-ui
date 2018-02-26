@@ -28,7 +28,7 @@ a:focus, a:hover {
   outline: 0;
 }
 li:focus, li:hover {
-  color: #ffcc99;
+  color: #28c3ab;
  }
 
 .f-left {
@@ -102,11 +102,11 @@ li:focus, li:hover {
   }
 
   ul.description-tab li:not(.active):not(.last) {
-    border-bottom: 1px solid #ffcc99;
+    border-bottom: 1px solid #28c3ab;
   }
 
   ul.description-tab .tab-content > .tab-pane.active{
-    border-bottom: 1px solid #ffcc99;
+    border-bottom: 1px solid #28c3ab;
   }
 
   ul.description-tab .tab-content > .tab-pane {
@@ -149,11 +149,11 @@ li:focus, li:hover {
   }
 
   ul.description-tab li:not(.active):not(.last) {
-    border-bottom: 1px solid #ffcc99;
+    border-bottom: 1px solid #28c3ab;
   }
 
   ul.description-tab .tab-content > .tab-pane.active {
-    border-bottom: 1px solid #ffcc99;
+    border-bottom: 1px solid #28c3ab;
   }
   ul.description-tab .tab-content > .tab-pane {
     padding: 0 10px 20px;
@@ -183,7 +183,7 @@ li:focus, li:hover {
 .description-tab li.active a {
   opacity: 1;
   transition: all .3s ease-in 0s;
-  border-bottom: 1px solid #ffcc99;
+  border-bottom: 1px solid #28c3ab;
 }
 
 .description-tab .tab-content .tab-pane {

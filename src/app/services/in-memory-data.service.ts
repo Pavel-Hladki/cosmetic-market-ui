@@ -46,7 +46,7 @@ export class InMemoryDataService implements InMemoryDbService {
 
     const product2 = {
       id: 2,
-      name: 'HANDMADE WINE SOAP aloe',
+      name: 'HANDMADE WINE SOAP',
       category: {
         id: 5,
         name: 'Vinotherapy'

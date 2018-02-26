@@ -24,7 +24,7 @@
 }
 
 .widget-search .search-button:hover {
-  color: #ff7f00;
+  color: #28c3ab;
 }
 
 .widget-search .search-button i {
@@ -136,7 +136,7 @@ button {
   border: medium none;
 }
 input[type="text"]:focus {
-  border: 1px solid #FFBF7F;
+  border: 1px solid #28c3ab;
 }
 ::-moz-placeholder {
   color: #444;

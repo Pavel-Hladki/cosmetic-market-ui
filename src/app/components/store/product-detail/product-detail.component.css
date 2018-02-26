@@ -1,5 +1,5 @@
-.section {
-  padding: 100px 0;
+.section-sm {
+  padding: 110px 0 70px;
 }
 
 .product-description {
@@ -8,11 +8,11 @@
 
 /* small mobile :320px. */
 @media (max-width: 767px) {
-  .container {width:300px}
+  .section-sm {
+    padding: 60px 0;
+  }
 }
 
 /* Large Mobile :480px. */
 @media only screen and (min-width: 480px) and (max-width: 767px) {
-  .container {width:450px}
-
 }

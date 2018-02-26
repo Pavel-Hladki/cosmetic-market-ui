@@ -53,7 +53,8 @@ export class SearchWidgetComponent implements OnInit {
 
   onSubmit(): void {
     if (this.searchForm.valid && this.searchForm.value.searchField !== this.term) {
-      this.onTermSelect.emit(this.searchForm.value.searchField);
+      const selectedTerm = this.searchForm.value.searchField.length > 0 ? this.searchForm.value.searchField : null;
+      this.onTermSelect.emit(selectedTerm);
     }
   }
 

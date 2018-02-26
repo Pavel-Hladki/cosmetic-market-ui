@@ -1,11 +1,14 @@
 <section class="section-sm">
   <div class="container">
     <div class="row">
-      <app-products-breadcrumb></app-products-breadcrumb>
-      <div *ngIf="searchTerm" class="col-md-12">
+      <app-products-breadcrumb>
+        <li *ngIf="!isSearch()">Products</li>
+        <li *ngIf="isSearch()">Search results for "{{filterState.searchTerm}}"</li>
+      </app-products-breadcrumb>
+      <div *ngIf="isSearch()" class="col-md-12">
         <div id="search-term-banner" class="search-result search-result-top">
           <p class="search-result-title">Your search results for:</p>
-          <p class="search-result-term">"{{searchTerm}}"</p>
+          <p class="search-result-term">"{{filterState.searchTerm}}"</p>
         </div>
       </div>
     </div>
@@ -24,9 +27,9 @@
       <div class="col-lg-9 col-lg-push-3 col-xs-12">
         <div class="shop-content">
 
-          <div *ngIf="searchTerm" class="search-result search-result-bottom">
+          <div *ngIf="isSearch()" class="search-result search-result-bottom">
             <p class="search-result-title">Your search results for:</p>
-            <p class="search-result-term">"{{searchTerm}}"</p>
+            <p class="search-result-term">"{{filterState.searchTerm}}"</p>
           </div>
 
           <app-products-control-panel [startItemsIndex]="getStartItemIndex()"
