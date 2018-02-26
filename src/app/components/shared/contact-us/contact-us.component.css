@@ -56,3 +56,20 @@
   animation-delay: .2s;
   opacity: .25;
 }
+
+.modal-content h3#contactModalLabel {
+  padding-top: 35px;
+  font-size: 1.6rem;
+  margin: 0;
+}
+.modal-content .modal-header p {
+  text-align: center;
+  margin-bottom: 0px;
+}
+#contactModal .modal-body {
+  margin-bottom: 20px;
+}
+#contactModal .btn-success {
+  background-color: #337f25;
+  border-color: #337f25;
+}
