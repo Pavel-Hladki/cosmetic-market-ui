@@ -29,7 +29,7 @@ import { ProductFormComponent } from './components/supplier/product-form/product
 import { SearchWidgetComponent } from './components/store/products/widgets/search-widget/search-widget.component';
 import { ProductItemGridComponent } from './components/store/products/products-item/product-item-grid/product-item-grid.component';
 import { ProductItemListComponent } from './components/store/products/products-item/product-item-list/product-item-list.component';
-import { ProductRatingsComponent } from './components/store/product-ratings/product-ratings.component';
+import { ProductRatingsComponent } from './components/shared/product-ratings/product-ratings.component';
 import { ProductImageSliderComponent } from './components/store/product-detail/product-image-slider/product-image-slider.component';
 import { ProductInfoComponent } from "./components/store/product-detail/product-info-block/product-info-block.component";
 import { ProductReviewComponent } from './components/store/product-detail/product-review/product-review.component';

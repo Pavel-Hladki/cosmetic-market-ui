@@ -10,6 +10,7 @@ import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/startWith';
+import {subscriptionLogsToBeFn} from "rxjs/testing/TestScheduler";
 
 @Component({
   selector: 'app-search-widget',
@@ -18,7 +19,7 @@ import 'rxjs/add/operator/startWith';
 })
 export class SearchWidgetComponent implements OnInit {
 
-  @Input() term: String;
+  @Input() term: string;
   @Output() onTermSelect = new EventEmitter<string>();
 
   searchForm: FormGroup;

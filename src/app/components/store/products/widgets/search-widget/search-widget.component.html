@@ -9,7 +9,7 @@
     </span>
   </form>
 
-  <ul *ngIf="isSearchFocused()" class="list-group search-result">
+  <ul [hidden]="!isSearchFocused()" class="list-group search-result">
     <li class="list-group-item"
         *ngFor="let product of products$ | async">
       <img src="{{product.mainImage}}" class="product-icon-small">
