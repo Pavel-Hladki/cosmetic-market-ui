@@ -26,7 +26,7 @@
   line-height: 30px;
 }
 .shop-tab li.active a {
-  color: #ff7f00;
+  color: #28c3ab;
 }
 .shop-tab, .short-by, .showing {
   width: 33.3337%;
@@ -107,7 +107,7 @@ a:focus {
 }
 a:focus,
 a:hover {
-  color: #ff7f00;
+  color: #28c3ab;
   text-decoration: none;
 }
 a {
@@ -166,23 +166,6 @@ option {
 .mb-30 { margin-bottom: 30px }
 
 .box-shadow {  box-shadow: 0 0 4px rgba(0, 0, 0, 0.1); }
-
-
-@font-face {
-  font-family: 'Material-Design-Iconic-Font';
-  src: url('/assets/fonts/Material-Design-Iconic-Font.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
-}
-
-.zmdi {
-  display: inline-block;
-  font: normal normal normal 14px/1 'Material-Design-Iconic-Font';
-  font-size: inherit;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
 
 .zmdi-view-list-alt:before {
   content: '\f31f';

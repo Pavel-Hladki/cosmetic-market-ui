@@ -1,4 +1,4 @@
-.breadcrumb-list{
+/deep/ .breadcrumb-list{
   height:50px;
   line-height:50px;
   padding:0 16px;
@@ -6,50 +6,62 @@
   margin-bottom: 0;
 }
 
-.products-breadcrumb a{
+/deep/ .products-breadcrumb a{
   color:#2d2d2d;
   text-decoration:none
 }
-.products-breadcrumb li{
+/deep/ .products-breadcrumb li{
   font-size:.875rem;
   display:inline-block;
-  letter-spacing:.4px
+  letter-spacing:.4px;
 }
-.products-breadcrumb li:not(:first-child):before{
+/deep/ .products-breadcrumb li:not(:first-child):before{
   content:"\203A";
   display:inline-block;
   padding:0 14px
 }
-.products-breadcrumb li:last-child,.products-breadcrumb li:last-child a{
+/deep/ .products-breadcrumb li:last-child,.products-breadcrumb li:last-child a{
   color:#999
 }
 @media (min-width:768px){
-  .products-breadcrumb{
+  /deep/ .products-breadcrumb{
     max-width:1366px;
     display:block
   }
-  .breadcrumb-list{
+  /deep/ .breadcrumb-list{
     padding:0 24px
   }
 }
 @media (min-width:1024px){
-  .breadcrumb-list{
+  /deep/ .breadcrumb-list{
     padding:0 32px
   }
 }
 
-.text {
+@media (max-width: 480px) {
+  /deep/ .products-breadcrumb li{
+    letter-spacing: .2px;
+  }
+
+  /deep/ .products-breadcrumb li:not(:first-child):before{
+    content: "\203A";
+    display: inline-block;
+    padding: 0 6px
+  }
+}
+
+/deep/ .text {
   @apply --suggested-term-text;
 }
 
-.searchTerm {
+/deep/ .searchTerm {
   @apply --suggested-term-searched-term;
 
   text-transform: capitalize;
 }
 
 @media (--medium-viewport) {
-  .searchTerm {
+  /deep/ .searchTerm {
     @apply --suggested-term-searched-term-medium-screen;
   }
 }

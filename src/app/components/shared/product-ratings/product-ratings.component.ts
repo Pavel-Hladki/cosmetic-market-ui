@@ -5,6 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './product-ratings.component.html',
   styleUrls: ['./product-ratings.component.css']
 })
+//todo move to common shared with rename
 export class ProductRatingsComponent implements OnInit {
 
   constructor() { }

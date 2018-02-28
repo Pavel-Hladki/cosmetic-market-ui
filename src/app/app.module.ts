@@ -29,7 +29,7 @@ import { ProductFormComponent } from './components/supplier/product-form/product
 import { SearchWidgetComponent } from './components/store/products/widgets/search-widget/search-widget.component';
 import { ProductItemGridComponent } from './components/store/products/products-item/product-item-grid/product-item-grid.component';
 import { ProductItemListComponent } from './components/store/products/products-item/product-item-list/product-item-list.component';
-import { ProductRatingsComponent } from './components/store/product-ratings/product-ratings.component';
+import { ProductRatingsComponent } from './components/shared/product-ratings/product-ratings.component';
 import { ProductImageSliderComponent } from './components/store/product-detail/product-image-slider/product-image-slider.component';
 import { ProductInfoComponent } from './components/store/product-detail/product-info-block/product-info-block.component';
 import { ProductReviewComponent } from './components/store/product-detail/product-review/product-review.component';
@@ -44,6 +44,8 @@ import { FooterComponent } from './components/shared/footer/footer.component';
 import { ContactUsComponent } from './components/shared/contact-us/contact-us.component';
 import { ProductActionsComponent } from './components/store/shared/product-actions/product-actions.component';
 import { ProductsBreadcrumbComponent } from './components/store/products/products-breadcrumb/products-breadcrumb.component';
+import {CategoryService} from "./services/category.service";
+import { WidgetsComponent } from './components/store/products/widgets/widgets.component';
 import { CategoryService } from './services/category.service';
 import { BestsellersComponent } from './components/dashboard/bestsellers/bestsellers.component';
 import { SetsComponent } from './components/dashboard/sets/sets.component';
@@ -88,7 +90,8 @@ import {DashboardService} from './services/dashboard.service';
     FooterComponent,
     ContactUsComponent,
     ProductActionsComponent,
-    ProductsBreadcrumbComponent
+    ProductsBreadcrumbComponent,
+    WidgetsComponent
   ],
   imports: [
     BrowserModule,
@@ -102,7 +105,7 @@ import {DashboardService} from './services/dashboard.service';
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.
     // Remove it when a real server is ready to receive requests.
-    HttpClientInMemoryWebApiModule.forRoot(
+     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
     ),
     NgbModule.forRoot()

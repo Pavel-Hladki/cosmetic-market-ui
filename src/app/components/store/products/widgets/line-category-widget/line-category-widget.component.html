@@ -6,11 +6,11 @@
        class="fa float-right"></i>
   </a>
   <div class="collapse-section" [@collapse]="collapse">
-    <ul class="category-list">
-      <li *ngFor="let categoryCount of categoryCountList">
-        <a href="#">
+    <ul class="categories">
+      <li *ngFor="let categoryCount of categoryCountList"
+          (click) = "selectCategory(categoryCount.category.id)"
+          [ngClass] = "{'selected': isCategorySelected(categoryCount.category.id)}">
           {{categoryCount.category.name}}<span>{{categoryCount.count}}</span>
-        </a>
       </li>
     </ul>
   </div>

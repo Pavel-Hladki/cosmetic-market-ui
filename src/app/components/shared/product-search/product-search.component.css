@@ -20,7 +20,7 @@
   width: 50px;
 }
 .widget-search button:hover {
-  color: #ff7f00;
+  color: #28c3ab;
 }
 
 /*responsive*/
@@ -101,7 +101,7 @@ button {
   font-family: raleway;
 }
 input[type="text"]:focus {
-  border: 1px solid #FFBF7F;
+  border: 1px solid #28c3ab;
 }
 ::-moz-placeholder {
   color: #444;

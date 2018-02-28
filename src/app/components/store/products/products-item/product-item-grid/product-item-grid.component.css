@@ -56,8 +56,8 @@
   line-height: 28px;
 }
 .action-button > li:hover > a {
-  background: #FF7F00;
-  border-color: #FF7F00;
+  background: #28c3ab;
+  border-color: #28c3ab;
   color: #fff;
 }
 .product-item:hover {
@@ -111,7 +111,7 @@ a:focus {
 }
 a:focus,
 a:hover {
-  color: #ff7f00;
+  color: #28c3ab;
   text-decoration: none;
 }
 a {

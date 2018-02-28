@@ -11,7 +11,7 @@ a {
 }
 
 img.p-c.active  {
-  border: 1px solid #FF7F00;
+  border: 1px solid #28c3ab;
 }
 
 a:focus, a:hover {
@@ -28,11 +28,6 @@ button {
   margin-top: 30px;
 }
 
-.p-c {
-  border: 1px solid #fff;
-  padding: 0 5px;
-}
-
 .slick-slide {
   display: none;
   float: left;
@@ -45,10 +40,6 @@ button {
   top: 0;
   left: 0;
   display: block;
-}
-
-.mt-30 {
-  margin-top: 30px;
 }
 
 .slick-slider {
@@ -76,14 +67,6 @@ button {
   background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
   border: medium none;
 }
-
-@font-face {
-  font-family: 'Material-Design-Iconic-Font';
-  src: url('/assets/fonts/Material-Design-Iconic-Font.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
-}
-/*todo to styles.css*/
 
 .zmdi {
   display: inline-block;
@@ -113,11 +96,6 @@ button {
   padding: 0 50px;
 }
 
-#gallery .gallery-slider {
-  overflow: hidden;
-  height: 100px;
-}
-
 #gallery .slick-item {
   width: 100px;
   height: 100px;
@@ -131,6 +109,7 @@ button {
   border: 1px solid #fff;
   padding: 0 5px;
 }
+
 #gallery.slick-arrow-3 .arrow-next.slick-arrow {
   right: 25px;
 }
@@ -237,11 +216,11 @@ button {
 }
 .slick-arrow-3 .arrow-next.slick-arrow {
   left: auto;
-  right: 0px;
+  right: 0;
 }
 .slick-arrow-3:hover .slick-arrow {}
 .slick-arrow-3 .arrow-prev.slick-arrow:hover, .slick-arrow-3 .arrow-next.slick-arrow:hover {
-  color: #FF7F00;
+  color: #28c3ab;
 }
 
 
@@ -255,59 +234,9 @@ button {
   display: inline-block;
 }
 
-.toggle-box mat-slide-toggle {
+.toggle-box .mat-slide-toggle {
   width: 100%;
   margin-bottom: 15px;
-}
-
-.footer {
-  font-weight: 300;
-  font-size: 15px;
-  background-color: rgb(33, 33, 33);
-}
-
-.footer a {
-  background-color: transparent;
-  text-decoration: none;
-  cursor: auto;
-}
-
-.docs-api-properties-table {
-  border-collapse: collapse;
-  border-radius: 2px;
-  border-spacing: 0;
-  margin: 0 0 32px;
-  width: 100%;
-  box-shadow: 0 2px 2px rgba(0,0,0,.24), 0 0 2px rgba(0,0,0,.12);
-}
-
-.docs-api-properties-table p {
-  margin: 0;
-}
-
-.docs-api-properties-table th {
-  max-width: 100px;
-  padding: 13px 32px;
-  text-align: left;
-}
-
-.docs-api-properties-table td {
-  font-weight: 400;
-  padding: 8px 30px;
-  color: rgba(0,0,0,.54);
-  border: 1px solid rgba(0,0,0,.03);
-}
-
-
-@media only screen and  (max-width: 960px) {
-  .toggle-box {
-    width: 100%;
-    display: block;
-  }
-
-  .demo-content {
-    margin: 16px;
-  }
 }
 
 .content {
@@ -326,22 +255,26 @@ button {
 }
 
   /* Tablet desktop :768px. */
-@media (min-width: 768px) and (max-width: 991px) {}
+@media (min-width: 768px) and (max-width: 991px) {
+  .toggle-box {
+    width: 100%;
+    display: block;
+  }
+
+  .demo-content {
+    margin: 16px;
+  }
+}
 
 /* small mobile :320px. */
 @media (max-width: 767px) {
-  #gallery .gallery-slider {
-    overflow: hidden;
-    height: 100px;
+  .toggle-box {
+    width: 100%;
+    display: block;
   }
 
-  #gallery .slick-item {
-    width: 100px;
-    height: 100px;
-  }
-
-  #gallery .slick-item.last {
-    width: 98px;
+  .demo-content {
+    margin: 16px;
   }
 }
 

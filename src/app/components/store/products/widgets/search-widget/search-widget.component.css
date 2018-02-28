@@ -9,18 +9,49 @@
   margin-bottom: 0;
   padding-right: 50px;
 }
-.widget-search button {
+
+.widget-search .search-button {
+  position: absolute;
+  top: auto;
+  bottom: -0.2em;
   background: transparent none repeat scroll 0 0;
   color: #999;
   font-size: 20px;
   height: 100%;
-  position: absolute;
   right: 0;
   transition: all 0.3s ease 0s;
   width: 50px;
 }
-.widget-search button:hover {
-  color: #ff7f00;
+
+.widget-search .search-button:hover {
+  color: #28c3ab;
+}
+
+.widget-search .search-button i {
+  font-size: 24px;
+}
+
+.widget-search .search-spinner {
+  position: absolute;
+  top: auto;
+  right: 3em;
+  bottom: 1.2em;
+}
+
+.widget-search .search-result {
+  position: absolute;
+  width: 100%;
+  min-width: 300px;
+  z-index: 20;
+}
+
+.widget-search .search-result .product-icon-small {
+  width: 35px;
+  height: 30px;
+}
+
+.zmdi-search:before {
+  content: '\f1c3';
 }
 
 /*responsive*/
@@ -38,6 +69,7 @@
 
 /* Tablet desktop :768px. */
 @media (min-width: 768px) and (max-width: 991px) {
+
   .widget-search {
     margin-top: 15px;
   }
@@ -49,6 +81,10 @@
 
   .widget-search {
     margin-top: 15px;
+  }
+
+  .widget-search .search-result {
+    min-width: unset;
   }
 }
 
@@ -98,10 +134,9 @@ input[type="text"] {
 button {
   background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
   border: medium none;
-  font-family: raleway;
 }
 input[type="text"]:focus {
-  border: 1px solid #FFBF7F;
+  border: 1px solid #28c3ab;
 }
 ::-moz-placeholder {
   color: #444;
@@ -109,5 +144,34 @@ input[type="text"]:focus {
 }
 
 .mb-30 { margin-bottom: 30px }
+
+.error {
+  position: absolute;
+  top: -2.0em;
+  left: 0;
+  padding: .2em 1em .1em;
+  background-color: #f66;
+  border: 1px solid #f00;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 12px;
+}
+.error::after,
+.error::before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 15px;
+  border: solid transparent;
+}
+.error::after {
+  margin-left: 1px;
+  border-top-color: #f66;
+  border-width: 7px;
+}
+.error::before {
+  border-top-color: #f00;
+  border-width: 8px;
+}
 
 
