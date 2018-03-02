@@ -58,6 +58,7 @@
 }
 
 .modal-content h3#contactModalLabel {
+  text-align: center;
   padding-top: 35px;
   font-size: 1.6rem;
   margin: 0;
