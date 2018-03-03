@@ -104,9 +104,9 @@ import {DashboardService} from './services/dashboard.service';
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.
     // Remove it when a real server is ready to receive requests.
-     HttpClientInMemoryWebApiModule.forRoot(
+     /*HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
-    ),
+    ),*/
     NgbModule.forRoot()
   ],
   providers: [ProductService, CategoryService, Logger, DashboardService],

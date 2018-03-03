@@ -46,7 +46,7 @@ li:focus, li:hover {
 @media (min-width: 1401px) {
 
   ul.description-tab li {
-    margin-right: 10%;
+    margin-right: 7%;
   }
 
   ul.description-tab .tab-content.vertical-align-fix {

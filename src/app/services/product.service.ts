@@ -9,12 +9,14 @@ import { of } from 'rxjs/observable/of';
 import { catchError, tap } from 'rxjs/operators';
 import {httpOptions} from "./http.options";
 import {BaseService} from "./base.service";
+import {environment} from "../../environments/environment";
+import 'rxjs/add/operator/catch';
 
 
 @Injectable()
 export class ProductService extends BaseService {
 
-  private productsUrl = 'api/products';  // URL to web api
+  private productsUrl = environment.apiBaseUrl + '/product/aloe';  // URL to web api
 
   constructor(private http: HttpClient) {
     super();
@@ -22,7 +24,7 @@ export class ProductService extends BaseService {
 
   getProducts(params?: FilterParams): Observable<Product[]> {
     const httpParams: HttpParams = params && params.toHttpParams();
-    return this.http.get<Product[]>(this.productsUrl, {params: httpParams})
+    return this.http.get<Product[]>(this.productsUrl + '/search', {params: httpParams})
       .pipe(
         tap(products => this.log(`fetched products`)),
         catchError(this.handleError('getProducts', []))
@@ -70,10 +72,10 @@ export class ProductService extends BaseService {
       // if not search term, return empty product array.
       return of([]);
     }
-    return this.http.get<(Product)[]>(`${this.productsUrl}?name=${term}`).pipe(
-      tap(_ => this.log(`found products matching "${term}"`)),
-      catchError(this.handleError<Product[]>('autocompleteName', []))
-    );
+    return this.http.get<(Product)[]>(`${this.productsUrl}/all`)
+      .map(products => products.filter(product => product.name.includes(term)))
+      .do(_ => this.log(`found products matching "${term}"`))
+      .catch(this.handleError<Product[]>('autocompleteName', []))
   }
 }
 
@@ -93,11 +95,13 @@ export class FilterParams {
     this.searchTerm && params.set("term", this.searchTerm);
     this.page && params.set("page", String(this.page));
     this.pageSize && params.set("pageSize", String(this.pageSize));
-    this.sortField && params.set("sortField", this.sortField);
-    this.sortOrder && params.set("sortOrder", this.sortOrder);
+    //todo refactor to support several filters
+    this.categoryIds && params.set("filter", `category[${this.categoryIds[0]}]`);
+    this.sortField && params.set("sort", `${this.sortField}[${this.sortOrder}]`);
 
-    this.categoryIds.forEach(categoryId => params
-      .append("categoryIds", String(categoryId)));
+
+    //this.categoryIds.forEach(categoryId => params
+    //  .append("categoryIds", String(categoryId)));
     return params;
   }
 }
