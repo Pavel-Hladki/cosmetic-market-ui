@@ -7,7 +7,7 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class SocialSharingComponent implements OnInit {
 
-  @Input() sharedUrl: string;
+  @Input() sharedUrl: string = "#";
   @Input() platforms: Platform[] = [Platform.FACEBOOK, Platform.TWITTER, Platform.PINTEREST, Platform.GOOGLE_PLUS];
 
   sharingList: ShareMeta[] = [];

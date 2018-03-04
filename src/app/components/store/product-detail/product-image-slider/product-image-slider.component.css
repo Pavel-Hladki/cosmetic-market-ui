@@ -1,57 +1,24 @@
 button {
-  font-family: "Muli", sans-serif;
   color: #666;
   font-size: 14px;
   font-weight: 400;
 }
 
-a {
+img.p-c {
   transition: all .3s ease-in 0s;
-  color: #000;
+  border: 5px solid #fff;
 }
 
-img.p-c.active  {
-  border: 1px solid #28c3ab;
-}
-
-a:focus, a:hover {
-  text-decoration: none;
-  outline: 0;
-  color: #5672f9;
+img.p-c.active {
+  border: 5px solid #30881e;
 }
 
 button {
   cursor: pointer;
 }
 
-.mt-30 {
-  margin-top: 30px;
-}
-
-.slick-slide {
-  display: none;
-  float: left;
-  height: inherit;
-  min-height: 1px;
-  -webkit-tap-highlight-color: transparent;
-}
-.slick-track {
-  position: relative;
-  top: 0;
-  left: 0;
-  display: block;
-}
-
-.slick-slider {
-  position: relative;
-  display: block;
-  box-sizing: border-box;
-  user-select: none;
-  touch-action: pan-y;
-  -webkit-tap-highlight-color: transparent;
-}
-
 .slick-arrow-3 .slick-arrow {
+  outline: none;
   color: #999999;
   font-size: 20px;
   height: 35px;
@@ -92,26 +59,9 @@ button {
   width: 100%;
 }
 
-#gallery {
-  padding: 0 50px;
-}
-
 #gallery .slick-item {
   width: 100px;
   height: 100px;
-}
-
-#gallery .slick-item.last {
-  width: 98px;
-}
-
-.p-c {
-  border: 1px solid #fff;
-  padding: 0 5px;
-}
-
-#gallery.slick-arrow-3 .arrow-next.slick-arrow {
-  right: 25px;
 }
 
 /* small mobile :320px. */
@@ -121,90 +71,11 @@ button {
   }
 }
 
-.slick-slider
-{
-  position: relative;
-  display: block;
-  box-sizing: border-box;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  /* user-select: none; */
-  -webkit-touch-callout: none;
-  -khtml-user-select: none;
-  -ms-touch-action: pan-y;
-  touch-action: pan-y;
-  -webkit-tap-highlight-color: transparent;
-}
-
-.slick-list
-{
-  position: relative;
-
-  display: block;
-  overflow: hidden;
-
-  margin: 0;
-  padding: 0;
-}
-.slick-list:focus
-{
-  outline: none;
-}
-
-.slick-slider .slick-track,
-.slick-slider .slick-list
-{
-  -webkit-transform: translate3d(0, 0, 0);
-  -moz-transform: translate3d(0, 0, 0);
-  -ms-transform: translate3d(0, 0, 0);
-  -o-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
-}
-
-.slick-track
-{
-  position: relative;
-  top: 0;
-  left: 0;
-
-  display: block;
-}
-.slick-track:before,
-.slick-track:after
-{
-  display: table;
-
-  content: '';
-}
-.slick-track:after
-{
-  clear: both;
-}
-
-.slick-slide
-{
-  display: none;
-  float: left;
-
-  height: inherit;
-  min-height: 1px;
-}
-.slick-slide img
-{
-  display: block;
-}
-.slick-initialized .slick-slide
-{
-  display: block;
-}
-
 /* slick-arrow-3 */
 .slick-arrow-3 .slick-arrow {
   color: #999999;
   font-size: 20px;
   height: 35px;
-  left: 28px;
   line-height: 35px;
   margin-top: -17px;
   position: absolute;
@@ -218,31 +89,23 @@ button {
   left: auto;
   right: 0;
 }
-.slick-arrow-3:hover .slick-arrow {}
+
 .slick-arrow-3 .arrow-prev.slick-arrow:hover, .slick-arrow-3 .arrow-next.slick-arrow:hover {
-  color: #28c3ab;
+  color: #30881e;
 }
 
 
 /*another slider css*/
-.title {
-  margin-top: 60px;
+
+.gallery-slider {
+  margin: auto;
+  width: 300px;
+  height: 100px;
 }
 
-.toggle-box {
-  width: 49%;
-  display: inline-block;
-}
-
-.toggle-box .mat-slide-toggle {
+.main-image {
   width: 100%;
-  margin-bottom: 15px;
 }
-
-.content {
-  margin: 50px 70px;
-}
-
 
 /* Large Screen  */
 @media (min-width: 1170px) and (max-width: 1400px) {
@@ -254,33 +117,67 @@ button {
 
 }
 
-  /* Tablet desktop :768px. */
+/* Tablet desktop :768px. */
 @media (min-width: 768px) and (max-width: 991px) {
-  .toggle-box {
-    width: 100%;
-    display: block;
-  }
-
-  .demo-content {
-    margin: 16px;
+  .gallery-slider {
+    width: 200px;
   }
 }
 
 /* small mobile :320px. */
 @media (max-width: 767px) {
-  .toggle-box {
-    width: 100%;
-    display: block;
+  .main-image {
+    display: none;
   }
 
-  .demo-content {
-    margin: 16px;
+  img.p-c {
+    border: none;
   }
+
+  img.p-c.active {
+    border: none;
+  }
+
+  .gallery-slider {
+    width: 510px;
+    height: 510px;
+  }
+
+  #gallery .slick-item {
+    width: 510px;
+    height: 510px;
+  }
+}
+
+/* fix for slider*/
+@media (max-width: 543px) {
+  .gallery-slider {
+    width: 445px;
+    height: 445px;
+  }
+
+  #gallery .slick-item {
+    width: 445px;
+    height: 445px;
+  }
+
+  .slick-arrow-3 .slick-arrow {
+    display: none;
+  }
+
 }
 
 /* Large Mobile :480px. */
 @media only screen and (min-width: 480px) and (max-width: 767px){}
 
 @media  (max-width: 480px) {
+  .gallery-slider {
+    width: 310px;
+    height: 310px;
+  }
 
+  #gallery .slick-item {
+    width: 310px;
+    height: 310px;
+  }
 }

@@ -1,7 +1,9 @@
 <div class="widget-search mb-30">
   <form [formGroup]="searchForm" (submit)="onSubmit()" novalidate>
 
-    <input (focus)="onSearchFieldFocus()" (blur)="onSearchFieldBlur()" formControlName="searchField" type="text" placeholder="Search here...">
+    <input (focus)="onSearchFieldFocus()" (blur)="onSearchFieldBlur()" formControlName="searchField" type="text"
+           class="search-field"
+           placeholder="Search here...">
     <span *ngIf = "searchField.errors?.minlength" class="error">Please type in at least {{this.searchField.errors.minlength.requiredLength}} letters...</span>
     <button type="submit" class="search-button"><i class="zmdi zmdi-search"></i></button>
     <span *ngIf="loading" class="search-spinner">
@@ -10,7 +12,7 @@
   </form>
 
   <ul [hidden]="!isSearchFocused()" class="list-group search-result">
-    <li class="list-group-item"
+    <li class="list-group-item search-item"
         *ngFor="let product of products$ | async">
       <img src="{{product.mainImage}}" class="product-icon-small">
       <a routerLink="/products/{{product.id}}">{{product.name}}</a>
