@@ -1,5 +1,4 @@
 p, li {
-  font-family: "Muli", sans-serif;
   color: #666;
   font-size: 14px;
   font-weight: 400;
@@ -28,20 +27,12 @@ a:focus, a:hover {
   outline: 0;
 }
 li:focus, li:hover {
-  color: #28c3ab;
+  color: #30881e;
  }
 
 .f-left {
   float: left;
 }
-
-@font-face {
-  font-family: 'Material-Design-Iconic-Font';
-  src: url('/assets/fonts/Material-Design-Iconic-Font.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
-}
-/*todo to styles.css*/
 
 @media (min-width: 1401px) {
 
@@ -102,11 +93,11 @@ li:focus, li:hover {
   }
 
   ul.description-tab li:not(.active):not(.last) {
-    border-bottom: 1px solid #28c3ab;
+    border-bottom: 1px solid #30881e;
   }
 
   ul.description-tab .tab-content > .tab-pane.active{
-    border-bottom: 1px solid #28c3ab;
+    border-bottom: 1px solid #30881e;
   }
 
   ul.description-tab .tab-content > .tab-pane {
@@ -149,11 +140,11 @@ li:focus, li:hover {
   }
 
   ul.description-tab li:not(.active):not(.last) {
-    border-bottom: 1px solid #28c3ab;
+    border-bottom: 1px solid #30881e;
   }
 
   ul.description-tab .tab-content > .tab-pane.active {
-    border-bottom: 1px solid #28c3ab;
+    border-bottom: 1px solid #30881e;
   }
   ul.description-tab .tab-content > .tab-pane {
     padding: 0 10px 20px;
@@ -176,14 +167,15 @@ li:focus, li:hover {
 }
 .description-tab li a {
   display: block;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 20px;
   text-transform: uppercase;
+  color: #575757;
 }
 .description-tab li.active a {
   opacity: 1;
   transition: all .3s ease-in 0s;
-  border-bottom: 1px solid #28c3ab;
+  border-bottom: 3px solid #30881e;
 }
 
 .description-tab .tab-content .tab-pane {

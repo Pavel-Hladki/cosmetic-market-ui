@@ -1,7 +1,7 @@
 <div class="imgs-zoom-area">
-  <img [src]="mainImage" style="width: 100%;" alt=""/>
+  <img class = "main-image" [src]="mainImage" style="width: 100%;" alt=""/>
   <div *ngIf="isNotEmptyImageList()" class="row">
-    <div class="col-sm-12 mt-30">
+    <div class="col-sm-12">
       <div id="gallery" class="slick-arrow-3">
         <button (click)="moveLeft()"
                 [hidden]="leftNavDisabled"
@@ -10,7 +10,6 @@
         </button>
         <div class="gallery-slider" dragScroll
              drag-scroll-y-disabled="true"
-             drag-scroll-x-disabled="true"
              scrollbar-hidden="true"
              (reachesLeftBound)="leftBoundStat($event)"
              (reachesRightBound)="rightBoundStat($event)"

@@ -1,5 +1,4 @@
 p, li {
-  font-family: "Muli", sans-serif;
   color: #666;
   font-size: 14px;
   font-weight: 400;
@@ -51,14 +50,6 @@ a:focus, a:hover {
   float: right;
 }
 
-@font-face {
-  font-family: 'Material-Design-Iconic-Font';
-  src: url('/assets/fonts/Material-Design-Iconic-Font.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
-}
-/*todo to styles.css*/
-
 .zmdi {
   display: inline-block;
   font: normal normal normal 14px/1 'Material-Design-Iconic-Font';
@@ -90,8 +81,8 @@ a:focus, a:hover {
   line-height: 28px;
 }
 .action-button > li:hover > a {
-  background: #28c3ab;
-  border-color: #28c3ab;
+  background: #30881e;
+  border-color: #30881e;
   color: #fff;
 }
 

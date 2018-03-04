@@ -46,7 +46,7 @@ export class InMemoryDataService implements InMemoryDbService {
 
     const product2 = {
       id: 2,
-      name: 'HANDMADE WINE SOAP',
+      name: 'HANDMADE WINE SOAP ALOE',
       category: {
         id: 5,
         name: 'Vinotherapy'
@@ -60,7 +60,7 @@ export class InMemoryDataService implements InMemoryDbService {
       brand: 'Lanzarote',
       briefDescription: 'Gel relax ideal for instant pain relief with a cool effect.',
       mainImage: 'assets/img/product/linea_jabones0004.jpg',
-      otherImages: ['assets/img/product/linea_jabones0011.jpg'],
+      otherImages: ['assets/img/product/linea_jabones0011.jpg','assets/img/product/linea_jabones0011.jpg','assets/img/product/linea_jabones0011.jpg','assets/img/product/linea_jabones0011.jpg','assets/img/product/linea_jabones0011.jpg','assets/img/product/linea_jabones0011.jpg'],
       description: {
         details: 'Soap with a fruity touch without allergen and rich in polyphenols and tannins from wine, which regenerate dead cells and stimulate collagen production. It is an antioxidant, preventing skin aging and removing dead cells.',
         activeIngredients: '<ul>\n' +

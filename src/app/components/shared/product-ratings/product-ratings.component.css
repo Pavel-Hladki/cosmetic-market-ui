@@ -364,8 +364,8 @@ hr {
   line-height: 28px;
 }
 .action-button > li:hover > a {
-  background: #28c3ab;
-  border-color: #28c3ab;
+  background: #30881e;
+  border-color: #30881e;
   color: #fff;
 }
 
@@ -608,11 +608,11 @@ input.cart-plus-minus-box {
   }
 
   ul.reviews-tab li:not(.active) {
-    border-bottom: 1px solid #28c3ab;
+    border-bottom: 1px solid #30881e;
   }
 
   ul.reviews-tab .tab-content > .tab-pane.active{
-    border-bottom: 1px solid #28c3ab;
+    border-bottom: 1px solid #30881e;
   }
 
   ul.reviews-tab .tab-content > .tab-pane {
@@ -688,11 +688,11 @@ input.cart-plus-minus-box {
   }
 
   ul.reviews-tab li:not(.active) {
-    border-bottom: 1px solid #28c3ab;
+    border-bottom: 1px solid #30881e;
   }
 
   ul.reviews-tab .tab-content > .tab-pane.active {
-    border-bottom: 1px solid #28c3ab;
+    border-bottom: 1px solid #30881e;
   }
   ul.reviews-tab .tab-content > .tab-pane {
     padding: 0 10px 20px;
@@ -800,7 +800,7 @@ input.cart-plus-minus-box {
 }
 .slick-arrow-3:hover .slick-arrow {}
 .slick-arrow-3 .arrow-prev.slick-arrow:hover, .slick-arrow-3 .arrow-next.slick-arrow:hover {
-  color: #28c3ab;
+  color: #30881e;
 }
 
 
@@ -818,7 +818,7 @@ input.cart-plus-minus-box {
   text-transform: uppercase;
 }
 .reviews-tab li.active a {
-  border-bottom: 1px solid #28c3ab;
+  border-bottom: 1px solid #30881e;
 }
 
 .reviews-tab .tab-content .tab-pane p {

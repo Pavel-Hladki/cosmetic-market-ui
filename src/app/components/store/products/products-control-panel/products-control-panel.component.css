@@ -26,7 +26,7 @@
   line-height: 30px;
 }
 .shop-tab li.active a {
-  color: #28c3ab;
+  color: #30881e;
 }
 .shop-tab, .short-by, .showing {
   width: 33.3337%;
@@ -107,7 +107,7 @@ a:focus {
 }
 a:focus,
 a:hover {
-  color: #28c3ab;
+  color: #30881e;
   text-decoration: none;
 }
 a {
@@ -131,33 +131,26 @@ li {
   color: #fff;
   text-shadow: none;
 }
-/***************************
-  Transtion
-****************************/
-select {
-  -webkit-transition: all 0.5s ease-out 0s;
-  -moz-transition: all 0.5s ease-out 0s;
-  -ms-transition: all 0.5s ease-out 0s;
-  -o-transition: all 0.5s ease-out 0s;
-  transition: all 0.5s ease-out 0s;
-}
 
 /*************************
   Input
 *************************/
-select {
+.short-by select {
+  outline-color: #30881e;
   border: 1px solid #eeeeee;
   color: #999999;
   font-size: 13px;
   height: 30px;
   padding-left: 20px;
 }
-option {
+
+.short-by select option {
   background: #ffffff none repeat scroll 0 0;
-  border: 0 solid #626262;
+  border: 1px solid #30881e;
   font-size: 13px;
   padding-left: 10px;
 }
+
 ::-moz-placeholder {
   color: #444;
   font-size: 13px;

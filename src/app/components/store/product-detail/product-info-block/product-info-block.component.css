@@ -1,12 +1,10 @@
 p, input {
-  font-family: "Muli", sans-serif;
   color: #666;
   font-size: 14px;
   font-weight: 400;
 }
 
 h3, h6 {
-  font-family: "Muli", sans-serif;
   font-weight: 600;
   color: #333;
 }
@@ -56,22 +54,10 @@ hr {
 }
 
 .single-product-info .description {
-  font-size: 16px;
-  font-family: "Muli", sans-serif;
-  font-weight: 600;
+  font-size: 14px;
+  font-weight: 400;
+  color: #888;
 }
-
-.text-black-2 {
-  color: #88888c;
-}
-
-@font-face {
-  font-family: 'Material-Design-Iconic-Font';
-  src: url('/assets/fonts/Material-Design-Iconic-Font.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
-}
-/*todo to styles.css*/
 
 .pro-price {
   z-index: 9;
@@ -154,10 +140,6 @@ a.button::after {
   width: 80%;
 }
 
-.text-black-1 {
-  color: #575757;
-}
-
 .brand-name-2 {
   color: #999999;
   font-size: 14px;
@@ -234,7 +216,6 @@ input.cart-plus-minus-box {
   }
 
   .single-product-info .description {
-    font-size: 14px;
     line-height: 20px;
   }
 

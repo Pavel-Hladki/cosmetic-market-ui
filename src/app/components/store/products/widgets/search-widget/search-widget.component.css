@@ -4,7 +4,7 @@
 .widget-search {
   position: relative;
 }
-.widget-search input {
+.widget-search .search-field {
   height: 50px;
   margin-bottom: 0;
   padding-right: 50px;
@@ -24,7 +24,7 @@
 }
 
 .widget-search .search-button:hover {
-  color: #28c3ab;
+  color: #30881e;
 }
 
 .widget-search .search-button i {
@@ -43,6 +43,22 @@
   width: 100%;
   min-width: 300px;
   z-index: 20;
+  box-shadow: 0 8px 13px rgba(0, 0, 0, 0.15);
+}
+
+.widget-search .search-result .search-item {
+  font-weight: bold;
+  border: 1px solid #30881e;
+  font-family: Montserrat, sans-serif;
+  font-size: 12px;
+}
+
+.widget-search .search-result .search-item a {
+  color: #5d5d5d;
+}
+
+.widget-search .search-result .search-item a:hover {
+  color: #30881e;
 }
 
 .widget-search .search-result .product-icon-small {
@@ -106,16 +122,6 @@ input {
   color: #fff;
   text-shadow: none;
 }
-/***************************
-  Transtion
-****************************/
-input {
-  -webkit-transition: all 0.5s ease-out 0s;
-  -moz-transition: all 0.5s ease-out 0s;
-  -ms-transition: all 0.5s ease-out 0s;
-  -o-transition: all 0.5s ease-out 0s;
-  transition: all 0.5s ease-out 0s;
-}
 
 /*************************
   Input
@@ -136,7 +142,7 @@ button {
   border: medium none;
 }
 input[type="text"]:focus {
-  border: 1px solid #28c3ab;
+  border: 3px solid #30881e;
 }
 ::-moz-placeholder {
   color: #444;
