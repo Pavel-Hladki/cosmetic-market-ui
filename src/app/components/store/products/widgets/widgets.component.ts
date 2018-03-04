@@ -25,7 +25,6 @@ export class WidgetsComponent implements OnInit {
 
   selectTerm(term: string) {
     this.searchTerm = term;
-    this.onTermSelect.emit(term);
     this.selectCategories([]);
   }
 

@@ -70,6 +70,7 @@ export class ProductsComponent implements OnInit {
 
   selectSortOption(sortOptionName: string): void {
     this.filterState.sortField = sortOptionName;
+    this.filterState.sortOrder = 'ASC';
     this.updateProductList();
   }
 
@@ -115,7 +116,7 @@ class FilterState {
   public categoryIds: number[];
   public searchTerm: string;
   public sortField: string = 'name';
-  public sortOrder: string;
+  public sortOrder: string = 'ASC';
 
   constructor() {}
 }

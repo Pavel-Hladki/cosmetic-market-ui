@@ -49,9 +49,17 @@
 }
 
 .search-result-title, .search-result-term {
-  font-family: futura-pt,sans-serif;
-  color: #2d2d2d;
+  font-family: Montserrat, sans-serif;
 }
+.search-result-term {
+  font-size: 22px;
+  font-weight: 900;
+  line-height: 1.45;
+  letter-spacing: 1.8px;
+  text-transform: capitalize;
+  color: #30881e;
+}
+
 .search-result-title {
   font-size: 14px;
   line-height: 1.57;
@@ -60,7 +68,6 @@
 .search-result-title, .search-result-term {
   margin: 0;
 }
-
 
 /* small mobile :320px. */
 @media (max-width: 767px) {
@@ -73,24 +80,4 @@
   .search-result-term {
     font-size: 24px;
   }
-}
-
-.search-result-term {
-  font-size: 22px;
-  font-weight: 900;
-  line-height: 1.45;
-  letter-spacing: 1.8px;
-  text-transform: capitalize;
-}
-.search-result-title, .search-result-term {
-  font-family: futura-pt,sans-serif;
-  color: #2d2d2d;
-}
-.search-result-title, .search-result-term {
-  margin: 0;
-}
-
-.text,
-.searchTerm {
-  margin: 0;
 }

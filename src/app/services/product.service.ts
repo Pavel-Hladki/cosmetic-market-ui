@@ -91,14 +91,23 @@ export class FilterParams {
   ) {}
 
   public toHttpParams(): HttpParams {
-    const params  = new HttpParams();
-    this.searchTerm && params.set("term", this.searchTerm);
-    this.page && params.set("page", String(this.page));
-    this.pageSize && params.set("pageSize", String(this.pageSize));
-    //todo refactor to support several filters
-    this.categoryIds && params.set("filter", `category[${this.categoryIds[0]}]`);
-    this.sortField && params.set("sort", `${this.sortField}[${this.sortOrder}]`);
+    let params = new HttpParams();
 
+    if(this.searchTerm != null && this.searchTerm.length > 0) {
+      params = params.set("term", this.searchTerm);
+    }
+    if(this.page != null) {
+      params = params.set("page", String(this.page));
+    }
+    if(this.pageSize != null) {
+      params = params.set("pageSize", String(this.pageSize));
+    }
+    if(this.categoryIds != null && this.categoryIds.length > 0) {
+      params = params.set("filter", `category[${this.categoryIds[0]}]`);
+    }
+    if(this.sortField != null && this.sortOrder != null) {
+      params = params.set("sort", `${this.sortField}[${this.sortOrder}]`);
+    }
 
     //this.categoryIds.forEach(categoryId => params
     //  .append("categoryIds", String(categoryId)));
