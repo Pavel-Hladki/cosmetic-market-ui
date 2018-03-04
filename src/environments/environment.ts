@@ -5,5 +5,5 @@
 
 export const environment = {
   production: false,
-  apiBaseUrl: ""
+  apiBaseUrl: "https://cosmetic-market.herokuapp.com/api/v1"
 };
