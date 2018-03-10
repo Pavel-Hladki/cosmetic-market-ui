@@ -11,6 +11,7 @@ function checkVideoContainer () {
       }, {
         posterType: 'png'
       });
+      $("video[autoplay]").each(function(){ this.play(); });
   } else {
     setTimeout(checkVideoContainer, 50);
   }

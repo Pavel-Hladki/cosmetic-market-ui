@@ -36,6 +36,7 @@
         volume: 1,
         playbackRate: 1,
         muted: true,
+        controls: true,
         loop: true,
         autoplay: true,
         position: '50% 50%',
@@ -326,6 +327,7 @@
                     loop: settings.loop,
                     volume: settings.volume,
                     muted: settings.muted,
+                    controls: settings.controls,
                     defaultMuted: settings.muted,
                     playbackRate: settings.playbackRate,
                     defaultPlaybackRate: settings.playbackRate
