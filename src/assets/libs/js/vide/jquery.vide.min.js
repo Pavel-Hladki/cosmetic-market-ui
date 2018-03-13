@@ -39,6 +39,7 @@
         controls: true,
         loop: true,
         autoplay: true,
+        playsinline: true,
         position: '50% 50%',
         posterType: 'detect',
         resizing: true,
@@ -328,6 +329,7 @@
                     volume: settings.volume,
                     muted: settings.muted,
                     controls: settings.controls,
+                    playsinline: settings.playsinline,
                     defaultMuted: settings.muted,
                     playbackRate: settings.playbackRate,
                     defaultPlaybackRate: settings.playbackRate
