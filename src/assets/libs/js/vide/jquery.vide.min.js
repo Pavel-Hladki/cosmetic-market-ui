@@ -39,7 +39,6 @@
         controls: true,
         loop: true,
         autoplay: true,
-        playsinline: true,
         position: '50% 50%',
         posterType: 'detect',
         resizing: true,
@@ -309,9 +308,9 @@
                 sources += '<source src="' + path.ogv + '.ogv" type="video/ogg">';
             }
 
-            $video = vide.$video = $('<video>' + sources + '</video>');
+            $video = vide.$video = $('<video playsinline>' + sources + '</video>');
         } else {
-            $video = vide.$video = $('<video>' +
+            $video = vide.$video = $('<video playsinline>' +
                 '<source src="' + path + '.mp4" type="video/mp4">' +
                 '<source src="' + path + '.webm" type="video/webm">' +
                 '<source src="' + path + '.ogv" type="video/ogg">' +
@@ -329,7 +328,6 @@
                     volume: settings.volume,
                     muted: settings.muted,
                     controls: settings.controls,
-                    playsinline: settings.playsinline,
                     defaultMuted: settings.muted,
                     playbackRate: settings.playbackRate,
                     defaultPlaybackRate: settings.playbackRate
