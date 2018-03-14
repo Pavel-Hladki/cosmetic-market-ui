@@ -21,11 +21,13 @@
       if(($(window).width() < 750 && $(".navigation-bar").offset().top > 50)
     || ($(window).width() > 750 && $(".navigation-bar").offset().top > 50)
           || ($(window).width() < 750 && $(".navigation-bar").offset().top < 50)){
-          $(".navigation-bar-brand > img").remove();
-          $(".navigation-bar-brand").prepend('<img class="aloe-logo-min" src="assets/img/icons/logoAloe-min-white.png">');
+          $(".navigation-bar-brand > img.aloe-logo").hide();
+          $(".navigation-bar-brand > img.aloe-logo-min").show();
+          //$(".navigation-bar-brand").prepend('<img class="aloe-logo-min" src="assets/img/icons/logoAloe-min-white.png">');
       } else {
-          $(".navigation-bar-brand > img").remove();
-          $(".navigation-bar-brand").prepend('<img class="aloe-logo" src="assets/img/icons/logoAloe-white.png">');
+          $(".navigation-bar-brand > img.aloe-logo-min").hide();
+          $(".navigation-bar-brand > img.aloe-logo").show();
+          //$(".navigation-bar-brand").prepend('<img class="aloe-logo" src="assets/img/icons/logoAloe-white.png">');
       }
   }
 
