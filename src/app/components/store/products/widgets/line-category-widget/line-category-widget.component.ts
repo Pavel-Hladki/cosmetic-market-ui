@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {animate, state, style, transition, trigger} from "@angular/animations";
-import {CategoryCount} from "../../../../../models/product-category";
+import {ProductCategory} from "../../../../../models/product-category";
 import {CategoryService} from "../../../../../services/category.service";
 import {defaultIfNull} from "../../../../../utils/utils";
 
@@ -31,7 +31,7 @@ export class LineCategoryComponent implements OnInit {
   @Output() onCategoriesChange = new EventEmitter<number[]>();
 
   collapse: string = 'open';
-  categoryCountList: CategoryCount[];
+  categoryList: ProductCategory[];
 
   constructor(private categoryService: CategoryService) { }
 
@@ -41,8 +41,8 @@ export class LineCategoryComponent implements OnInit {
   }
 
   getCategoriesCount(): void {
-    this.categoryService.getCategoryCounts()
-      .subscribe(categoryCountList => this.categoryCountList = categoryCountList);
+    this.categoryService.getCategories()
+      .subscribe(categoryList => this.categoryList = categoryList);
   }
 
   toggleCollapse(): void {

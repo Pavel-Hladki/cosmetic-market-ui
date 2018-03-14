@@ -7,10 +7,10 @@
   </a>
   <div class="collapse-section" [@collapse]="collapse">
     <ul class="categories">
-      <li *ngFor="let categoryCount of categoryCountList"
-          (click) = "selectCategory(categoryCount.category.id)"
-          [ngClass] = "{'selected': isCategorySelected(categoryCount.category.id)}">
-          {{categoryCount.category.name}}<span>{{categoryCount.count}}</span>
+      <li *ngFor="let category of categoryList"
+          (click) = "selectCategory(category.id)"
+          [ngClass] = "{'selected': isCategorySelected(category.id)}">
+          {{category.name}}<span>{{category.products}}</span>
       </li>
     </ul>
   </div>
