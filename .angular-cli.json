@@ -28,6 +28,7 @@
         "../node_modules/jquery.scrollto/jquery.scrollTo.min.js",
         "../node_modules/owl.carousel/dist/owl.carousel.min.js",
         "../node_modules/wowjs/dist/wow.min.js",
+        "../src/assets/libs/js/iphone-inline-video/iphone-inline-video.js",
         "../src/assets/libs/js/vide/jquery.vide.js",
         "../src/assets/libs/js/background-video.js",
         "../src/assets/libs/js/custom.js"

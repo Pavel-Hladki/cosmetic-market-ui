@@ -308,9 +308,9 @@
                 sources += '<source src="' + path.ogv + '.ogv" type="video/ogg">';
             }
 
-            $video = vide.$video = $('<video>' + sources + '</video>');
+            $video = vide.$video = $('<video playsinline>' + sources + '</video>');
         } else {
-            $video = vide.$video = $('<video>' +
+            $video = vide.$video = $('<video playsinline>' +
                 '<source src="' + path + '.mp4" type="video/mp4">' +
                 '<source src="' + path + '.webm" type="video/webm">' +
                 '<source src="' + path + '.ogv" type="video/ogg">' +

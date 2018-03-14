@@ -11,7 +11,12 @@ function checkVideoContainer () {
       }, {
         posterType: 'png'
       });
-      $("video[autoplay]").each(function(){ this.play(); });
+      $("video[autoplay]").each(function() {
+        window.enableInlineVideo(this, {
+          iPad: true
+        });
+        this.play();
+      });
   } else {
     setTimeout(checkVideoContainer, 50);
   }
