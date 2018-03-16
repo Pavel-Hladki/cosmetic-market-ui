@@ -142,12 +142,6 @@ label {
 .form-group {
   margin-bottom: 15px;
 }
-.collapse {
-  display: none;
-}
-.collapse.in {
-  display: block;
-}
 .navigation {
   padding-left: 0;
   margin-bottom: 0;
