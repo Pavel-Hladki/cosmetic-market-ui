@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
 import {Product} from "../../../../../models/product";
 import {ProductService} from "../../../../../services/product.service";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
@@ -10,7 +10,7 @@ import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/startWith';
-import {subscriptionLogsToBeFn} from "rxjs/testing/TestScheduler";
+import {of} from "rxjs/observable/of";
 
 @Component({
   selector: 'app-search-widget',
@@ -21,6 +21,8 @@ export class SearchWidgetComponent implements OnInit {
 
   @Input() term: string;
   @Output() onTermSelect = new EventEmitter<string>();
+
+  @ViewChild('searchButton') searchButtonEl: ElementRef;
 
   searchForm: FormGroup;
 
@@ -36,11 +38,13 @@ export class SearchWidgetComponent implements OnInit {
     this.createForm();
     this.products$ = this.searchField.valueChanges
       .startWith(this.term || '')
-      .filter(value => 1 > value.length || value.length > 2)
       .debounceTime(300)
       .distinctUntilChanged()
       .do(_ => this.loading = true)
-      .switchMap(term => this.productService.autocompleteName(term))
+      .switchMap(term => {
+        if (3 > term.length) return of([]);
+        return this.productService.autocompleteName(term);
+      })
       .do(_ => this.loading = false)
   }
 
@@ -53,7 +57,8 @@ export class SearchWidgetComponent implements OnInit {
   }
 
   onSubmit(): void {
-    if (this.searchForm.valid && this.searchForm.value.searchField !== this.term) {
+    if (this.searchForm.valid) {
+      this.searchButtonEl.nativeElement.focus();
       const selectedTerm = this.searchForm.value.searchField.length > 0 ? this.searchForm.value.searchField : null;
       this.onTermSelect.emit(selectedTerm);
     }

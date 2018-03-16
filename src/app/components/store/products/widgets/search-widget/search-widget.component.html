@@ -5,7 +5,7 @@
            class="search-field"
            placeholder="Search here...">
     <span *ngIf = "searchField.errors?.minlength" class="error">Please type in at least {{this.searchField.errors.minlength.requiredLength}} letters...</span>
-    <button type="submit" class="search-button"><i class="zmdi zmdi-search"></i></button>
+    <button #searchButton type="submit" class="search-button"><i class="zmdi zmdi-search"></i></button>
     <span *ngIf="loading" class="search-spinner">
       <img src="assets/img/loading.gif">
     </span>

@@ -3,7 +3,11 @@ import { Product } from '../../../models/product';
 
 import { ProductService, FilterParams } from '../../../services/product.service';
 import { ViewType } from "./products-control-panel/products-control-panel.component";
-import {defaultIfNull} from "../../../utils/utils";
+import {defaultIfNull, isDefined} from "../../../utils/utils";
+import {Location} from "@angular/common";
+import {ActivatedRoute, ParamMap, Router} from "@angular/router";
+
+declare var window: any;
 
 @Component({
   selector: 'app-products',
@@ -24,14 +28,13 @@ export class ProductsComponent implements OnInit {
 
   readonly viewType = ViewType;
 
-  constructor(private productService: ProductService) { }
+  constructor(private productService: ProductService,
+              private route: ActivatedRoute,
+              private router: Router,
+              private location: Location) { }
 
   ngOnInit() {
-    this.filterState = JSON.parse(sessionStorage.getItem("productFilter"));
-    if (!this.filterState) {
-      this.filterState = new FilterState();
-      this.syncStorageFilter();
-    }
+    this.initFromUrl();
 
     this.selectedViewType = ViewType[localStorage.getItem("viewType")];
     this.selectViewType(defaultIfNull(this.selectedViewType, ViewType.GRID));
@@ -74,7 +77,7 @@ export class ProductsComponent implements OnInit {
     this.updateProductList();
   }
 
-  selectCategories(categoryIds: number[]): void {
+  selectCategories(categoryIds: string[]): void {
     this.filterState.categoryIds = categoryIds;
     this.updateProductList();
   }
@@ -89,17 +92,21 @@ export class ProductsComponent implements OnInit {
     this.updateProductList();
   };
 
+  private initFromUrl() {
+    this.filterState = new FilterState(this.route.snapshot.queryParamMap);
+  }
+
   private calculatePageItemIndex(page: number): number {
     return (page - 1) * this.pageSize;
   }
 
-  private syncStorageFilter() {
-    sessionStorage.setItem("productFilter", JSON.stringify(this.filterState));
+  private syncUrlParams() {
+    this.location.replaceState(window.location.pathname + this.filterState.toUrlParams());
   }
 
   private updateProductList() {
+    this.syncUrlParams();
     this.getProducts();
-    this.syncStorageFilter();
   }
 
   private buildFilterParams(): FilterParams {
@@ -111,12 +118,37 @@ export class ProductsComponent implements OnInit {
 }
 
 class FilterState {
-
   public page: number = 1;
-  public categoryIds: number[];
+  public categoryIds: string[];
   public searchTerm: string;
   public sortField: string = 'name';
   public sortOrder: string = 'ASC';
 
-  constructor() {}
+  constructor(paramMap: ParamMap) {
+    this.fromParamMap(paramMap)
+  }
+
+  public toUrlParams(): string {
+    return ((isDefined(this.searchTerm) && this.searchTerm.length > 0 ? `&term=${this.searchTerm}` : '')
+      + ((this.page > 1) ? `&page=${this.page}` : '')
+      + ((this.categoryIds.length > 0 ) ? `&filter=category[${this.categoryIds.join(",")}]` : '')
+      +`&sort=${this.sortField}[${this.sortOrder}]`)
+      .replace('&', '?');
+  }
+
+  private fromParamMap(paramMap: ParamMap) {
+    this.page = +paramMap.get('page') || 1;
+    this.searchTerm = paramMap.get('term');
+    this.categoryIds = paramMap.get('filter') &&
+      paramMap.get('filter').replace('category[', '')
+      .replace(']', '')
+      .split(',')
+      .map(category => category.trim()) || [];
+
+    const sortValue = paramMap.get('sort');
+    this.sortField = sortValue && sortValue.substring(0, sortValue.indexOf('[')) || 'name';
+    this.sortOrder = sortValue && sortValue
+      .replace(this.sortField + '[', '')
+      .replace(']', '') || 'ASC';
+  }
 }

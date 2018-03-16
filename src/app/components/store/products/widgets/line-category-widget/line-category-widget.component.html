@@ -8,8 +8,8 @@
   <div class="collapse-section" [@collapse]="collapse">
     <ul class="categories">
       <li *ngFor="let category of categoryList"
-          (click) = "selectCategory(category.id)"
-          [ngClass] = "{'selected': isCategorySelected(category.id)}">
+          (click) = "selectCategory(category.name)"
+          [ngClass] = "{'selected': isCategorySelected(category.name)}">
           {{category.name}}<span>{{category.products}}</span>
       </li>
     </ul>

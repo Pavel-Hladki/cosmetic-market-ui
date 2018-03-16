@@ -11,12 +11,12 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 //todo here place load counts service
 export class WidgetsComponent implements OnInit {
 
-  @Input() categoryIds: number[];
+  @Input() categoryIds: string[];
   @Input() searchTerm: string;
 
   //todo think how to unite into one object if widgets get a lot
   @Output() onTermSelect = new EventEmitter<string>();
-  @Output() onCategoriesChange = new EventEmitter<number[]>();
+  @Output() onCategoriesChange = new EventEmitter<string[]>();
 
   constructor() { }
 
@@ -25,10 +25,10 @@ export class WidgetsComponent implements OnInit {
 
   selectTerm(term: string) {
     this.searchTerm = term;
-    this.selectCategories([]);
+    this.onTermSelect.emit(term);
   }
 
-  selectCategories(categoryIds: number[]) {
+  selectCategories(categoryIds: string[]) {
     this.categoryIds = categoryIds;
     this.onCategoriesChange.emit(categoryIds);
   }

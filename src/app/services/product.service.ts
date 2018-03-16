@@ -11,7 +11,7 @@ import {httpOptions} from "./http.options";
 import {BaseService} from "./base.service";
 import {environment} from "../../environments/environment";
 import 'rxjs/add/operator/catch';
-
+import {isDefined} from "../utils/utils";
 
 @Injectable()
 export class ProductService extends BaseService {
@@ -84,7 +84,7 @@ export class FilterParams {
 
   constructor(public page: number,
               public pageSize: number,
-              public categoryIds: number[] = [],
+              public categoryIds: string[] = [],
               public searchTerm: string,
               public sortField: string,
               public sortOrder: string
@@ -93,19 +93,19 @@ export class FilterParams {
   public toHttpParams(): HttpParams {
     let params = new HttpParams();
 
-    if(this.searchTerm != null && this.searchTerm.length > 0) {
+    if(isDefined(this.searchTerm) && this.searchTerm.length > 0) {
       params = params.set("term", this.searchTerm);
     }
-    if(this.page != null) {
+    if(isDefined(this.page)) {
       params = params.set("page", String(this.page));
     }
-    if(this.pageSize != null) {
+    if(isDefined(this.pageSize)) {
       params = params.set("pageSize", String(this.pageSize));
     }
-    if(this.categoryIds != null && this.categoryIds.length > 0) {
+    if(isDefined(this.categoryIds) && this.categoryIds.length > 0) {
       params = params.set("filter", `category[${this.categoryIds[0]}]`);
     }
-    if(this.sortField != null && this.sortOrder != null) {
+    if(isDefined(this.sortField) && isDefined(this.sortOrder)) {
       params = params.set("sort", `${this.sortField}[${this.sortOrder}]`);
     }
 

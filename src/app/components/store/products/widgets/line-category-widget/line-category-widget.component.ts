@@ -27,8 +27,8 @@ import {defaultIfNull} from "../../../../../utils/utils";
 })
 export class LineCategoryComponent implements OnInit {
 
-  @Input("categoryIds") selectedCategoryIds: number[];
-  @Output() onCategoriesChange = new EventEmitter<number[]>();
+  @Input("categoryIds") selectedCategoryIds: string[];
+  @Output() onCategoriesChange = new EventEmitter<string[]>();
 
   collapse: string = 'open';
   categoryList: ProductCategory[];
@@ -53,18 +53,19 @@ export class LineCategoryComponent implements OnInit {
     return this.collapse === 'open';
   }
 
-  selectCategory(categoryId: number) {
+  selectCategory(categoryId: string) {
     if(this.isCategorySelected(categoryId)) {
       this.selectedCategoryIds = this.selectedCategoryIds
         .filter(item => item !== categoryId);
     } else {
-      this.selectedCategoryIds.push(categoryId);
+      this.selectedCategoryIds = [categoryId];
+      //this.selectedCategoryIds.push(categoryId);
     }
 
     this.onCategoriesChange.emit(this.selectedCategoryIds);
   }
 
-  isCategorySelected(categoryId: number): boolean {
+  isCategorySelected(categoryId: string): boolean {
     return this.selectedCategoryIds.includes(categoryId);
   }
 }
