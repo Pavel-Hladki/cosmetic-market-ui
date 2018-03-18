@@ -1,7 +1,8 @@
 <header class="navigation-bar navigation-bar-custom navigation-bar-fixed-top" role="navigation">
   <div class="menu-container">
-    <a class="navigation-bar-brand" href="index.html">
-      <img class="aloe-logo" src="assets/img/icons/logoAloe-white.png">
+    <a class="navigation-bar-brand" routerLink="">
+      <img [hidden]="!isCurrentLogo(logoType.GREEN_LOGO)" class="aloe-logo" src="assets/img/icons/logoAloe.png">
+      <img [hidden]="!isCurrentLogo(logoType.WHITE_LOGO)" class="aloe-logo" src="assets/img/icons/logoAloe-white.png">
       <img class="aloe-logo-min" src="assets/img/icons/logoAloe-min-white.png">
     </a>
     <div class="navigation-bar-header page-scroll">
@@ -14,11 +15,11 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navigation-bar-collapse navigation-bar-right navigation-bar-main-collapse">
       <ul class="navigation navigation-bar-nav">
-        <li class="active"><a routerLink="" fragment="intro">Главная</a></li>
-        <li><a routerLink="" fragment="about">О нас</a></li>
-        <li><a routerLink="/products">Магазин</a></li>
-        <li><a routerLink="" fragment="contact">Контакты</a></li>
-        <li><a routerLink=""><i class="fa fa-shopping-cart fa-1_5x" aria-hidden="true"></i></a></li>
+        <li [ngClass]="{'active' : isItemActive('main')}"><a routerLink="" fragment="intro">Главная</a></li>
+        <li [ngClass]="{'active' : isItemActive('about')}"><a routerLink="" fragment="about">О нас</a></li>
+        <li [ngClass]="{'active' : isItemActive('store')}"><a routerLink="/products">Магазин</a></li>
+        <li [ngClass]="{'active' : isItemActive('contact')}"><a routerLink="" fragment="contact">Контакты</a></li>
+        <li [ngClass]="{'active' : isItemActive('bucket')}"><a routerLink=""><i class="fa fa-shopping-cart fa-1_5x" aria-hidden="true"></i></a></li>
         <li class="search-form">
           <div class="form-group">
             <label for="search" class="sr-only">Поиск</label>

@@ -59,7 +59,7 @@
               </div>
             </div>
           </div>
-          <app-pagination *ngIf="!loading"
+          <app-pagination *ngIf="!loading && pageSize < productsTotalCount"
                           [pageSize] = "pageSize"
                           [page] = "filterState.page"
                           [collectionSize] = "productsTotalCount"
