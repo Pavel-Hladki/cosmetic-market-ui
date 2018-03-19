@@ -3,8 +3,6 @@ import {ActivatedRoute, NavigationEnd, Router} from "@angular/router";
 import {ScrollService} from "../../../services/scroll.service";
 import {isDefined} from "../../../utils/utils";
 
-declare var $: any;
-
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -55,21 +53,21 @@ export class HeaderComponent implements OnInit {
 
   private lookupRouteParam(route: ActivatedRoute, param: string): string {
     while (route.firstChild && !isDefined(route.snapshot.data[param])) {
-      route = route.firstChild
+      route = route.firstChild;
     }
 
     return route.snapshot.data[param];
   }
 
   @HostListener("window:scroll", []) onScroll() {
-    this.changeActiveItemIfVisible($('#about'), 'about');
-    this.changeActiveItemIfVisible($('#intro'), 'main');
-    this.changeActiveItemIfVisible($('#contact'), 'contact');
+    this.changeActiveItemIfVisible('about', 'about');
+    this.changeActiveItemIfVisible('intro', 'main');
+    this.changeActiveItemIfVisible('contact', 'contact');
   }
 
-  private changeActiveItemIfVisible(element: any, item: string) {
+  private changeActiveItemIfVisible(elementId: string, item: string) {
     this.activeItem = this.scrollService
-      .isElementInView(element, false) ? item : this.activeItem;
+      .isElementInView(elementId, false) ? item : this.activeItem;
   }
 }
 

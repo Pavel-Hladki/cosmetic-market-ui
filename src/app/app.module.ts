@@ -51,6 +51,7 @@ import { SetsComponent } from './components/dashboard/sets/sets.component';
 import { StockComponent } from './components/dashboard/stock/stock.component';
 import {DashboardService} from './services/dashboard.service';
 import {ScrollService} from "./services/scroll.service";
+import {VideoService} from './services/video.service';
 
 @NgModule({
   //todo separate on several modules
@@ -110,7 +111,7 @@ import {ScrollService} from "./services/scroll.service";
     ),*/
     NgbModule.forRoot()
   ],
-  providers: [ProductService, CategoryService, Logger, DashboardService, ScrollService],
+  providers: [ProductService, CategoryService, Logger, DashboardService, ScrollService, VideoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

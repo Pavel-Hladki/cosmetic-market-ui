@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import {isDefined} from "../utils/utils";
 
 declare var $: any;
 
@@ -8,9 +7,9 @@ export class ScrollService {
 
   constructor() { }
 
-  public isElementInView(element: any, fullyInView: boolean) {
-    const $element = $(element);
-    if($element.length) {
+  public isElementInView(selectorId: string, fullyInView: boolean) {
+    const $element = $('#' + selectorId);
+    if ($element.length) {
       const pageTop = $(window).scrollTop();
       const pageBottom = pageTop + $(window).height();
       const elementTop = $element.offset().top;
