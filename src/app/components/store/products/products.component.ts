@@ -90,7 +90,11 @@ export class ProductsComponent implements OnInit {
   selectPage(page: number) {
     this.filterState.page = page;
     this.updateProductList();
-  };
+  }
+
+  trackProductFn(index, product: Product) {
+    return product ? product.id : null;
+  }
 
   private initFromUrl() {
     this.filterState = new FilterState(this.route.snapshot.queryParamMap);
@@ -125,7 +129,7 @@ class FilterState {
   public sortOrder: string = 'ASC';
 
   constructor(paramMap: ParamMap) {
-    this.fromParamMap(paramMap)
+    this.fromParamMap(paramMap);
   }
 
   public toUrlParams(): string {

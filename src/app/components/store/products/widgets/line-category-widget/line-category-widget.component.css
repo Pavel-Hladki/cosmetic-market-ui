@@ -28,7 +28,6 @@
 
 .widget.category-list ul.categories li {
   transition: all .3s ease-in 0s;
-  color: #000;
 }
 
 .widget.category-list ul.categories li.selected {

@@ -67,4 +67,9 @@ export class LineCategoryComponent implements OnInit {
   isCategorySelected(categoryId: string): boolean {
     return this.selectedCategoryIds.includes(categoryId);
   }
+
+  trackCategoryFn(index, category: ProductCategory) {
+    return category ? category.id + category.products : null;
+
+  }
 }

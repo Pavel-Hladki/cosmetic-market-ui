@@ -45,14 +45,14 @@
             <div [ngSwitch]="selectedViewType" class="tab-pane active">
               <div *ngSwitchCase="viewType.LIST" class="row mt-30">
                   <!-- product card -->
-                <app-product-item-list *ngFor="let product of products"
+                <app-product-item-list *ngFor="let product of products; trackBy: trackProductFn"
                                        [product]="product"
                                        class="col-md-12">
                 </app-product-item-list>
               </div>
               <div *ngSwitchCase="viewType.GRID" class="row mt-30">
                 <!-- product card -->
-                <app-product-item-grid *ngFor="let product of products"
+                <app-product-item-grid *ngFor="let product of products; trackBy: trackProductFn"
                                        [product]="product"
                                        class="col-sm-12 col-lg-4 col-md-6">
                 </app-product-item-grid>
