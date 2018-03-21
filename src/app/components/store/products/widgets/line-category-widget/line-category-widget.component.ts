@@ -2,7 +2,6 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {animate, state, style, transition, trigger} from "@angular/animations";
 import {ProductCategory} from "../../../../../models/product-category";
 import {CategoryService} from "../../../../../services/category.service";
-import {defaultIfNull} from "../../../../../utils/utils";
 
 @Component({
   selector: 'app-products-line-category-widget',

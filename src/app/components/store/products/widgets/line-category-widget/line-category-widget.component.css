@@ -43,10 +43,16 @@
 
 .widget.category-list ul.categories li {
   padding: 8px 10px;
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.widget.category-list ul.categories li span {
+.widget.category-list ul.categories li span.name {
+  width: 100%;
+}
+
+.widget.category-list ul.categories li span.count {
   float: right;
   font-size: 10px;
   background: #F4F7F9;

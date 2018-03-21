@@ -10,7 +10,7 @@
       <li *ngFor="let category of categoryList"
           (click) = "selectCategory(category.name)"
           [ngClass] = "{'selected': isCategorySelected(category.name)}">
-          {{category.name}}<span>{{category.products}}</span>
+          <span class="name">{{category.name}}</span><span class="count">{{category.products}}</span>
       </li>
     </ul>
   </div>
