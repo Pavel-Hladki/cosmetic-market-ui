@@ -17,6 +17,7 @@ export class VideoService {
       posterType: 'png'
     });
     $('video[autoplay]').each(function() {
+      console.log('play video');
       window.enableInlineVideo(this, {
         iPad: true
       });
