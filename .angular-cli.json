@@ -31,6 +31,7 @@
         "../node_modules/wowjs/dist/wow.min.js",
         "../src/assets/libs/js/iphone-inline-video/iphone-inline-video.js",
         "../src/assets/libs/js/vide/jquery.vide.js",
+        "../src/assets/libs/js/background-video.js",
         "../src/assets/libs/js/custom.js"
       ],
       "environmentSource": "environments/environment.ts",

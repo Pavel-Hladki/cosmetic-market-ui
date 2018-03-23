@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {AfterContentInit, AfterViewInit, Component, OnInit} from '@angular/core';
 import {Product} from "../../models/product";
 import {ProductService} from "../../services/product.service";
-import {VideoService} from '../../services/video.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -11,12 +10,9 @@ import {VideoService} from '../../services/video.service';
 export class DashboardComponent implements OnInit {
   products: Product[] = [];
 
-  constructor(private productService: ProductService,
-              private videoService: VideoService) { }
+  constructor(private productService: ProductService) { }
 
   ngOnInit() {
-    this.videoService
-      .putVideo('intro', 'ALOE_PLUS_LANZAROTE_desktop.mp4', 'ALOE_PLUS_LANZAROTE_small.mp4');
     this.getProducts();
   }
 
