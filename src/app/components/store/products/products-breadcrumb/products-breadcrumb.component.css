@@ -14,6 +14,10 @@
   font-size:.875rem;
   display:inline-block;
   letter-spacing:.4px;
+  max-width: 370px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 /deep/ .products-breadcrumb li:not(:first-child):before{
   content:"\203A";
@@ -47,6 +51,12 @@
     content: "\203A";
     display: inline-block;
     padding: 0 6px
+  }
+}
+
+@media (max-width: 555px) {
+  /deep/ .products-breadcrumb {
+    display: none;
   }
 }
 

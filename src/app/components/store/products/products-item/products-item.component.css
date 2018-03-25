@@ -16,12 +16,11 @@
 .product-title {
   color: #434343;
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 500;
   margin-bottom: 10px;
   overflow: hidden;
   text-overflow: ellipsis;
   text-transform: uppercase;
-  white-space: nowrap;
 }
 .pro-price {
   color: #666666;

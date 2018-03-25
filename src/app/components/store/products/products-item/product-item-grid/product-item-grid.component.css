@@ -23,13 +23,13 @@
 
 .product-title {
   color: #434343;
-  font-size: 14px;
-  font-weight: 700;
+  font-size: 12px;
+  font-weight: 500;
   margin-bottom: 10px;
   overflow: hidden;
   text-overflow: ellipsis;
   text-transform: uppercase;
-  height: 37px;
+  height: 56px;
 }
 .pro-price {
   color: #666666;

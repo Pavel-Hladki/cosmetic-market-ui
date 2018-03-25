@@ -143,6 +143,7 @@ label {
   padding-left: 0;
   margin-bottom: 0;
   list-style: none;
+  font-family: 'Lato', sans-serif;
 }
 .navigation > li {
   position: relative;

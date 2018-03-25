@@ -79,6 +79,10 @@
   transform: translateY(4px)
 }
 
+.product .price {
+  display: none;
+}
+
 .item-image img {
   height: 30vh
 }

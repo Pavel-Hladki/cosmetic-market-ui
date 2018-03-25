@@ -108,9 +108,6 @@ li:focus, li:hover {
 
 /* small mobile :320px. */
 @media (max-width: 767px) {
-  p {
-    font-size: 12px;
-  }
 }
 
 /* Large Mobile :480px. */

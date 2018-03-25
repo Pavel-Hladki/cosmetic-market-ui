@@ -79,3 +79,7 @@
   transform: translateY(4px)
 }
 
+.product .price {
+  display: none;
+}
+
