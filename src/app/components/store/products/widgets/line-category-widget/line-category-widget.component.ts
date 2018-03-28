@@ -26,22 +26,16 @@ import {CategoryService} from "../../../../../services/category.service";
 })
 export class LineCategoryComponent implements OnInit {
 
-  @Input("categoryIds") selectedCategoryIds: string[];
-  @Output() onCategoriesChange = new EventEmitter<string[]>();
+  @Input("selectedCategoryIds") selectedCategoryIds: number[];
+  @Output() onCategoriesChange = new EventEmitter<number[]>();
+  @Input("categoriesList") categoryList: ProductCategory[];
 
   collapse: string = 'open';
-  categoryList: ProductCategory[];
 
   constructor(private categoryService: CategoryService) { }
 
   ngOnInit() {
     this.selectedCategoryIds = this.selectedCategoryIds || [];
-    this.getCategoriesCount();
-  }
-
-  getCategoriesCount(): void {
-    this.categoryService.getCategories()
-      .subscribe(categoryList => this.categoryList = categoryList);
   }
 
   toggleCollapse(): void {
@@ -52,7 +46,7 @@ export class LineCategoryComponent implements OnInit {
     return this.collapse === 'open';
   }
 
-  selectCategory(categoryId: string) {
+  selectCategory(categoryId: number) {
     if(this.isCategorySelected(categoryId)) {
       this.selectedCategoryIds = this.selectedCategoryIds
         .filter(item => item !== categoryId);
@@ -64,7 +58,7 @@ export class LineCategoryComponent implements OnInit {
     this.onCategoriesChange.emit(this.selectedCategoryIds);
   }
 
-  isCategorySelected(categoryId: string): boolean {
+  isCategorySelected(categoryId: number): boolean {
     return this.selectedCategoryIds.includes(categoryId);
   }
 

@@ -84,7 +84,7 @@ export class FilterParams {
 
   constructor(public page: number,
               public pageSize: number,
-              public categoryIds: string[] = [],
+              public categoryIds: number[] = [],
               public searchTerm: string,
               public sortField: string,
               public sortOrder: string

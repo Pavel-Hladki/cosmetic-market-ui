@@ -6,6 +6,7 @@ import { ViewType } from "./products-control-panel/products-control-panel.compon
 import {defaultIfNull, isDefined} from "../../../utils/utils";
 import {Location} from "@angular/common";
 import {ActivatedRoute, ParamMap, Router} from "@angular/router";
+import {WidgetsState} from "./widgets/widgets.component";
 
 declare var window: any;
 
@@ -61,7 +62,7 @@ export class ProductsComponent implements OnInit {
   }
 
   isSearch() {
-    return this.filterState.searchTerm != null;
+    return isDefined(this.filterState.widgetsState.searchTerm);
   }
 
   selectViewType(viewType: ViewType): void {
@@ -77,13 +78,8 @@ export class ProductsComponent implements OnInit {
     this.updateProductList();
   }
 
-  selectCategories(categoryIds: string[]): void {
-    this.filterState.categoryIds = categoryIds;
-    this.updateProductList();
-  }
-
-  selectTerm(term: string): void {
-    this.filterState.searchTerm = term;
+  setWidgetsState(state: WidgetsState) {
+    this.filterState.widgetsState = state;
     this.updateProductList();
   }
 
@@ -116,15 +112,14 @@ export class ProductsComponent implements OnInit {
   private buildFilterParams(): FilterParams {
       return new FilterParams(
         this.filterState.page, this.pageSize,
-        this.filterState.categoryIds, this.filterState.searchTerm,
+        this.filterState.widgetsState.categoryIds, this.filterState.widgetsState.searchTerm,
         this.filterState.sortField, this.filterState.sortOrder);
   }
 }
 
 class FilterState {
   public page: number = 1;
-  public categoryIds: string[];
-  public searchTerm: string;
+  public widgetsState: WidgetsState = new WidgetsState();
   public sortField: string = 'name';
   public sortOrder: string = 'ASC';
 
@@ -133,22 +128,14 @@ class FilterState {
   }
 
   public toUrlParams(): string {
-    return ((isDefined(this.searchTerm) && this.searchTerm.length > 0 ? `&term=${this.searchTerm}` : '')
+    return (this.widgetsState.toUrlParams()
       + ((this.page > 1) ? `&page=${this.page}` : '')
-      + ((this.categoryIds.length > 0 ) ? `&filter=category[${this.categoryIds.join(",")}]` : '')
       +`&sort=${this.sortField}[${this.sortOrder}]`)
       .replace('&', '?');
   }
 
   private fromParamMap(paramMap: ParamMap) {
     this.page = +paramMap.get('page') || 1;
-    this.searchTerm = paramMap.get('term');
-    this.categoryIds = paramMap.get('filter') &&
-      paramMap.get('filter').replace('category[', '')
-      .replace(']', '')
-      .split(',')
-      .map(category => category.trim()) || [];
-
     const sortValue = paramMap.get('sort');
     this.sortField = sortValue && sortValue.substring(0, sortValue.indexOf('[')) || 'name';
     this.sortOrder = sortValue && sortValue

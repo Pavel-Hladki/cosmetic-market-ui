@@ -8,8 +8,8 @@
   <div class="collapse-section" [@collapse]="collapse">
     <ul class="categories">
       <li *ngFor="let category of categoryList; trackBy: trackCategoryFn"
-          (click) = "selectCategory(category.name)"
-          [ngClass] = "{'selected': isCategorySelected(category.name)}">
+          (click) = "selectCategory(category.id)"
+          [ngClass] = "{'selected': isCategorySelected(category.id)}">
           <span class="name">{{category.name}}</span><span class="count">{{category.products}}</span>
       </li>
     </ul>

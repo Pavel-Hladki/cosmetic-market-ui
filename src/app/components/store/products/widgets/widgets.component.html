@@ -2,6 +2,7 @@
 <app-search-widget [term]="searchTerm"
                    (onTermSelect)="selectTerm($event)">
 </app-search-widget>
-<app-products-line-category-widget [categoryIds]="categoryIds"
+<app-products-line-category-widget [categoriesList]="categoryList"
+                                   [selectedCategoryIds]="categoryIds"
                                    (onCategoriesChange)="selectCategories($event)">
 </app-products-line-category-widget>

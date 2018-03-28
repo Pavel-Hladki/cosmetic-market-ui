@@ -1,36 +1,98 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {CategoryService} from "../../../../services/category.service";
+import {ProductCategory} from "../../../../models/product-category";
+import {isDefined} from "../../../../utils/utils";
+import {ActivatedRoute, ParamMap} from "@angular/router";
 
 @Component({
   selector: 'app-widgets',
   templateUrl: './widgets.component.html',
   styleUrls: ['./widgets.component.css']
 })
-///todo add ?q="term" param to url and read from
+
 //todo rename to filter-widgets
 //todo reload counts on term change, any change
-//todo here place load counts service
 export class WidgetsComponent implements OnInit {
 
-  @Input() categoryIds: string[];
-  @Input() searchTerm: string;
+  widgetsState: WidgetsState;
+  @Output() onStateChanged = new EventEmitter<WidgetsState>();
 
-  //todo think how to unite into one object if widgets get a lot
-  @Output() onTermSelect = new EventEmitter<string>();
-  @Output() onCategoriesChange = new EventEmitter<string[]>();
+  categoryList: ProductCategory[];
 
-  constructor() { }
+  constructor(private categoryService: CategoryService,
+              private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.categoryService.getCategories()
+      .subscribe(categoryList => {
+        this.categoryList = categoryList;
+        this.initFromUrl(categoryList);
+        this.emitStateChanged();
+      });
   }
 
   selectTerm(term: string) {
-    this.searchTerm = term;
-    this.onTermSelect.emit(term);
+    this.widgetsState.searchTerm = term;
+    this.emitStateChanged()
   }
 
-  selectCategories(categoryIds: string[]) {
-    this.categoryIds = categoryIds;
-    this.onCategoriesChange.emit(categoryIds);
+  selectCategories(categoryIds: number[]) {
+    this.widgetsState.categoryIds = categoryIds;
+    this.emitStateChanged();
   }
 
+  private initFromUrl(categoryList: ProductCategory[]) {
+    this.widgetsState = WidgetsState.createFrom(this.route.snapshot.queryParamMap, categoryList);
+  }
+
+  private emitStateChanged() {
+    this.onStateChanged.emit(this.widgetsState);
+  }
 }
+
+export class WidgetsState {
+  public searchTerm: string;
+  private _categoryIds: number[] = [];
+  private categoryNames: string[] = [];
+  private categoryList: ProductCategory[] = [];
+
+  constructor() {
+  }
+
+  public toUrlParams(): string {
+    return ((isDefined(this.searchTerm) && this.searchTerm.length > 0 ? `&term=${this.searchTerm}` : '')
+      + ((this.categoryNames.length > 0 ) ? `&filter=category[${this.categoryNames.join(",")}]` : ''))
+      .replace('&', '?');
+  }
+
+  static createFrom(paramMap: ParamMap, categoryList: ProductCategory[]): WidgetsState  {
+    const state = new WidgetsState();
+    state.initFrom(paramMap, categoryList);
+    return state;
+  }
+
+  get categoryIds(): number[] {
+    return this._categoryIds;
+  }
+  set categoryIds(categoryIds: number[]) {
+    this._categoryIds = categoryIds;
+    this.categoryNames = this.categoryList
+      .filter(category => categoryIds.includes(category.id))
+      .map(category => category.name);
+  }
+
+  private initFrom(paramMap: ParamMap, categoryList: ProductCategory[]) {
+    this.categoryList = categoryList;
+    this.searchTerm = paramMap.get('term');
+    this.categoryNames = paramMap.get('filter') &&
+      paramMap.get('filter').replace('category[', '')
+        .replace(']', '')
+        .split(',')
+        .map(category => category.trim()) || [];
+
+    this.categoryIds =  categoryList
+      .filter(category => this.categoryNames.includes(category.name))
+      .map(category => category.id);
+  }
+}
+
