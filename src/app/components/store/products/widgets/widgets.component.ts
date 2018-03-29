@@ -14,7 +14,7 @@ import {ActivatedRoute, ParamMap} from "@angular/router";
 //todo reload counts on term change, any change
 export class WidgetsComponent implements OnInit {
 
-  widgetsState: WidgetsState;
+  widgetsState: WidgetsState = new WidgetsState();
   @Output() onStateChanged = new EventEmitter<WidgetsState>();
 
   categoryList: ProductCategory[];
@@ -27,22 +27,26 @@ export class WidgetsComponent implements OnInit {
       .subscribe(categoryList => {
         this.categoryList = categoryList;
         this.initFromUrl(categoryList);
-        this.emitStateChanged();
       });
   }
 
   selectTerm(term: string) {
-    this.widgetsState.searchTerm = term;
-    this.emitStateChanged()
+    if(this.widgetsState.searchTerm != term) {
+      this.widgetsState.searchTerm = term;
+      this.emitStateChanged();
+    }
   }
 
   selectCategories(categoryIds: number[]) {
-    this.widgetsState.categoryIds = categoryIds;
-    this.emitStateChanged();
+    if(this.widgetsState.categoryIds != categoryIds) {
+      this.widgetsState.categoryIds = categoryIds;
+      this.emitStateChanged();
+    }
   }
 
   private initFromUrl(categoryList: ProductCategory[]) {
     this.widgetsState = WidgetsState.createFrom(this.route.snapshot.queryParamMap, categoryList);
+    this.emitStateChanged();
   }
 
   private emitStateChanged() {

@@ -1,8 +1,8 @@
 <!--todo to popup when size is small less than 768-->
-<app-search-widget [term]="searchTerm"
+<app-search-widget [term]="widgetsState.searchTerm"
                    (onTermSelect)="selectTerm($event)">
 </app-search-widget>
 <app-products-line-category-widget [categoriesList]="categoryList"
-                                   [selectedCategoryIds]="categoryIds"
+                                   [selectedCategoryIds]="widgetsState.categoryIds"
                                    (onCategoriesChange)="selectCategories($event)">
 </app-products-line-category-widget>

@@ -66,16 +66,20 @@ export class ProductsComponent implements OnInit {
   }
 
   selectViewType(viewType: ViewType): void {
+    if(this.selectedViewType != viewType) {
       this.selectedViewType = viewType;
       this.pageSize = viewType === ViewType.GRID ? 30 : 15;
       this.getProducts();
       localStorage.setItem("viewType", ViewType[viewType]);
+    }
   }
 
   selectSortOption(sortOptionName: string): void {
-    this.filterState.sortField = sortOptionName;
     this.filterState.sortOrder = 'ASC';
-    this.updateProductList();
+    if(this.filterState.sortField != sortOptionName) {
+      this.filterState.sortField = sortOptionName;
+      this.updateProductList();
+    }
   }
 
   setWidgetsState(state: WidgetsState) {
@@ -84,8 +88,10 @@ export class ProductsComponent implements OnInit {
   }
 
   selectPage(page: number) {
-    this.filterState.page = page;
-    this.updateProductList();
+    if(this.filterState.page != page) {
+      this.filterState.page = page;
+      this.updateProductList();
+    }
   }
 
   trackProductFn(index, product: Product) {
