@@ -120,7 +120,7 @@
     </div>
     <div class="tab-content">
       <div class="container-fluid active drivers-main tab-pane" id="bestsellers">
-        <app-bestsellers></app-bestsellers>
+        <app-bestsellers [products]="products"></app-bestsellers>
       </div>
       <div class="container-fluid drivers-main tab-pane" id="sets">
         <app-sets style="height: 100%;"></app-sets>
@@ -159,7 +159,7 @@
       <p class="category-list-description">Средства для ухода за лицом и телом для женщин.
         Сделаны на основе натуральных ингредиентов.</p>
       <p class="category-list-footer">
-        <a class="btn">Подробнее</a>
+        <a routerLink="/products" class="btn">Подробнее</a>
       </p>
     </div>
     <div class="col-xl-3 col-md-6 col-lg-3 col-12 category">
@@ -169,7 +169,7 @@
       <p class="category-list-description">Средства для ухода за лицом и телом для мужчин.
         Сделаны на основе натуральных ингредиентов.</p>
       <p class="category-list-footer">
-        <a class="btn">Подробнее</a>
+        <a routerLink="/products" [queryParams]="{filter: 'Для мужчин'}" class="btn">Подробнее</a>
       </p>
     </div>
     <div class="col-xl-3 col-md-6 col-lg-3 col-12 category">
@@ -179,7 +179,7 @@
       <p class="category-list-description">Средства для ухода за лицом и телом для детей.
         Сделаны на основе натуральных ингредиентов.</p>
       <p class="category-list-footer">
-        <a class="btn">Подробнее</a>
+        <a routerLink="/products" [queryParams]="{filter: 'Для детей'}" class="btn">Подробнее</a>
       </p>
     </div>
     <div class="col-xl-3 col-md-6 col-lg-3 col-12 category">
@@ -189,7 +189,7 @@
       <p class="category-list-description">Средства для дома и животных сделаны на основе натуральных ингредиентов.
       </p>
       <p class="category-list-footer">
-        <a class="btn">Подробнее</a>
+        <a routerLink="/products" [queryParams]="{filter: 'Для дома'}" class="btn">Подробнее</a>
       </p>
     </div>
   </div>

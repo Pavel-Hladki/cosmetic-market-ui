@@ -65,8 +65,7 @@ export class WidgetsState {
 
   public toUrlParams(): string {
     return ((isDefined(this.searchTerm) && this.searchTerm.length > 0 ? `&term=${this.searchTerm}` : '')
-      + ((this.categoryNames.length > 0 ) ? `&filter=category[${this.categoryNames.join(",")}]` : ''))
-      .replace('&', '?');
+      + ((this.categoryNames.length > 0 ) ? `&filter=category[${this.categoryNames.join(",")}]` : ''));
   }
 
   static createFrom(paramMap: ParamMap, categoryList: ProductCategory[]): WidgetsState  {

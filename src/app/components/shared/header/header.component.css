@@ -517,3 +517,63 @@ background-color: #454343 !important;
   padding-left: 20px;
 }
 /* END: Search field */
+
+#overlay {
+  position: fixed; /* Sit on top of the page content */
+  display: block; /* Hidden by default */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+  z-index: 1000; /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer; /* Add a pointer on hover */
+}
+
+/*search result css taken from products page*/
+.search-spinner {
+  position: absolute;
+  top: auto;
+  right: 1.7em;
+  bottom: 1.2em;
+}
+
+.search-result {
+  position: absolute;
+  width: 100%;
+  min-width: 300px;
+  z-index: 1020;
+  box-shadow: 0 8px 13px rgba(0, 0, 0, 0.15);
+}
+
+.search-result .search-item {
+  font-weight: bold;
+  font-family: Montserrat, sans-serif;
+  font-size: 12px;
+}
+
+.search-result .search-item a {
+  color: #5d5d5d;
+}
+
+.search-result .search-item a:hover {
+  color: #30881e;
+}
+
+.search-result .product-icon-small {
+  width: 35px;
+  height: 30px;
+}
+
+@media (max-width: 767px) {
+
+  .widget-search {
+    margin-top: 15px;
+  }
+
+  .search-result {
+    min-width: unset;
+  }
+}

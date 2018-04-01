@@ -3,6 +3,7 @@ import {ProductCategory} from "./product-category";
 export class Product {
   constructor(
     public id: number,
+    public url: string,
     public name: string,
     public category: ProductCategory,
     public properties: ProductProperty[],

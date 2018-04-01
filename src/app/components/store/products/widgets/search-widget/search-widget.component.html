@@ -3,7 +3,7 @@
 
     <input (focus)="onSearchFieldFocus()" (blur)="onSearchFieldBlur()" formControlName="searchField" type="text"
            class="search-field"
-           placeholder="Search here...">
+           placeholder="Поиск...">
     <span *ngIf = "searchField.errors?.minlength" class="error">Please type in at least {{this.searchField.errors.minlength.requiredLength}} letters...</span>
     <button #searchButton type="submit" class="search-button"><i class="zmdi zmdi-search"></i></button>
     <span *ngIf="loading" class="search-spinner">

@@ -21,11 +21,18 @@
         <li [ngClass]="{'active' : isItemActive('contact')}"><a routerLink="" fragment="contact">Контакты</a></li>
         <li [ngClass]="{'active' : isItemActive('bucket')}"><a routerLink=""><i class="fa fa-shopping-cart fa-1_5x" aria-hidden="true"></i></a></li>
         <li class="search-form">
-          <div class="form-group">
-            <label for="search" class="sr-only">Поиск</label>
-            <input type="text" class="form-control" name="search" id="search" placeholder="Поиск...">
-            <i class="fa fa-search fa-1_5x"></i>
-          </div>
+          <form [formGroup]="searchForm" (submit)="onSubmit()" novalidate>
+            <div class="form-group">
+              <label for="search" class="sr-only">Поиск</label>
+              <input (focus)="onSearchFieldFocus()" (blur)="onSearchFieldBlur()"
+                     formControlName="searchField" type="text"
+                     class="form-control" id="search" placeholder="Поиск..."/>
+              <i class="fa fa-search fa-1_5x"></i>
+              <span *ngIf="loading" class="search-spinner">
+                <img src="assets/img/loading.gif">
+              </span>
+            </div>
+          </form>
         </li>
       </ul>
     </div>
@@ -33,3 +40,11 @@
   </div>
   <!-- /.container -->
 </header>
+<ul  class="list-group search-result">
+  <li class="list-group-item search-item"
+      *ngFor="let product of products$ | async">
+    <img src="{{product.mainImage}}" class="product-icon-small">
+    <a routerLink="/products/{{product.id}}">{{product.name}}</a>
+  </li>
+</ul>
+<div [hidden]="!isSearchFocused()" id="overlay"></div>

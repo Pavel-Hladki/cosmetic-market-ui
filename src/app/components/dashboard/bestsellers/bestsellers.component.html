@@ -1,5 +1,7 @@
   <div id="products-slider" class="owl-carousel owl-theme">
-    <div class="product">
+    <app-product-item-grid *ngFor="let product of _products" [product]="product">
+    </app-product-item-grid>
+      <!--<div class="product">
       <div class="item-image">
           <img src="assets/img/155-con.jpg" class="img-fluid" alt="">
         <div class="hover-overlay">
@@ -112,5 +114,5 @@
           <span class="price">70.00$</span>
         </div>
       </div>
-    </div>
+    </div>-->
   </div>

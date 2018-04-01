@@ -45,7 +45,7 @@ export class SearchWidgetComponent implements OnInit {
         if (3 > term.length) return of([]);
         return this.productService.autocompleteName(term);
       })
-      .do(_ => this.loading = false)
+      .do(_ => this.loading = false);
   }
 
   get searchField() {
