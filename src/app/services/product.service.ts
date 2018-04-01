@@ -73,7 +73,8 @@ export class ProductService extends BaseService {
       return of([]);
     }
     return this.http.get<(Product)[]>(`${this.productsUrl}/all`)
-      .map(products => products.filter(product => product.name.includes(term)))
+      .map(products => products.filter(product => product.name.toLowerCase()
+        .includes(term.toLowerCase())))
       .do(_ => this.log(`found products matching "${term}"`))
       .catch(this.handleError<Product[]>('autocompleteName', []))
   }

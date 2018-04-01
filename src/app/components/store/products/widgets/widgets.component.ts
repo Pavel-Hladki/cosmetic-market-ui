@@ -86,7 +86,7 @@ export class WidgetsState {
 
   private initFrom(paramMap: ParamMap, categoryList: ProductCategory[]) {
     this.categoryList = categoryList;
-    this.searchTerm = paramMap.get('term');
+    this.searchTerm = paramMap.get('term') || '';
     this.categoryNames = paramMap.get('filter') &&
       paramMap.get('filter').replace('category[', '')
         .replace(']', '')

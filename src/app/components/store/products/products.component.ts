@@ -62,7 +62,8 @@ export class ProductsComponent implements OnInit {
   }
 
   isSearch() {
-    return isDefined(this.filterState.widgetsState.searchTerm);
+    return isDefined(this.filterState.widgetsState.searchTerm)
+      && this.filterState.widgetsState.searchTerm.length > 0;
   }
 
   selectViewType(viewType: ViewType): void {

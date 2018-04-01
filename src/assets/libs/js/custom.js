@@ -1,3 +1,4 @@
+//todo rewrite cache an selectors in vars
 (function ($) {
 	new WOW().init();
 
@@ -19,7 +20,7 @@
   });
 
   function manageMenuCollapsing() {
-    const $menuItems = $(".navigation-bar-main-collapse ul li");
+    const $menuItems = $(".navigation-bar-main-collapse > ul > li:not(.search-form)");
 
     if($(window).width() < 750 ) {
       $menuItems.attr("data-toggle", "collapse");

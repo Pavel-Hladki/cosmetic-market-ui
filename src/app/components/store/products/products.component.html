@@ -38,7 +38,7 @@
                                       (onSelectSortOption) = "selectSortOption($event)">
           </app-products-control-panel>
           <div *ngIf="loading" id="load" style="z-index: 9990"></div>
-          <div *ngIf="!loading" class="tab-content">
+          <div *ngIf="!loading" id="product-list" class="tab-content">
             <div [ngSwitch]="selectedViewType" class="tab-pane active">
               <div *ngSwitchCase="viewType.LIST" class="row mt-30">
                   <!-- product card -->

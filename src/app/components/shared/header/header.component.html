@@ -25,7 +25,7 @@
             <div class="form-group">
               <label for="search" class="sr-only">Поиск</label>
               <input (focus)="onSearchFieldFocus()" (blur)="onSearchFieldBlur()"
-                     formControlName="searchField" type="text"
+                     formControlName="searchField" type="text" autocomplete="off" tabindex="-1"
                      class="form-control" id="search" placeholder="Поиск..."/>
               <i class="fa fa-search fa-1_5x"></i>
               <span *ngIf="loading" class="search-spinner">
@@ -38,13 +38,13 @@
     </div>
     <!-- /.navigation-bar-collapse -->
   </div>
+  <ul [hidden]="!isSearchFocused()" class="list-group search-result">
+    <li class="list-group-item search-item"
+        *ngFor="let product of products$ | async">
+      <img src="{{product.mainImage}}" class="product-icon-small">
+      <a routerLink="/products/{{product.id}}">{{product.name}}</a>
+    </li>
+  </ul>
   <!-- /.container -->
 </header>
-<ul  class="list-group search-result">
-  <li class="list-group-item search-item"
-      *ngFor="let product of products$ | async">
-    <img src="{{product.mainImage}}" class="product-icon-small">
-    <a routerLink="/products/{{product.id}}">{{product.name}}</a>
-  </li>
-</ul>
 <div [hidden]="!isSearchFocused()" id="overlay"></div>

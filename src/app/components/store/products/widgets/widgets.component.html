@@ -1,5 +1,5 @@
 <!--todo to popup when size is small less than 768-->
-<app-search-widget *ngIf="widgetsState.searchTerm"
+<app-search-widget *ngIf="widgetsState.searchTerm != null"
                    [term]="widgetsState.searchTerm"
                    (onTermSelect)="selectTerm($event)">
 </app-search-widget>
