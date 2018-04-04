@@ -537,7 +537,7 @@ background-color: #454343 !important;
   position: absolute;
   top: auto;
   right: 1.7em;
-  bottom: 1.2em;
+  bottom: -2.1em;
 }
 
 .search-result {
@@ -572,4 +572,32 @@ background-color: #454343 !important;
 .search-result .product-icon-small {
   width: 35px;
   height: 30px;
+}
+
+.search-button {
+  position: absolute;
+  top: auto;
+  bottom: -0.2em;
+  background: transparent none repeat scroll 0 0;
+  color: #999;
+  font-size: 20px;
+  height: 100%;
+  right: 0;
+  transition: all 0.3s ease 0s;
+  width: 50px;
+}
+
+.search-button:hover {
+  color: #30881e;
+}
+
+.search-button i {
+  font-size: 24px;
+}
+
+@media(min-width:767px) {
+
+  .search-spinner {
+    bottom: 1.2em;
+  }
 }

@@ -32,9 +32,13 @@ export class ProductImageSliderComponent implements OnInit {
     }
   }
 
-  clickItem(mainImageIndex: number): void {
+  public setActiveImage(imageUrl: string) {
+    this.mainImage = imageUrl;
+  }
+
+  setActiveItem(mainImageIndex: number): void {
     this.mainImageIndex = mainImageIndex;
-    this.mainImage = this.imageList[mainImageIndex];
+    this.setActiveImage(this.imageList[mainImageIndex]);
   }
 
   moveLeft(): void {

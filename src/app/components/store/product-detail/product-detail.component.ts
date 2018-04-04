@@ -1,9 +1,10 @@
-import { Component, OnInit, Input } from '@angular/core';
+import {Component, OnInit, Input, ViewChild} from '@angular/core';
 import { Product } from '../../../models/product'
 
-import { ActivatedRoute } from '@angular/router';
+import {ActivatedRoute, NavigationEnd, Router} from '@angular/router';
 import { Location } from '@angular/common';
 import { ProductService } from "../../../services/product.service";
+import {ProductImageSliderComponent} from "./product-image-slider/product-image-slider.component";
 
 @Component({
   selector: 'app-product-detail',
@@ -12,16 +13,25 @@ import { ProductService } from "../../../services/product.service";
 })
 export class ProductDetailComponent implements OnInit {
 
+  @ViewChild('imageSlider') imageSlider: ProductImageSliderComponent;
+
   @Input() product: Product;
   imageUrls: string[] = [];
 
   constructor(
+    private router: Router,
     private route: ActivatedRoute,
     private productService: ProductService,
     private location: Location
   ) { }
 
   ngOnInit(): void {
+    this.router.events.subscribe((e: any) => {
+      if (e instanceof NavigationEnd) {
+        this.getProduct();
+      }
+    });
+
     this.getProduct();
   }
 
@@ -32,6 +42,9 @@ export class ProductDetailComponent implements OnInit {
         this.product = product;
         this.imageUrls = [];
         this.imageUrls.push(product.mainImage, ...product.otherImages);
+        if(this.imageSlider) {
+          this.imageSlider.setActiveImage(product.mainImage);
+        }
       });
   }
 

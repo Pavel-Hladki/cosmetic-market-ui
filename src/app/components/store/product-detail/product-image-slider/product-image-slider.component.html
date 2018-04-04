@@ -16,7 +16,7 @@
              #nav>
 
           <img *ngFor="let image of imageList; let last = last; let i = index"
-               (click)="clickItem(i)"
+               (click)="setActiveItem(i)"
                [src]="image"
                [class.last]="last"
                [class.active]="i === mainImageIndex"

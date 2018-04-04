@@ -5,7 +5,7 @@ import { ProductService, FilterParams } from '../../../services/product.service'
 import { ViewType } from "./products-control-panel/products-control-panel.component";
 import {defaultIfNull, isDefined} from "../../../utils/utils";
 import {Location} from "@angular/common";
-import {ActivatedRoute, ParamMap, Router} from "@angular/router";
+import {ActivatedRoute, NavigationEnd, ParamMap, Router} from "@angular/router";
 import {WidgetsState} from "./widgets/widgets.component";
 
 declare var window: any;
@@ -35,6 +35,12 @@ export class ProductsComponent implements OnInit {
               private location: Location) { }
 
   ngOnInit() {
+    this.router.events.subscribe((e: any) => {
+      if (e instanceof NavigationEnd) {
+        this.initFromUrl();
+      }
+    });
+
     this.initFromUrl();
 
     this.selectedViewType = ViewType[localStorage.getItem("viewType")];
@@ -148,5 +154,7 @@ class FilterState {
     this.sortOrder = sortValue && sortValue
       .replace(this.sortField + '[', '')
       .replace(']', '') || 'ASC';
+
+    return this;
   }
 }

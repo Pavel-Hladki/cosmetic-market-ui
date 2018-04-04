@@ -16,20 +16,7 @@
 
   $(window).resize(function() {
       resizeLogo();
-      manageMenuCollapsing();
   });
-
-  function manageMenuCollapsing() {
-    const $menuItems = $(".navigation-bar-main-collapse > ul > li:not(.search-form)");
-
-    if($(window).width() < 750 ) {
-      $menuItems.attr("data-toggle", "collapse");
-      $menuItems.attr("data-target", ".navigation-bar-main-collapse");
-    } else {
-      $menuItems.removeAttr("data-toggle");
-      $menuItems.removeAttr("data-target");
-    }
-  }
 
   function resizeLogo() {
       if(($(window).width() < 750 && $(".navigation-bar").offset().top > 50)
@@ -46,7 +33,6 @@
 	//jQuery for page scrolling feature - requires jQuery Easing plugin
 	$(function() {
     resizeLogo();
-    manageMenuCollapsing();
 
 		$('.navigation-bar-nav li a').on('click', function(event) {
 

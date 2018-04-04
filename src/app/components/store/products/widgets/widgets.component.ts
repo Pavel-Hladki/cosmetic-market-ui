@@ -2,7 +2,7 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {CategoryService} from "../../../../services/category.service";
 import {ProductCategory} from "../../../../models/product-category";
 import {isDefined} from "../../../../utils/utils";
-import {ActivatedRoute, ParamMap} from "@angular/router";
+import {ActivatedRoute, NavigationEnd, ParamMap, Router} from "@angular/router";
 
 @Component({
   selector: 'app-widgets',
@@ -20,9 +20,16 @@ export class WidgetsComponent implements OnInit {
   categoryList: ProductCategory[];
 
   constructor(private categoryService: CategoryService,
-              private route: ActivatedRoute) { }
+              private route: ActivatedRoute,
+              private router: Router) { }
 
   ngOnInit() {
+    this.router.events.subscribe((e: any) => {
+      if (e instanceof NavigationEnd) {
+        this.initFromUrl(this.categoryList);
+      }
+    });
+
     this.categoryService.getCategories()
       .subscribe(categoryList => {
         this.categoryList = categoryList;

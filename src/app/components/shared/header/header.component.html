@@ -15,11 +15,11 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navigation-bar-collapse navigation-bar-right navigation-bar-main-collapse">
       <ul class="navigation navigation-bar-nav">
-        <li [ngClass]="{'active' : isItemActive('main')}"><a routerLink="" fragment="intro">Главная</a></li>
-        <li [ngClass]="{'active' : isItemActive('about')}"><a routerLink="" fragment="about">О нас</a></li>
-        <li [ngClass]="{'active' : isItemActive('store')}"><a routerLink="/products">Магазин</a></li>
-        <li [ngClass]="{'active' : isItemActive('contact')}"><a routerLink="" fragment="contact">Контакты</a></li>
-        <li [ngClass]="{'active' : isItemActive('bucket')}"><a routerLink=""><i class="fa fa-shopping-cart fa-1_5x" aria-hidden="true"></i></a></li>
+        <li (click)="collapseMenu()" [ngClass]="{'active' : isItemActive('main')}"><a routerLink="" fragment="intro">Главная</a></li>
+        <li (click)="collapseMenu()" [ngClass]="{'active' : isItemActive('about')}"><a routerLink="" fragment="about">О нас</a></li>
+        <li (click)="collapseMenu()" [ngClass]="{'active' : isItemActive('store')}"><a routerLink="/products">Магазин</a></li>
+        <li (click)="collapseMenu()" [ngClass]="{'active' : isItemActive('contact')}"><a routerLink="" fragment="contact">Контакты</a></li>
+        <li (click)="collapseMenu()" [ngClass]="{'active' : isItemActive('bucket')}"><a routerLink=""><i class="fa fa-shopping-cart fa-1_5x" aria-hidden="true"></i></a></li>
         <li class="search-form">
           <form [formGroup]="searchForm" (submit)="onSubmit()" novalidate>
             <div class="form-group">
@@ -27,7 +27,7 @@
               <input (focus)="onSearchFieldFocus()" (blur)="onSearchFieldBlur()"
                      formControlName="searchField" type="text" autocomplete="off" tabindex="-1"
                      class="form-control" id="search" placeholder="Поиск..."/>
-              <i class="fa fa-search fa-1_5x"></i>
+              <i #searchButton class="fa fa-search fa-1_5x"></i>
               <span *ngIf="loading" class="search-spinner">
                 <img src="assets/img/loading.gif">
               </span>
@@ -38,8 +38,12 @@
     </div>
     <!-- /.navigation-bar-collapse -->
   </div>
-  <ul [hidden]="!isSearchFocused()" class="list-group search-result">
+  <ul [hidden]="!isSearchFocused()"
+      (mouseenter)="onSearchResultHover()"
+      (mouseleave)="onSearchResultLeave()"
+      class="list-group search-result">
     <li class="list-group-item search-item"
+        (click)="selectFoundItem()"
         *ngFor="let product of products$ | async">
       <img src="{{product.mainImage}}" class="product-icon-small">
       <a routerLink="/products/{{product.id}}">{{product.name}}</a>

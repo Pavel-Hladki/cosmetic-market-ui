@@ -8,7 +8,7 @@
     </div>
     <div *ngIf="product" class="product-details">
       <div class="row product-description">
-        <app-product-image-slider [imageUrls]="imageUrls" class="col-md-5 col-sm-12">
+        <app-product-image-slider #imageSlider [imageUrls]="imageUrls" class="col-md-5 col-sm-12">
         </app-product-image-slider>
 
         <app-product-info-block [product]="product" class="col-md-7 col-sm-12">

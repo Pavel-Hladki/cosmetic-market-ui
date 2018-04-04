@@ -16,7 +16,7 @@ import { Logger } from './services/logger.service';
 import { StoreComponent } from './components/store/store.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ProductSearchComponent } from './components/shared/product-search/product-search.component';
-import { ProductsItemComponent } from './components/store/products/products-item/products-item.component';
+import { ProductsItemComponent } from './components/shared/products-item/products-item.component';
 import { PaginationComponent } from './components/store/shared/pagination/pagination.component';
 import { ProductsControlPanelComponent } from './components/store/products/products-control-panel/products-control-panel.component';
 import { LineCategoryComponent } from './components/store/products/widgets/line-category-widget/line-category-widget.component';
@@ -27,8 +27,8 @@ import { AccountNavigationComponent } from './components/supplier/account-naviga
 import { ProductRecordComponent } from './components/supplier/products-table/product-record/product-record.component';
 import { ProductFormComponent } from './components/supplier/product-form/product-form.component';
 import { SearchWidgetComponent } from './components/store/products/widgets/search-widget/search-widget.component';
-import { ProductItemGridComponent } from './components/store/products/products-item/product-item-grid/product-item-grid.component';
-import { ProductItemListComponent } from './components/store/products/products-item/product-item-list/product-item-list.component';
+import { ProductItemGridComponent } from './components/shared/products-item/product-item-grid/product-item-grid.component';
+import { ProductItemListComponent } from './components/shared/products-item/product-item-list/product-item-list.component';
 import { ProductRatingsComponent } from './components/shared/product-ratings/product-ratings.component';
 import { ProductImageSliderComponent } from './components/store/product-detail/product-image-slider/product-image-slider.component';
 import { ProductInfoComponent } from './components/store/product-detail/product-info-block/product-info-block.component';
@@ -51,6 +51,7 @@ import { SetsComponent } from './components/dashboard/sets/sets.component';
 import { StockComponent } from './components/dashboard/stock/stock.component';
 import {DashboardService} from './services/dashboard.service';
 import {ScrollService} from "./services/scroll.service";
+import {CollapseService} from "./services/collapse.service";
 
 @NgModule({
   //todo separate on several modules
@@ -110,7 +111,7 @@ import {ScrollService} from "./services/scroll.service";
     ),*/
     NgbModule.forRoot()
   ],
-  providers: [ProductService, CategoryService, Logger, DashboardService, ScrollService],
+  providers: [ProductService, CategoryService, Logger, DashboardService, ScrollService, CollapseService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

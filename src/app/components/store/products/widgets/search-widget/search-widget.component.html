@@ -11,7 +11,10 @@
     </span>
   </form>
 
-  <ul [hidden]="!isSearchFocused()" class="list-group search-result">
+  <ul [hidden]="!isSearchFocused()"
+      (mouseenter)="onSearchResultHover()"
+      (mouseleave)="onSearchResultLeave()"
+      class="list-group search-result">
     <li class="list-group-item search-item"
         *ngFor="let product of products$ | async">
       <img src="{{product.mainImage}}" class="product-icon-small">

@@ -19,7 +19,7 @@ import {of} from "rxjs/observable/of";
 })
 export class SearchWidgetComponent implements OnInit {
 
-  @Input() term: string;
+  @Input() _term: string;
   @Output() onTermSelect = new EventEmitter<string>();
 
   @ViewChild('searchButton') searchButtonEl: ElementRef;
@@ -29,15 +29,24 @@ export class SearchWidgetComponent implements OnInit {
   products$: Observable<Product[]>;
   loading: boolean = false;
   searchFocused: boolean = false;
+  searchResultHovered: boolean = false;
 
   constructor(private productService: ProductService,
               private fb: FormBuilder) {
   }
 
+  @Input()
+  set term(term: string) {
+    this._term = term;
+    if(this.searchField) {
+      this.searchField.setValue(term);
+    }
+  }
+
   ngOnInit(): void {
     this.createForm();
     this.products$ = this.searchField.valueChanges
-      .startWith(this.term || '')
+      .startWith(this._term || '')
       .debounceTime(300)
       .distinctUntilChanged()
       .do(_ => this.loading = true)
@@ -49,18 +58,17 @@ export class SearchWidgetComponent implements OnInit {
   }
 
   get searchField() {
-    return this.searchForm.get('searchField');
+    return this.searchForm && this.searchForm.get('searchField') || null;
   }
 
   isSearchFocused(): boolean {
-    return this.searchFocused;
+    return this.searchFocused || this.searchResultHovered;
   }
 
   onSubmit(): void {
     if (this.searchForm.valid) {
       this.searchButtonEl.nativeElement.focus();
-      const selectedTerm = this.searchForm.value.searchField.length > 0 ? this.searchForm.value.searchField : null;
-      this.onTermSelect.emit(selectedTerm);
+      this.onTermSelect.emit(this.searchForm.value.searchField);
     }
   }
 
@@ -72,9 +80,17 @@ export class SearchWidgetComponent implements OnInit {
     this.searchFocused = false;
   }
 
+  onSearchResultHover() {
+    this.searchResultHovered = true;
+  }
+
+  onSearchResultLeave() {
+    this.searchResultHovered = false;
+  }
+
   private createForm() {
     this.searchForm = this.fb.group({
-      searchField: [this.term || '', Validators.minLength(3)]
+      searchField: [this._term || '', Validators.minLength(3)]
     });
   }
 }

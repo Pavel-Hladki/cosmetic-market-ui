@@ -1,4 +1,4 @@
-import {Component, HostListener, OnInit} from '@angular/core';
+import {Component, ElementRef, HostListener, OnInit, ViewChild} from '@angular/core';
 import {ActivatedRoute, NavigationEnd, Router} from "@angular/router";
 import {ScrollService} from "../../../services/scroll.service";
 import {isDefined} from "../../../utils/utils";
@@ -7,6 +7,8 @@ import {Product} from "../../../models/product";
 import {Observable} from "rxjs/Rx";
 import {of} from "rxjs/observable/of";
 import {ProductService} from "../../../services/product.service";
+import {Location} from "@angular/common";
+import {CollapseService, CollapseState} from "../../../services/collapse.service";
 
 @Component({
   selector: 'app-header',
@@ -15,6 +17,8 @@ import {ProductService} from "../../../services/product.service";
 })
 //todo make search input directive/component
 export class HeaderComponent implements OnInit {
+
+  @ViewChild('searchButton') searchButtonEl: ElementRef;
 
   readonly logoType = Logo;
 
@@ -26,10 +30,14 @@ export class HeaderComponent implements OnInit {
   products$: Observable<Product[]>;
   loading: boolean = false;
   searchFocused: boolean = false;
+  searchResultHovered: boolean = false;
+  searching: boolean = false;
 
   constructor(private router: Router,
               private activatedRoute: ActivatedRoute,
+              private location: Location,
               private scrollService: ScrollService,
+              private collapseService: CollapseService,
               private productService: ProductService,
               private fb: FormBuilder) { }
 
@@ -49,6 +57,7 @@ export class HeaderComponent implements OnInit {
       .do(_ => this.loading = true)
       .switchMap(term => {
         if (3 > term.length) return of([]);
+        this.searching = true;
         return this.productService.autocompleteName(term);
       })
       .do(_ => this.loading = false);
@@ -59,20 +68,38 @@ export class HeaderComponent implements OnInit {
   }
 
   isSearchFocused(): boolean {
-    return this.searchFocused;
+    return (this.searchFocused || this.searchResultHovered) && this.searching ;
   }
 
   onSubmit(): void {
     if (this.searchForm.valid) {
+      this.searching = false;
+      this.searchButtonEl.nativeElement.focus();
+      this.collapseMenu();
       this.router.navigate(['/products'], { queryParams: { term: this.searchForm.value.searchField } });
     }
   }
+
+  selectFoundItem() {
+    this.searching = false;
+    this.collapseMenu();
+  }
+
   onSearchFieldFocus() {
+    this.searching = true;
     this.searchFocused = true;
   }
 
   onSearchFieldBlur() {
     this.searchFocused = false;
+  }
+
+  onSearchResultHover() {
+    this.searchResultHovered = true;
+  }
+
+  onSearchResultLeave() {
+    this.searchResultHovered = false;
   }
 
   isCurrentLogo(logo: Logo) {
@@ -81,6 +108,11 @@ export class HeaderComponent implements OnInit {
 
   isItemActive(activeItem: string) {
     return this.activeItem === activeItem;
+  }
+
+  collapseMenu() {
+    this.collapseService
+      .collapseElement(".collapse", CollapseState.HIDE, {maxScreenWidth: 750})
   }
 
   private setLogoOnInit(route: ActivatedRoute) {
