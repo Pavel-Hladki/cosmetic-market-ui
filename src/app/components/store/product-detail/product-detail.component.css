@@ -1,0 +1,18 @@
+.section {
+  padding: 100px 0;
+}
+
+.product-description {
+  padding: 40px 0;
+}
+
+/* small mobile :320px. */
+@media (max-width: 767px) {
+  .container {width:300px}
+}
+
+/* Large Mobile :480px. */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+  .container {width:450px}
+
+}

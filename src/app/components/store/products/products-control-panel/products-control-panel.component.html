@@ -1,0 +1,30 @@
+<div class="shop-content">
+  <div class="shop-option box-shadow mb-30 clearfix">
+    <!-- showing -->
+    <div class="showing f-left text-left">
+      <span>
+        Showing : {{startItemIndex | number:'2.0-0'}}-{{endItemIndex | number:'2.0-0'}} of {{itemCount}}.
+      </span>
+    </div>
+    <!-- short-by -->
+    <div class="short-by f-left text-center">
+      <span>Sort by :</span>
+      <select #sortOptionsSelect
+              (change)="selectSortOption(sortOptionsSelect.value)"
+              title="Sort by :">
+        <option *ngFor="let option of sortOptions" [value]="option.value">
+          {{option.name}}
+        </option>
+      </select>
+    </div>
+    <!-- Nav tabs -->
+    <ul class="shop-tab f-right text-right" role="tablist">
+      <li [ngClass]="{'active': isSelectedViewType(viewType.GRID)}">
+        <a (click)="selectViewType(viewType.GRID)"><i class="zmdi zmdi-view-module"></i></a>
+      </li>
+      <li [ngClass]="{'active': isSelectedViewType(viewType.LIST)}">
+        <a (click)="selectViewType(viewType.LIST)"><i class="zmdi zmdi-view-list-alt"></i></a>
+      </li>
+    </ul>
+  </div>
+</div>

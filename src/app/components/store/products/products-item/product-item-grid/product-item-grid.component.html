@@ -1,0 +1,15 @@
+<div class="product-item">
+  <div class="product-img">
+    <a routerLink="/products/{{product.id}}">
+      <img [src]="product.mainImage" alt="">
+    </a>
+  </div>
+  <div class="product-info">
+    <h6 class="product-title">
+      <a routerLink="/products/{{product.id}}">{{product.name}}</a>
+    </h6>
+    <app-product-ratings></app-product-ratings>
+    <h3 class="pro-price">{{product.price}}</h3>
+    <!-- <app-product-actions></app-product-actions>-->
+  </div>
+</div>

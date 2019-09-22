@@ -1,0 +1,195 @@
+p, li {
+  font-family: "Muli", sans-serif;
+  color: #666;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+p {
+  color: #666;
+}
+
+p {
+  color: #888;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  transition: all .3s ease-in-out 0s;
+}
+
+a:focus, a:hover {
+  text-decoration: none;
+  outline: 0;
+}
+li:focus, li:hover {
+  color: #ffcc99;
+ }
+
+.f-left {
+  float: left;
+}
+
+@font-face {
+  font-family: 'Material-Design-Iconic-Font';
+  src: url('/assets/fonts/Material-Design-Iconic-Font.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+/*todo to styles.css*/
+
+@media (min-width: 1401px) {
+
+  ul.description-tab li {
+    margin-right: 10%;
+  }
+
+  ul.description-tab .tab-content.vertical-align-fix {
+    margin-top: 40px;
+    box-sizing: border-box;
+    float: right;
+    margin-left: -100%;
+    width: 100%;
+  }
+
+}
+
+/* Large Screen  */
+@media (min-width: 1200px) and (max-width: 1400px) {
+  ul.description-tab .tab-content.vertical-align-fix {
+    margin-top: 40px;
+    box-sizing: border-box;
+    float: right;
+    margin-left: -100%;
+    width: 100%;
+  }
+
+}
+
+/* Normal desktop :992px. */
+@media (min-width: 992px) and (max-width: 1199px) {
+
+  ul.description-tab .tab-content.vertical-align-fix {
+    margin-top: 40px;
+    box-sizing: border-box;
+    float: right;
+    margin-left: -100%;
+    width: 100%;
+  }
+
+}
+
+/* Tablet desktop :768px. */
+@media (min-width: 768px) and (max-width: 991px) {
+
+  ul.description-tab li {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    margin: 0;
+  }
+
+  ul.description-tab li {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    margin: 0;
+  }
+
+  ul.description-tab li:not(.active):not(.last) {
+    border-bottom: 1px solid #ffcc99;
+  }
+
+  ul.description-tab .tab-content > .tab-pane.active{
+    border-bottom: 1px solid #ffcc99;
+  }
+
+  ul.description-tab .tab-content > .tab-pane {
+    padding: 0 10px 20px;
+  }
+
+}
+
+/* small mobile :320px. */
+@media (max-width: 767px) {
+  p {
+    font-size: 12px;
+  }
+}
+
+/* Large Mobile :480px. */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+
+  ul.description-tab li {
+    margin-right: 3%;
+    font-size: 13px;
+  }
+
+  ul.description-tab .tab-content.vertical-align-fix {
+    margin-top: 40px;
+    box-sizing: border-box;
+    float: right;
+    margin-left: -100%;
+    width: 100%;
+  }
+
+}
+
+@media (max-width: 480px) {
+  ul.description-tab li {
+    width: 100%;
+    text-align: center;
+    padding: 7px 0;
+    margin: 0;
+  }
+
+  ul.description-tab li:not(.active):not(.last) {
+    border-bottom: 1px solid #ffcc99;
+  }
+
+  ul.description-tab .tab-content > .tab-pane.active {
+    border-bottom: 1px solid #ffcc99;
+  }
+  ul.description-tab .tab-content > .tab-pane {
+    padding: 0 10px 20px;
+  }
+
+}
+
+/* -------------------------------------
+    Product description tab
+------------------------------------- */
+.description-tab {
+  display: inline-block;
+  width:100%;
+}
+
+.description-tab li {
+  display: inline-block;
+  margin-right: 6%;
+  cursor: pointer;
+}
+.description-tab li a {
+  display: block;
+  font-weight: 500;
+  line-height: 20px;
+  text-transform: uppercase;
+}
+.description-tab li.active a {
+  opacity: 1;
+  transition: all .3s ease-in 0s;
+  border-bottom: 1px solid #ffcc99;
+}
+
+.description-tab .tab-content .tab-pane {
+  display: block !important;
+}
+
+.description-tab .tab-content .tab-pane p {
+  margin-bottom: 0;
+}

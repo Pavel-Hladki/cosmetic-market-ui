@@ -1,0 +1,18 @@
+<div *ngIf="infoTabs" class="single-product-tab">
+  <ul class="description-tab">
+    <ng-template ngFor let-infoTab let-i="index" let-last="last" [ngForOf]="infoTabs">
+      <li (click) = "openTab(i)"
+          [ngClass]="{
+              'active': i === activeTabIndex,
+              'last':last && i-1 != activeTabIndex
+          }"
+          class="f-left"><a>{{infoTab.name}}</a>
+      </li>
+      <div [@collapse]="i === activeTabIndex" class="tab-content vertical-align-fix" style="height: 100% !important;">
+        <div class="tab-panel">
+          <p [innerHTML] = "infoTab.content"></p>
+        </div>
+      </div>
+    </ng-template>
+  </ul>
+</div>

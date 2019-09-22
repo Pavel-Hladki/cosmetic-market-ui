@@ -1,0 +1,122 @@
+p, li {
+  font-family: "Muli", sans-serif;
+  color: #666;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+p {
+  color: #666;
+}
+
+p {
+  color: #888;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  transition: all .3s ease-in 0s;
+  color: #000;
+}
+
+a:focus, a:hover {
+  text-decoration: none;
+  outline: 0;
+  color: #5672f9;
+}
+
+/* -------------------------------------
+    Product sharing
+------------------------------------- */
+.sharing-title {
+  line-height: 25px;
+  margin-bottom: 0;
+  text-transform: uppercase;
+  width: 70px;
+  font-size: 13px;
+  font-weight: normal;
+  color: #575757;
+}
+
+.f-left {
+  float: left;
+}
+
+.f-right {
+  float: right;
+}
+
+@font-face {
+  font-family: 'Material-Design-Iconic-Font';
+  src: url('/assets/fonts/Material-Design-Iconic-Font.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+/*todo to styles.css*/
+
+.zmdi {
+  display: inline-block;
+  font: normal normal normal 14px/1 'Material-Design-Iconic-Font';
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.action-button > li {
+  display: inline-block;
+  margin-right: 10px;
+}
+.action-button > li:last-child {
+  margin-right: 0;
+}
+.action-button > li > a {
+  background: transparent;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  color: #999999;
+  display: block;
+  font-size: 14px;
+  height: 30px;
+  text-align: center;
+  width: 30px;
+}
+.action-button > li > a i {
+  line-height: 28px;
+}
+.action-button > li:hover > a {
+  background: #FF7F00;
+  border-color: #FF7F00;
+  color: #fff;
+}
+
+/* small mobile :320px. */
+@media (max-width: 767px) {
+  p {
+    font-size: 12px;
+  }
+}
+
+/* -------------------------------------
+    Social sharing
+------------------------------------- */
+.zmdi-facebook:before {
+  content: '\f343';
+}
+
+.zmdi-twitter:before {
+  content: '\f360';
+}
+
+.zmdi-pinterest:before {
+  content: '\f3fc';
+}
+
+.zmdi-google-plus:before {
+  content: '\f34d';
+}
